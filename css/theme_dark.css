@@ -1,0 +1,378 @@
+﻿@namespace url(http://www.w3.org/1999/xhtml);
+@keyframes fadeIn { from { opacity: 0; filter: blur(3px);} to { opacity:1; filter: blur(0px);} }
+
+@-moz-document domain("gc.bahamut.com.tw") {
+    body {
+        background-color: #36393E;
+    }
+}
+
+@-moz-document domain("gamer.com.tw") {
+    @-moz-document domain("forum.gamer.com.tw") {
+        /* 重新分配寬度 */
+        #BH-slave {
+            width: 150px;
+        }
+
+        #BH-master {
+            width: 850px;
+            /*background-color: #36393E;*/
+        }
+
+        .FM-abox2A {
+            width: 400px;
+        } /* 這個是分類版的 熱門推薦_文章預覽小框框 */
+        .FM-abox2A p {
+            width: 280px;
+        }
+    }
+    /* 隱藏廣告 */
+    #flySalve, #BH-bigbanner {
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    /***************/
+    /** 暗色系開始 **/
+    /***************/
+    
+    body {
+        background-image: url("http://www.nwaction.com/metroalbum/images/bg1.jpg");
+        background-color: #1E2124;
+        font-family:Noto Sans CJK TC DemiLight,sans-serif;
+        
+    }
+    
+    input, select, textarea {
+        font-family:Noto Sans CJK TC DemiLight,sans-serif;
+    }
+    
+    #BH-wrapper {
+        background-color: #2E3136;
+        padding-left: 5px;
+    }
+    
+    /* 置頂導覽列 */
+    
+    .TOP-bh, #BH-top-data, .TOP-data {
+        background-image: none;
+        background-color: #36393E;
+        color: #FFFFF1;
+    }
+    
+    .TOP-msg {
+        font-size: 13px;
+        width: 387px;
+        position: absolute;
+        right: -1px;
+        top: 35px;
+        background-color: #36393E;
+        border: 15px solid #2E3136;
+        border-top: none;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        word-break: break-all;
+        word-wrap: break-word;
+        z-index: 1000;
+        /*animation*/
+        opacity:0;  /* make things invisible upon start */        
+        animation:fadeIn ease-in 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+        border-radius: 15px;
+    }
+    
+    .TOP-msg > span {/*子選單標題文字*/
+        display: block;
+        background-color: #2E3136;
+        color: #FFFFFF;
+        padding: 3px 30px 6px 0px;
+        text-align: right;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-family: "Noto Sans CJK TC Black", sans-serif;
+
+    }
+    
+    .TOP-msgbtn {
+        display: block;
+        padding: 5px;
+        text-align: center;
+        border-top: 0px solid #e5e5e5;
+        background-color: #2E3136;
+    }
+    .TOP-msgbtn a {
+        color: #D9E7FF;
+    }
+    .TOP-msgbtn a:hover {
+        color: #D9E7FF;
+    }
+    
+    .TOP-btn a:hover {
+        background-color: #282B30;
+    }
+    
+    .TOP-my li a {
+        display: block;
+        border-left: 0px solid #282B30;
+        width: 45px;
+        height: 35px;
+        position: relative;
+    }
+    
+    .TOP-my li a:hover {
+        background-color: #282B30;
+        text-decoration: none;
+    }
+    
+    .TOP-data .topb1, .TOP-data .topb2, .TOP-data .topb3 {   /* 通知鈕 */
+        filter: grayscale(100%);
+    }
+    
+    .TOP-data .topbnow2 {
+       filter: grayscale(0%);
+    }
+    
+    .TOP-data .topbnow {
+        background-color: #282B30;
+        background-position: bottom;
+        filter: grayscale(0%);
+    }
+    
+    
+    /* 導覽列 > 子選單 */
+    .TOP-msglist .new {
+        background-color: #36393E;
+        border-left: 5px solid #C00000;
+    }
+    
+    .TOP-msglist div{
+        background-color: #36393E;
+        padding: 5px;
+        border-top: 0px solid #e5e5e5;
+        overflow: auto;
+    }
+    
+    .TOP-msglist div:hover {
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+    }
+    
+    .TOP-msglist .title a {
+        color: #E9E9E9;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 30px;
+    }
+    
+    .TOP-msglist a {
+        color: #66D9EF;
+    }
+    
+    .TOP-msglist a:hover {
+        color: #FFFFFF;
+    }
+     
+    .TOP-board a {
+        display: inline-block;
+        text-align: left;
+        width: 180px;
+        vertical-align: middle;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 20px;
+        color: #66D9EF;
+        padding: 5px 5px 5px 7px;
+        background-image:none;
+        margin-left: 5px;
+    }
+    
+    .TOP-board a:hover {
+        color: #FFFFFF;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        text-decoration: none;
+    }
+    
+    .TOP-more a:hover {
+        color: #FFFFFF;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        text-decoration: none;
+    }
+    
+    .TOP-more p {
+        display: block;
+        background-color: #4E535C;
+        color: #FFFFFF;
+        padding: 3px 10px;
+        border-top: 2px solid #2E3136;
+    }
+    
+    .TOP-more li {
+        display: block;
+        border-bottom: 0px dotted #CCC;
+        line-height: 30px;
+    }
+    
+    /* 內文_次導覽列 */
+    .BH-menuE, .FM-tags {
+        filter: grayscale(100%);
+    }
+    
+    /* 版務人員框框 */
+    .BH-rbox {
+        background-color: transparent;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        clear: both;
+        overflow: auto;
+        _height: 1%;
+    }
+    
+    .FM-rbox14-master {
+        /*visibility: hidden;*/
+        font-size: 0;
+
+    }
+    .FM-rbox14-master::before {
+        content: url('http://i.imgur.com/vmWBU4D.png');
+    }
+    
+    .FM-rbox14-master a {
+        visibility: visible;
+
+    }
+    
+    .BH-rbox {
+        color: #C1C1C1;
+    }
+    
+    
+    /* 文章區 */
+    
+    .FM-cbox2 > a {
+        float: left;
+        margin-right: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+        padding: 4px;
+        background-color: black;
+    }
+    
+    .FM-cbox10 textarea {
+        /*display: flex;*/
+        position: relative;
+        padding: 8px 10px;
+        border-radius: 3px;
+        border: 2px solid #dadddf;
+        box-sizing: border-box;
+        height: 80px;
+        border-color: hsla(0,0%,100%,.2);
+        background-color: hsla(0,0%,100%,.06);
+        color: #C6C7C9 !important;
+    }
+    
+    .FM-cboxfold {
+        padding: 7px 10px;
+        /*background: url(http://i2.bahamut.com.tw/forum/FM-titlebg2.gif) repeat-x bottom;*/
+        background-image: none;
+        font-size: 13px;
+        /*border-left: 1px solid #CCCCCC;
+        border-right: 2px solid #CCCCCC;*/
+        border-left: 20px solid #282B30;
+        border-right: 0px solid #282B30;
+        border-top: 1px solid #282B30;
+        border-bottom: 1px solid #282B30;
+        
+        color: #999999;
+        overflow: auto;
+    }
+    
+    .FM-cbox1 {
+        background-color: #36393E;
+        border: 0px solid #CCCCCC;
+        border-top-color: #5A9ACC;
+        border-bottom-color: #5A9ACC;
+    } /* DIV_CONTAINER */
+    
+    .FM-cbox2 {
+        background-image: none;
+        background-color: #36393E;
+    }
+    
+    .FM-cbox3 {
+        padding: 7px 10px;
+        color: #FFFFFF;
+        background-image: none;
+        background-color: #2E3136;
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+        border-top: 1px solid black;
+    }
+    
+    .FM-cbox5 {
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 8px 0 5px 0;
+    }
+    
+    .FM-cbox5 > a:link, .FM-cbox5 > a:visited {
+        color: #FFFFFF;
+    }
+    
+    .FM-cbox7 {
+        background-color: #36393E;
+        color: #C1C1C1;
+    }
+    
+    .FM-cbox7 a:link, .FM-cbox7 a:visited{
+        color: #0696CF;
+    }
+    
+    .FM-cbox8, .FM-cbox9, .FM-cbox10, FM-cbox11 {
+        background-color: #36393E;
+        background-image: none;
+    }
+    
+    .FM-cbox9 {
+        padding: 2px 0px 5px 0px;
+        margin: 0px;
+        border-top: 1px solid #282B30;
+        font-size: 12px;
+        position: relative;
+        min-height: 25px;
+        width: 100%;
+    }
+    
+    .FM-cbox10A {
+        border: 0px;
+        color: #C1C1C1;
+    }
+    
+    .FM-cbox11 {
+        padding: 5px 0;
+        border-top: 0px dotted #CCCCCC;
+        margin: 0 10px;
+        background-color: #36393E;
+    }
+    
+    .FM-cbox11 iframe{
+        width: 100%;
+        border: 2px solid black;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 5px;
+    }
+    
+    .FM-msgbg a {
+        color: #FFFFFF;
+    }
+    
+    .FM-msgbg p:first-child {
+        background-image: none;
+        padding-top: 0px;
+    }
+    
+}
