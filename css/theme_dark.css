@@ -291,23 +291,31 @@
         還沒用好
     }*/
     
-    /* 版務人員框框 */
+    /* 版務人員框框 MOD */
     .BH-rbox {
         background-color: transparent;
         border: 0px solid #e5e5e5;
         margin-bottom: 10px;
         clear: both;
         overflow: auto;
-        
     }
     
     .FM-rbox14-master {
         /*visibility: hidden;*/
         font-size: 0;
-
+        text-align: center;
     }
     .FM-rbox14-master::before {
+        text-align: center;
         content: url('http://i.imgur.com/vmWBU4D.png');
+        padding-bottom: 3px;
+        display: block;
+    }
+    
+    .FM-rbox14 img {
+        float: none;
+        border: 0px solid #e5e5e5;
+        margin-right: 1px;
     }
     
     .FM-rbox14-master a {
@@ -356,13 +364,13 @@
         -webkit-filter: hue-rotate(180deg);
     }
     
-    .FM-cbox2 > a {
+    .FM-cbox2 > a {/*大勇造*/
         float: left;
         margin-right: 10px;
-        border-radius: 10px;
-        border: 2px solid black;
-        padding: 4px;
-        background-color: black;
+        border-radius: 0px;
+        border: 3px double white;
+        padding: 0px;
+        background-color: transparent;
     }
     
     .FM-cbox10 textarea {
@@ -412,6 +420,7 @@
         margin-bottom: 10px;
         clear: both;
         overflow: auto;
+        border-radius: 20px;
     }
     
     .FM-abox2 {
@@ -457,6 +466,14 @@
         text-decoration: none;
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
         border-radius: 5px;
+    }
+    
+    .FM-abox5B a:link {
+        color: #66C1FF;
+    }
+    
+    .FM-abox5B a:hover {
+        color: #95D4FF;
     }
     
     .FM-abox6, .FM-abox7A {
@@ -526,6 +543,21 @@
     .FM-cbox8, .FM-cbox9, .FM-cbox10, FM-cbox11 {
         background-color: #36393E;
         background-image: none;
+    }
+    
+    .FM-abox8 div {
+        width: 90%;
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+    
+    .FM-abox8A /* 達人專欄 > 小框框 */ {
+        display: block;
+        background-color: transparent;
+        border-bottom: 0px  #CCCCCC;
+        border: 3px double #B0B1B1; 
+        padding: 3px;
+        border-radius: 10px;
     }
     
     .FM-cbox9 {
@@ -707,17 +739,22 @@
     }
     
     .FM-sticky {/*置頂文章*/
-        background-color: transparent !important;
+        background-color: #483F3F !important;
         border-left: 4px solid #FF0000;
-        color: #FFFFFF;
+        
     }
     
     .FM-sticky a {/*置頂文章*/
-        color: #CEE4F6;
+        /*font-style: italic;*/
+        
     }
     
     .FM-blist .new_res {
-        color: #DE0000;
+        color: #FF7777;
+    }
+    
+    .FM-daco {
+        color: #FF7777 !important;
     }
     
     .FM-blist1 {
@@ -729,16 +766,17 @@
     }
     
     .FM-blist {/*table*/
-        border: 0px solid #CCCCCC;
+        border-bottom: 0px solid transparent;
         background-color: #3F4248;
         font-size: 12px;
         line-height: 20px;
         margin-bottom: 10px;
-        width: 100%;
+        border-radius: 20px;
     }
+
     
     .FM-row {
-        background-color: transparent !important;/*#36393E !important;*/
+        background-color: transparent !important;
     }
     
     .FM-blist tr:hover a{
@@ -756,16 +794,70 @@
         color: #85878D;
     }
     
+    .FM-blist tr, .FM-sticky {
+        height: 38px ;
+        
+    }
+    
     .FM-blist td {
         border-bottom: 0px solid #e5e5e5;
         padding: 5px;
+        
+    }
+    
+    .FM-blist3 {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .FM-blist3 a {
+        display: inline-block;/*!!!! inline-block + white-space: nowrap*/
+        margin-right: -50px;
+        /*http://www.puritys.me/docs-blog/article-259-移除-CSS-inline-block-空白.html*/
+        width: 100%;
+        height: 36px;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 36px;
+    }
+    
+    .FM-blist3 > span {/*標題文章頁數前面的符號*/
+        font-size:0;
+        visibility: hidden;
+        position: relative;
+        top: 13px;
+        left: -50px;
+        /*z-index: 2;
+        top: -50px;
+        margin-top: -15px;*/
+        /*幹這個部分快把我搞死了，不過是用個 Block*/
     }
     
     .FM-blist3 > span > a {/*標題文章頁數*/
-        margin-left: 5px;
-        font-size: 20px;
+        visibility: visible;
+        display:inline;
+        margin-left: 1px;
+        font-size: 10px;
         font-weight: bold;
         color: #BDC0C8;
+    }
+    
+    .FM-blist3 > span::before{/*標題文章頁數*/
+        visibility: visible;
+        display:inline;
+        font-size: 10px;
+        content:"跳至 ";
+        vertical-align: middle;
+        color: #C0C0C0;
+    }
+    
+    .FM-blist3 > span::after{/*標題文章頁數*/
+        visibility: visible;
+        display:inline;
+        font-size: 10px;
+        content:"頁";
+        vertical-align: middle;
+        color: #C0C0C0;
     }
     
     .FM-blist3 > span > a::before{/*標題文章頁數*/
@@ -777,6 +869,7 @@
     }
     
     .FM-blist4 {/*GP數*/
+        
         color: #EBF400;
         text-align: right;
         width: 30px;
@@ -794,6 +887,13 @@
         font-size: 30px;
         padding-top: 0px;
         padding-left: 20px;
+    }
+    
+    .FM-abox5B span {
+        line-height: 15px;
+        font-size: 13px !important;
+        color: #B4C1B3 !important;
+        font-style: italic;
     }
     
     /* 其他小東西_評分 */
