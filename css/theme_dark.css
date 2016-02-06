@@ -1,5 +1,14 @@
-﻿@namespace url(http://www.w3.org/1999/xhtml);
-@keyframes fadeIn { from { opacity: 0; filter: blur(3px);} to { opacity:1; filter: blur(0px);} }
+﻿/*
+
+名稱: 巴哈姆特之夜
+作者: 好冷酒 (hollen9)
+日期: 2016/02/07
+
+*/
+
+@namespace url(http://www.w3.org/1999/xhtml);
+@keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
+@keyframes PaintColor { from { filter: grayscale(100%);-webkit-filter: grayscale(100%);} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
 
 @-moz-document domain("gc.bahamut.com.tw") {
     body {
@@ -9,9 +18,12 @@
 
 @-moz-document domain("gamer.com.tw") {
     @-moz-document domain("forum.gamer.com.tw") {
-        /* 重新分配寬度 */
+        /* 討論區重新分配寬度 */
         #BH-slave {
             width: 150px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border-left: 3px solid transparent;
         }
 
         #BH-master {
@@ -21,16 +33,17 @@
 
         .FM-abox2A {
             width: 400px;
-        } /* 這個是分類版的 熱門推薦_文章預覽小框框 */
+        } /*這個是分類版的 熱門推薦_文章預覽小框框*/
         .FM-abox2A p {
             width: 280px;
         }
     }
+    
     /* 隱藏廣告 */
-    #flySalve, #BH-bigbanner {
+    #flySalve, #BH-bigbanner, #BH-footer iframe {
         visibility: hidden;
         position: absolute;
-        top: 0px;
+        top: -800px;
         left: 0px;
     }
     /***************/
@@ -40,18 +53,38 @@
     body {
         background-image: url("http://www.nwaction.com/metroalbum/images/bg1.jpg");
         background-color: #1E2124;
-        font-family:Noto Sans CJK TC DemiLight,sans-serif;
-        
+        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
+        color: #C0C1C2;
+    }
+    a:hover {
+        color: #A6DBFF;
+        text-decoration: underline;
+    }
+    a {
+        color: #3BAFFF;
+        text-decoration: none;
     }
     
     input, select, textarea {
-        font-family:Noto Sans CJK TC DemiLight,sans-serif;
+        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
     }
     
     #BH-wrapper {
         background-color: #2E3136;
         padding-left: 5px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
     }
+    /* 首頁 */
+    #BA-center-id {
+        
+    }
+    
+    .BA-topbg {
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    /*filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);*/
     
     /* 置頂導覽列 */
     
@@ -128,16 +161,19 @@
     
     .TOP-data .topb1, .TOP-data .topb2, .TOP-data .topb3 {   /* 通知鈕 */
         filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
     }
     
     .TOP-data .topbnow2 {
-       filter: grayscale(0%);
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
     }
     
     .TOP-data .topbnow {
         background-color: #282B30;
         background-position: bottom;
         filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
     }
     
     
@@ -145,7 +181,9 @@
     .TOP-msglist .new {
         background-color: #36393E;
         border-left: 5px solid #C00000;
-    }
+        /*border-bottom: 5px solid #36393E;*/
+        margin-bottom: 2px;
+    }/*新通知*/
     
     .TOP-msglist div{
         background-color: #36393E;
@@ -215,9 +253,43 @@
     }
     
     /* 內文_次導覽列 */
-    .BH-menuE, .FM-tags {
+    .FM-tags {
         filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
     }
+    
+    ul.BH-menuE {
+        list-style: none;
+        display: block;
+        background-color: #37363E;
+        border-top: 0px solid #117E96;
+        height: 40px;
+        font-family: "Noto Sans CJK TC Bold", "Noto Sans CJK TC DemiLight", sans-serif;
+        position: relative;
+        z-index: 2;
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    
+    ul.BH-menuE li:first-child > a {
+        background-color: #117E96;
+        color: #464646;
+        text-shadow: none;
+        font-weight: bold;
+        border: 0;
+        color: #fff;
+        height: 40px;
+        z-index: 5;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    /*ul.BH-menuE li:first-child > a::before {
+        content: "回";
+        display: block;
+        width: auto;
+        height: 50%;
+        還沒用好
+    }*/
     
     /* 版務人員框框 */
     .BH-rbox {
@@ -226,7 +298,7 @@
         margin-bottom: 10px;
         clear: both;
         overflow: auto;
-        _height: 1%;
+        
     }
     
     .FM-rbox14-master {
@@ -249,6 +321,40 @@
     
     
     /* 文章區 */
+    
+    #BH-slave h5 {
+        background-color: #1E2124;position: relative; top: 20px; border-radius: 10px;
+    }
+    
+    #BH-master h4 {
+        height: 30px;
+        line-height: 30px;
+        background-color: transparent;
+        background-image: url(https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/26bf3e7c65dd8aeaf3ffc0952be7d063b28b8f50/images/h1_img_pink.png);
+        background-repeat: no-repeat;
+        background-position: 20px;
+        color: #F35A92;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+    
+    #BH-master h4 img {
+        visibility: hidden;
+    }
+    
+    .FM-atag1now{
+        text-indent: 20px;
+        text-align: left !important;;
+        width: 200px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        background-image: url(http://i2.bahamut.com.tw/gnn/now2.jpg);
+        border: 0px solid transparent;
+        border-radius: 13px;
+        text-decoration: none;
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
     
     .FM-cbox2 > a {
         float: left;
@@ -287,6 +393,75 @@
         color: #999999;
         overflow: auto;
     }
+    .BH-rbox {
+        background-color: #36393E;
+        border-radius: 20px;
+        padding-top: 20px;
+    }
+    
+    .BH-rbox a {/* 層級高於其他超連結設定*/
+        color: #3498DB;
+    }
+    .BH-rbox a:hover {/* 層級高於其他超連結設定*/
+        color: #3DB1FF;
+    }
+    
+    .BH-lbox {/*進版*/
+        background-color: #36393E;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        clear: both;
+        overflow: auto;
+    }
+    
+    .FM-abox2 {
+        border-radius: 20px;
+    }
+    
+    .FM-abox2 a:hover {
+        color: #A6DBFF;
+    }
+    
+    .FM-abox2A {
+        filter: grayscale(100%);-webkit-filter: grayscale(100%);
+    }
+    
+    .FM-abox2A:hover {
+        /*滑鼠移過變彩色*/
+        animation:PaintColor ease-in 1;
+        animation-fill-mode:forwards;
+        /*animation-direction: normal;*/
+        animation-duration:0.2s;
+        animation-delay: 0s;
+        border-radius: 15px;
+    }
+    
+    .FM-abox2A > a:first-child {
+        display: block;
+        width: 120px;
+        height: 120px;
+        float: left;
+        position: relative;
+        background-color: transparent;
+    }
+    
+    .FM-abox2B:link {
+        color: #3BAFFF;
+        display: block;
+        height: 30px;
+        vertical-align: middle;
+    }
+    
+    .FM-abox2B:hover {
+        color: #66C1FF !important;
+        text-decoration: none;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        border-radius: 5px;
+    }
+    
+    .FM-abox6, .FM-abox7A {
+        border-radius: 20px;
+    }
     
     .FM-cbox1 {
         background-color: #36393E;
@@ -322,6 +497,19 @@
         color: #FFFFFF;
     }
     
+    .FM-abox6B > a {
+        color: #3BAFFF !important;
+        display: block;
+        height: 20px;
+    }
+    
+    .FM-abox6B a:hover {
+        color: #66C1FF !important;
+        text-decoration: none;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        border-radius: 5px;
+    }
+    
     .FM-cbox7 {
         background-color: #36393E;
         color: #C1C1C1;
@@ -329,6 +517,10 @@
     
     .FM-cbox7 a:link, .FM-cbox7 a:visited{
         color: #0696CF;
+    }
+    
+    FM-abox7A {
+        color: #C0C1C2;
     }
     
     .FM-cbox8, .FM-cbox9, .FM-cbox10, FM-cbox11 {
@@ -366,6 +558,119 @@
         border-radius: 5px;
     }
     
+    .FM-rbox15C {
+        padding-bottom: 15px;
+    }
+    
+    .FM-rbox15C a:hover {
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #999999;
+    }
+    .FM-rbox15C a {
+        display: block;
+        width: 25px;
+        line-height: 25px;
+        background-color: #484D55;
+        border: 1px solid #CCC;
+        border-radius: 3px;
+        text-align: center;
+    }
+    
+    .FM-rbox15C span {
+        line-height: 27px;
+        font-size: 15px;
+        display: block;
+        margin: 0 50px;
+        width: 50px;
+    }
+    
+    .FM-rbox16 {
+        padding: 0px;
+    }
+    
+    .FM-rbox16A {
+        padding-top: 22px;
+    }
+    
+    .FM-rbox16A > a, .FM-rbox16A > a:hover {
+        color: #FFFFFF;
+        margin-bottom: 2px;
+    }
+    
+    .FM-rbox16B > a {
+        display: block;
+        width: 147px;
+        height: auto;
+        position: relative;
+        margin: 0 auto;
+        background-color: #e5e5e5;
+        color: inherit;
+        border: 0px solid #e5e5e5;
+    }
+    
+    .FM-rbox16B a {
+        display: block;
+        
+        color: #3e81c6;
+    }
+    
+    .FM-rbox16B h2 {
+        text-align: center;
+        padding-top: 3px;
+        width: 147px;
+        margin: 0 auto;
+        white-space: normal;
+        overflow: hidden;
+    }
+    
+    .FM-rbox16B img {
+        width: 147px;
+        display: block;
+        max-height: 150px;
+    }
+    
+    .FM-rbox16C {
+        width: 147px;
+    }
+    
+    .FM-rbox16C img {
+        display:block;
+        width: 147px;
+        height: auto;
+        position: relative;
+    }
+    
+    .FM-rbox16C h2 {
+        width: 147px;
+        height: auto;
+        clear: left;
+        overflow: hidden;
+    }
+    
+    .FM-rbox16C h2 > a{
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 30px;
+        min-height: 70px;
+        height: auto !important;
+        /*text-shadow: 1px 1px 0px rgba(27,79,115,1);*/
+    }
+    
+    .FM-rbox16B h2 > a:hover {
+        color: #38F3FF;
+    }
+
+    
+    .FM-rbox16C li {
+        display: block;
+        overflow: hidden;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 5px 0;
+        
+    }
+    
     .FM-msgbg a {
         color: #FFFFFF;
     }
@@ -375,4 +680,158 @@
         padding-top: 0px;
     }
     
+    .BH-list1 li {
+        border-bottom: 0px solid #1E2124;
+        padding: 3px 0px 3px 12px;
+        background: url(http://i2.bahamut.com.tw/icon_blue.gif) no-repeat left 8px;
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    
+    .BH-list1 a  {
+        color: #FF6D2C;
+        text-decoration: none;
+    }
+    
+    .BH-list1 a:hover  {
+        color: #FFFFFF;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        text-decoration: none;
+    }
+    
+    /* 討論區文章列表 */
+    
+    .BH-pagebtnA {
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    
+    .FM-sticky {/*置頂文章*/
+        background-color: transparent !important;
+        border-left: 4px solid #FF0000;
+        color: #FFFFFF;
+    }
+    
+    .FM-sticky a {/*置頂文章*/
+        color: #CEE4F6;
+    }
+    
+    .FM-blist .new_res {
+        color: #DE0000;
+    }
+    
+    .FM-blist1 {
+        color: #FFFFFF;
+        /*background: url(http://i2.bahamut.com.tw/forum/main_btnbg2.gif) repeat-x 0 -398px;
+        filter: grayscale(70%) contrast(100%);-webkit-filter: grayscale(70%) contrast(100%);*/
+        background: linear-gradient(0deg,#1E2124 30%,#383E43);
+        text-align: right;
+    }
+    
+    .FM-blist {/*table*/
+        border: 0px solid #CCCCCC;
+        background-color: #3F4248;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .FM-row {
+        background-color: transparent !important;/*#36393E !important;*/
+    }
+    
+    .FM-blist tr:hover a{
+        
+        /*background: linear-gradient(90deg,#2e3136 60%,#36393E);*/
+        color: #FFFFFF;
+    }
+    .FM-blist tr:hover {
+        /*background-color: #2666BC !important;*/
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        color: #FFFFFF; 
+    }
+    
+    .FM-blist a {/*table*/
+        color: #85878D;
+    }
+    
+    .FM-blist td {
+        border-bottom: 0px solid #e5e5e5;
+        padding: 5px;
+    }
+    
+    .FM-blist3 > span > a {/*標題文章頁數*/
+        margin-left: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #BDC0C8;
+    }
+    
+    .FM-blist3 > span > a::before{/*標題文章頁數*/
+        content:"[";
+    }
+    
+    .FM-blist3 > span > a::after{/*標題文章頁數*/
+        content:"]";
+    }
+    
+    .FM-blist4 {/*GP數*/
+        color: #EBF400;
+        text-align: right;
+        width: 30px;
+    }
+    
+    .FM-blist6 a:first-child {/*文章時間*/
+        color: #BDC0C8;
+        display: block;
+    }
+    
+    .FM-blist8 span {
+        display: block;
+        font-weight: bold;
+        text-align: left;
+        font-size: 30px;
+        padding-top: 0px;
+        padding-left: 20px;
+    }
+    
+    /* 其他小東西_評分 */
+    .ACG-score {
+        width: 105px;
+        height: 105px;
+        border-radius: 105px;
+        -webkit-border-radius: 105px;
+        border: 10px solid #F98933;
+        float: left;
+        margin: 15px 5px 0 5px;
+        font-size: 50px;
+        line-height: 100px;
+        color: #F98933;
+        text-align: center;
+        position: relative;
+    }
+    .ACG-score span {
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        bottom: 15px;
+        color: #AF6023;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .ACG-rbox4B {
+        font-size: 15px;
+        color: #D9772C;
+        text-align: center;
+        line-height: 30px;
+        padding: 8px 0;
+        clear: both;
+    }
+    .ACG-persent span {
+        font-size: 15px;
+        color: #B46325 !important;;
+        font-family: Helvetica, Arial, sans-serif;
+        line-height: 27px;
+    }
 }
