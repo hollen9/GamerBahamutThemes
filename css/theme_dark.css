@@ -18,16 +18,19 @@
 
 @-moz-document domain("gamer.com.tw") {
     @-moz-document domain("forum.gamer.com.tw") {
-        /* 討論區重新分配寬度 */
+        /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
         #BH-slave {
-            width: 150px;
+            width: 147px;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
-            border-left: 3px solid transparent;
+            /*右邊框框留白*/
+            padding-left: 3px;
+            padding-right: 3px;
         }
 
         #BH-master {
             width: 850px;
+            padding-left: 3px;
             /*background-color: #36393E;*/
         }
 
@@ -35,7 +38,7 @@
             width: 400px;
         } /*這個是分類版的 熱門推薦_文章預覽小框框*/
         .FM-abox2A p {
-            width: 280px;
+            width: 270px;/*<=280*/
         }
     }
     
@@ -50,17 +53,20 @@
     /** 暗色系開始 **/
     /***************/
     
+    /*基本共同設定*/
+    
     body {
         background-image: url("http://www.nwaction.com/metroalbum/images/bg1.jpg");
         background-color: #1E2124;
         font-family:"Noto Sans CJK TC DemiLight",sans-serif;
         color: #C0C1C2;
+        
     }
     a:hover {
         color: #A6DBFF;
         text-decoration: underline;
     }
-    a {
+    a:link, a:visited {
         color: #3BAFFF;
         text-decoration: none;
     }
@@ -69,9 +75,56 @@
         font-family:"Noto Sans CJK TC DemiLight",sans-serif;
     }
     
+    Button {
+        margin-right: 2px;
+        overflow: hidden;
+        white-space: nowrap;
+        color:#ffffff;
+        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
+        font-size:15px;
+        font-weight: bold;
+        font-style:normal;
+        height:35px;
+        line-height:30px;
+        width:86px;
+        text-decoration:none;
+        text-align:center;
+        text-shadow:1px 1px 0px #4d1c1c;
+        -moz-box-shadow:inset 0px 29px 15px -19px #d6966b;
+        -webkit-box-shadow:inset 0px 29px 15px -19px #d6966b;
+        box-shadow:inset 0px 29px 15px -19px #d6966b;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7878), color-stop(1, #fa2525) );
+        background:-moz-linear-gradient( center top, #ff7878 5%, #fa2525 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7878', endColorstr='#fa2525');
+        background-color:#ff7878;
+        -webkit-border-top-left-radius:10px;
+        -moz-border-radius-topleft:10px;
+        border-top-left-radius:10px;
+        -webkit-border-top-right-radius:10px;
+        -moz-border-radius-topright:10px;
+        border-top-right-radius:10px;
+        -webkit-border-bottom-right-radius:10px;
+        -moz-border-radius-bottomright:10px;
+        border-bottom-right-radius:10px;
+        -webkit-border-bottom-left-radius:10px;
+        -moz-border-radius-bottomleft:10px;
+        border-bottom-left-radius:10px;
+        text-indent:0;
+        border:1px solid #9c7535;
+        display:inline-block;
+    } Button:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
+        background:-moz-linear-gradient( center top, #fa2525 5%, #ff7878 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');
+        background-color:#fa2525;
+    } Button:active {
+        position:relative;
+        top:1px;
+    }
+
+    
     #BH-wrapper {
         background-color: #2E3136;
-        padding-left: 5px;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
     }
     /* 首頁 */
@@ -124,7 +177,8 @@
         text-align: right;
         font-size: 15px;
         letter-spacing: 1px;
-        font-family: "Noto Sans CJK TC Black", sans-serif;
+        font-family: "Noto Sans CJK TC", sans-serif;
+        font-weight: bold;
 
     }
     
@@ -196,7 +250,7 @@
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
     }
     
-    .TOP-msglist .title a {
+    .TOP-msglist .title a:link, .TOP-msglist .title a:visited {
         color: #E9E9E9;
         font-weight: bold;
         display: block;
@@ -204,7 +258,7 @@
         height: 30px;
     }
     
-    .TOP-msglist a {
+    .TOP-msglist a:link, .TOP-msglist a:visited {
         color: #66D9EF;
     }
     
@@ -212,7 +266,7 @@
         color: #FFFFFF;
     }
      
-    .TOP-board a {
+    .TOP-board a:link, .TOP-board a:visited {
         display: inline-block;
         text-align: left;
         width: 180px;
@@ -296,14 +350,17 @@
         background-color: transparent;
         border: 0px solid #e5e5e5;
         margin-bottom: 10px;
-        clear: both;
-        overflow: auto;
+        overflow: hidden;
+        padding: 8px;
     }
     
     .FM-rbox14-master {
-        /*visibility: hidden;*/
+        padding-bottom: 2px;
         font-size: 0;
         text-align: center;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #9B9C9E;
+        border-radius: 20px;
     }
     .FM-rbox14-master::before {
         text-align: center;
@@ -350,6 +407,10 @@
         visibility: hidden;
     }
     
+    .FM-atag1 {
+        display: none;
+    }
+    
     .FM-atag1now{
         text-indent: 20px;
         text-align: left !important;;
@@ -373,7 +434,7 @@
         background-color: transparent;
     }
     
-    .FM-cbox10 textarea {
+    .FM-cbox10 textarea, .FM-reply textarea { /*留言、快速回覆*/
         /*display: flex;*/
         position: relative;
         padding: 8px 10px;
@@ -384,6 +445,20 @@
         border-color: hsla(0,0%,100%,.2);
         background-color: hsla(0,0%,100%,.06);
         color: #C6C7C9 !important;
+    }
+    
+    .FM-reply {
+        background-color: #36393E;
+        border-color: transparent;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border-radius: 40px;
+        /*裁切迷你大頭貼 成圓形的*/
     }
     
     .FM-cboxfold {
@@ -423,6 +498,8 @@
         border-radius: 20px;
     }
     
+    /* 推薦文章列表 */
+    
     .FM-abox2 {
         border-radius: 20px;
     }
@@ -443,6 +520,7 @@
         animation-duration:0.2s;
         animation-delay: 0s;
         border-radius: 15px;
+        background-color: #51565D; 
     }
     
     .FM-abox2A > a:first-child {
@@ -454,11 +532,16 @@
         background-color: transparent;
     }
     
-    .FM-abox2B:link {
+    .FM-abox2B:link, .FM-abox2B:visited {
         color: #3BAFFF;
         display: block;
+        border-bottom: 0px dotted #CCCCCC;
+        margin-bottom: 0px;
+        margin-left: 130px;
         height: 30px;
+        line-height: 29px;
         vertical-align: middle;
+        font-size: 15px;
     }
     
     .FM-abox2B:hover {
@@ -468,7 +551,7 @@
         border-radius: 5px;
     }
     
-    .FM-abox5B a:link {
+    .FM-abox5B a:link, .FM-abox5B a:visited {
         color: #66C1FF;
     }
     
@@ -514,7 +597,7 @@
         color: #FFFFFF;
     }
     
-    .FM-abox6B > a {
+    .FM-abox6B > a:link, .FM-abox6B > a:visited {
         color: #3BAFFF !important;
         display: block;
         height: 20px;
@@ -554,10 +637,34 @@
     .FM-abox8A /* 達人專欄 > 小框框 */ {
         display: block;
         background-color: transparent;
-        border-bottom: 0px  #CCCCCC;
-        border: 3px double #B0B1B1; 
+        border-bottom: 1px solid #B0B1B1;
+        /*border: 0px double #B0B1B1; */
         padding: 3px;
         border-radius: 10px;
+    }
+    
+    .FM-abox8A > a:link, .FM-abox8A > a:visited, .FM-abox8A > a:hover {
+        color: red;
+        background: transparent;
+    }
+    
+    .FM-abox8A > span > a:link, .FM-abox8A > span > a:visited {
+        color: #B32637;
+        background: transparent;
+    }
+    
+    .FM-abox8 a:hover {
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        text-decoration: none;
+        border-radius: 15px;
+    }
+    
+    .FM-abox8 div > a:link, .FM-abox8 div > a:visited {
+        display: block;
+        border-bottom: 0px dotted #CCCCCC;
+        padding: 4px 0;
+        white-space: nowrap;
+        overflow: hidden;
     }
     
     .FM-cbox9 {
@@ -573,6 +680,29 @@
     .FM-cbox10A {
         border: 0px;
         color: #C1C1C1;
+    }
+    
+    .FM-cbox10D {/*顯示稍舊的 16 則留言*/
+        display: block;
+        text-align: center;
+        padding: 3px 5px;
+        background-color: transparent;
+        border-top: 0px solid #e5e5e5;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    
+    .FM-cbox10D > a {
+        display: block;
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        margin-left: 0px;
+    }
+    
+    .FM-cbox10D > a:hover {
+        text-decoration: none;
+        background: linear-gradient(90deg,#2e3136 0%,#36393E 50%,#2e3136);
     }
     
     .FM-cbox11 {
@@ -703,6 +833,17 @@
         
     }
     
+    /*留言區*/
+    .FM-msgbg, .FM-cbox10A {
+        font-family: "Noto Sans Mono CJK TC";
+        /*letter-spacing: 0.2px;*/
+        font-size: 14px;
+    }
+    
+    .FM-msgbg > .FM-cbox10A:hover{
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+    }
+    
     .FM-msgbg a {
         color: #FFFFFF;
     }
@@ -733,40 +874,41 @@
     
     /* 討論區文章列表 */
     
-    .BH-pagebtnA {
-        filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg);
-    }
-    
-    .FM-sticky {/*置頂文章*/
+    .FM-sticky {
         background-color: #483F3F !important;
-        border-left: 4px solid #FF0000;
         
-    }
-    
-    .FM-sticky a {/*置頂文章*/
-        /*font-style: italic;*/
-        
-    }
+    }/*置頂文章*/
     
     .FM-blist .new_res {
         color: #FF7777;
-    }
+        
+    }/*某種重要的文章_連結設定*/
     
     .FM-daco {
         color: #FF7777 !important;
+    } .FM-daco:visited {
+        color: #BE4040 !important;
+    } .FM-daco:hover {
+        color: #FFFFFF !important;
+    }/*達人文章_連結設定 */
+    
+    .FM-blist td {
+        border-bottom: 0px !important;;
+        padding: 0px !important;;
     }
     
     .FM-blist1 {
         color: #FFFFFF;
-        /*background: url(http://i2.bahamut.com.tw/forum/main_btnbg2.gif) repeat-x 0 -398px;
-        filter: grayscale(70%) contrast(100%);-webkit-filter: grayscale(70%) contrast(100%);*/
         background: linear-gradient(0deg,#1E2124 30%,#383E43);
         text-align: right;
-    }
+        border-left: 0px solid transparent;
+    } /* 列表的項目標題 (第一列) */
     
     .FM-blist {/*table*/
-        border-bottom: 0px solid transparent;
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 10px solid transparent;
         background-color: #3F4248;
         font-size: 12px;
         line-height: 20px;
@@ -815,7 +957,7 @@
         margin-right: -50px;
         /*http://www.puritys.me/docs-blog/article-259-移除-CSS-inline-block-空白.html*/
         width: 100%;
-        height: 36px;
+        height: 38px;
         vertical-align: middle;
         font-size: 16px;
         line-height: 36px;
@@ -825,11 +967,8 @@
         font-size:0;
         visibility: hidden;
         position: relative;
-        top: 13px;
-        left: -50px;
-        /*z-index: 2;
-        top: -50px;
-        margin-top: -15px;*/
+        top: 12px;
+        right: 70px;
         /*幹這個部分快把我搞死了，不過是用個 Block*/
     }
     
@@ -846,7 +985,7 @@
         visibility: visible;
         display:inline;
         font-size: 10px;
-        content:"跳至 ";
+        content:"✈️跳至 ";
         vertical-align: middle;
         color: #C0C0C0;
     }
@@ -894,6 +1033,39 @@
         font-size: 13px !important;
         color: #B4C1B3 !important;
         font-style: italic;
+    }
+    
+    /*其他個別按鈕、ICON (通用按鈕設定在CSS最上面)*/
+    /*filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg); 偷懶作法*/
+    
+    .BH-pagebtnA a{
+        padding: 0 !important;
+        border-radius: 40px !important;
+        width: 40px;
+        height: 40px;
+        font-size: 20px !important;
+        line-height: 35px  !important;
+        border: 2px solid #232323 !important;
+        background: none !important;
+        color: #FFFFFF !important;
+    } .BH-pagebtnA a:hover, .BH-pagebtnA .pagenow {
+        background-color: #D25C42 !important;
+    }/* 文章頁數按鈕_數字 */
+    
+    #BH-pagebtn .no, #BH-pagebtn .no:hover, #BH-pagebtn .no:active {
+        visibility: hidden;
+        color: #DDD;
+        background: none;
+        background-color: transparent;
+        filter: none;
+        border-color: #e5e5e5;
+    }/* 文章頁數按鈕_箭頭_disabled 的情形*/
+    
+    .FM-lbox1 button {
+        color: #FFFFFF;
+        margin-left: 380px;
+        height: 30px;
     }
     
     /* 其他小東西_評分 */
