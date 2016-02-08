@@ -2,7 +2,8 @@
 
 名稱: 巴哈姆特之夜
 作者: 好冷酒 (hollen9)
-日期: 2016/02/07
+更新: 2016/02/08
+始於: 2016/02/06
 
 */
 
@@ -17,6 +18,13 @@
 }
 
 @-moz-document domain("gamer.com.tw") {
+    #BH-footer::after {
+        visibility: visible;
+        content: "\A\A BahaRevisualization: Dark v0.1\A Created by Hollen9 (好冷酒)\A　";
+        white-space: pre;
+        cursor: default;
+    }
+    
     @-moz-document domain("forum.gamer.com.tw") {
         /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
         #BH-slave {
@@ -84,30 +92,26 @@
         font-size:15px;
         font-weight: bold;
         font-style:normal;
-        height:35px;
+        height:35px !important;
+        min-width:86px;
+        
         line-height:30px;
-        width:86px;
         text-decoration:none;
         text-align:center;
         text-shadow:1px 1px 0px #4d1c1c;
-        -moz-box-shadow:inset 0px 29px 15px -19px #d6966b;
         -webkit-box-shadow:inset 0px 29px 15px -19px #d6966b;
         box-shadow:inset 0px 29px 15px -19px #d6966b;
         background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff7878), color-stop(1, #fa2525) );
         background:-moz-linear-gradient( center top, #ff7878 5%, #fa2525 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7878', endColorstr='#fa2525');
+        /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7878', endColorstr='#fa2525');*/
         background-color:#ff7878;
         -webkit-border-top-left-radius:10px;
-        -moz-border-radius-topleft:10px;
         border-top-left-radius:10px;
         -webkit-border-top-right-radius:10px;
-        -moz-border-radius-topright:10px;
         border-top-right-radius:10px;
         -webkit-border-bottom-right-radius:10px;
-        -moz-border-radius-bottomright:10px;
         border-bottom-right-radius:10px;
         -webkit-border-bottom-left-radius:10px;
-        -moz-border-radius-bottomleft:10px;
         border-bottom-left-radius:10px;
         text-indent:0;
         border:1px solid #9c7535;
@@ -115,7 +119,7 @@
     } Button:hover {
         background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
         background:-moz-linear-gradient( center top, #fa2525 5%, #ff7878 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');
+        /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');*/
         background-color:#fa2525;
     } Button:active {
         position:relative;
@@ -126,6 +130,7 @@
     #BH-wrapper {
         background-color: #2E3136;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+        border-radius: 0 0 20px 20px;
     }
     /* 首頁 */
     #BA-center-id {
@@ -167,7 +172,7 @@
         animation-duration:0.2s;
         animation-delay: 0s;
         border-radius: 15px;
-    }
+    } /*上方跳出小窗*/
     
     .TOP-msg > span {/*子選單標題文字*/
         display: block;
@@ -306,10 +311,27 @@
         line-height: 30px;
     }
     
-    /* 內文_次導覽列 */
+    /* 內文_次導覽列AKA子導覽列 */
     .FM-tags {
-        filter: grayscale(100%);
-        -webkit-filter: grayscale(100%);
+        /*filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);偷懶的東西*/
+        border: 0px;
+    } .FM-tags a {
+        border-radius: 10px;
+        margin-bottom: 4px;
+        margin-right: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: 2px solid #232323;
+        background: transparent;
+        color: #E3C1C1;
+    } .FM-tags a:hover {
+        border: 2px solid #6A6F8B;
+        background: none;
+        color: #AFB7E6;
+    } #FM-tagsnow {
+        color: #D25C42;
+        border-color: #D25C42;
     }
     
     ul.BH-menuE {
@@ -755,9 +777,16 @@
         padding-top: 22px;
     }
     
-    .FM-rbox16A > a, .FM-rbox16A > a:hover {
+    .FM-rbox16A > a {
         color: #FFFFFF;
         margin-bottom: 2px;
+        white-space: nowrap;
+    } .FM-rbox16A > a:hover {
+        color: #FFFFFF;
+        -webkit-filter: brightness(1.25); filter: brightness(1.25);
+    } .FM-rbox16A > a:active {
+        color: #FFFFFF;
+        -webkit-filter: brightness(0.70); filter: brightness(0.70);
     }
     
     .FM-rbox16B > a {
@@ -882,7 +911,7 @@
     .FM-blist .new_res {
         color: #FF7777;
         
-    }/*某種重要的文章_連結設定*/
+    }/*某種重要的文章吧?_連結設定*/
     
     .FM-daco {
         color: #FF7777 !important;
@@ -890,35 +919,68 @@
         color: #BE4040 !important;
     } .FM-daco:hover {
         color: #FFFFFF !important;
-    }/*達人文章_連結設定 */
+    }/* 達人文章_連結設定 */
+    
+    .FM-blist1 .gplist {
+        left: 1px;
+        top: 20px;
+        width: 76px;
+        padding: 0px 0px 6px 0px !important;
+        background-color: #3F4248 !important; 
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        /* 模糊浮出 */
+        opacity:0;  /* make things invisible upon start */        
+        animation:fadeIn ease-in 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    } .gplist > a:link, .gplist > a:visited {
+        color: #D3DDF1 !important;
+        width: 100%;
+        text-indent: 10px;
+    } .gplist > a:hover {
+        color: #FFFFFF!important;
+        background: linear-gradient(0deg,#383E43 0%,#1E2124 60%, #383E43 100%);
+    }/* GP 推薦選單*/
     
     .FM-blist td {
-        border-bottom: 0px !important;;
-        padding: 0px !important;;
+        border-bottom: 0px !important;
+        padding: 0px !important;
     }
     
-    .FM-blist1 {
+    .FM-blist1, .FM-blist1:hover {
         color: #FFFFFF;
-        background: linear-gradient(0deg,#1E2124 30%,#383E43);
+        background: linear-gradient(0deg,#1E2124 30%,#383E43) !important;
         text-align: right;
-        border-left: 0px solid transparent;
-    } /* 列表的項目標題 (第一列) */
+    }/* 列表的項目標題 (第一列) */
     
     .FM-blist {/*table*/
-        border-top: 0;
+        border:0;
+        /*border-top: 0;
         border-bottom: 0;
         border-left: 0;
-        border-right: 10px solid transparent;
+        border-right: 0px solid transparent;*/
+        border-radius: 20px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        
+        margin-bottom: 15px;
+        
         background-color: #3F4248;
         font-size: 12px;
         line-height: 20px;
-        margin-bottom: 10px;
-        border-radius: 20px;
     }
 
     
     .FM-row {
         background-color: transparent !important;
+    }
+    
+    .FM-blist tr {
+        height: 38px !important;
     }
     
     .FM-blist tr:hover a{
@@ -953,8 +1015,9 @@
     }
     
     .FM-blist3 a {
+        text-indent: 2px;
         display: inline-block;/*!!!! inline-block + white-space: nowrap*/
-        margin-right: -50px;
+        margin-right: -116px;/*這個還要多多注意_改*/
         /*http://www.puritys.me/docs-blog/article-259-移除-CSS-inline-block-空白.html*/
         width: 100%;
         height: 38px;
@@ -968,7 +1031,7 @@
         visibility: hidden;
         position: relative;
         top: 12px;
-        right: 70px;
+        right: 40px;
         /*幹這個部分快把我搞死了，不過是用個 Block*/
     }
     
@@ -1014,6 +1077,14 @@
         width: 30px;
     }
     
+    .FM-blist6 {
+        border-right: 10px solid transparent;
+    }/*在最後發表那整欄的右邊空一點點*/
+    
+    .FM-blist1 td:nth-child(4) {
+        padding-right: 7px !important;/*配合 .FM-blist6 做的位移*/
+    }
+    
     .FM-blist6 a:first-child {/*文章時間*/
         color: #BDC0C8;
         display: block;
@@ -1039,6 +1110,18 @@
     /*filter: hue-rotate(180deg);
         -webkit-filter: hue-rotate(180deg); 偷懶作法*/
     
+    
+    
+    #BH-pagebtn a {
+        padding: 0px;
+    }
+    
+    .BH-pagebtnA {
+        width: 380px;
+        display: inline-block !important;
+        /*margin-left: -10px;*/
+    }
+    
     .BH-pagebtnA a{
         padding: 0 !important;
         border-radius: 40px !important;
@@ -1053,6 +1136,44 @@
         background-color: #D25C42 !important;
     }/* 文章頁數按鈕_數字 */
     
+    .prev {
+        background: transparent url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/prev.png") no-repeat center center !important;
+        border:0 !important;
+        height: 40px;
+        width: 60px !important;;
+        font-size: 0px !important;
+        display: inline-block !important;
+        float: left !important;
+        /*line-height: 53px !important;*/
+        /*position: relative;
+        left: 48px;*/
+        position: relative;
+        left: 21%;
+        top: 1px;
+    } .prev:hover {
+        background: transparent url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/prev_hover.png") no-repeat center center !important;
+    }
+    
+    
+    .next {
+        background: transparent url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/next.png") no-repeat center center !important;
+        border:0 !important;
+        height: 40px;
+        width: 60px;
+        font-size: 0px !important;
+        display: inline-block !important;
+        float: right !important;
+        /*line-height: 53px !important;*/
+        /*
+        left: 352px;*/
+        /*margin-right: -100px;*/
+        position: relative;
+        left: -21%;
+        top: 1px;
+    } .next:hover {
+        background: transparent url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/next_hover.png") no-repeat center center !important;
+    }
+    
     #BH-pagebtn .no, #BH-pagebtn .no:hover, #BH-pagebtn .no:active {
         visibility: hidden;
         color: #DDD;
@@ -1062,10 +1183,77 @@
         border-color: #e5e5e5;
     }/* 文章頁數按鈕_箭頭_disabled 的情形*/
     
+    .FM-lbox1 {
+        min-height: 40px;
+    }
+    
     .FM-lbox1 button {
         color: #FFFFFF;
-        margin-left: 380px;
+        /*margin-left: 390px;文章列表的中間位置*/
+        /*margin-left: 457px;整個頁面的中間位置*/
         height: 30px;
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        right: 5px;
+    } .FM-lbox1 button:active {
+        /*與通用按鈕的按下相對位移效果抵銷*/
+        position: fixed !important;
+        top: auto;
+        bottom: 9px;
+    }/*回上方_back to top_修_浮動回上方按鈕*/
+    
+    /* 其他小東西_動漫電玩通(riddle)_詳細設定 (其實很多都在前面定義好了) */
+    .BH-qabox1 {
+        padding: 22px 0 0 0;
+        /*padding-top: 22px;*/
+    }/* .BH-qabox1::before {
+        font-size: 18px;
+        content:"ℹ️";
+    }*/
+    
+    .BH-qabox1 img {
+        width: 140px;
+    }
+    
+    .BH-qabox1 > ul {
+        padding: 5px 0 10px 0px;
+        border-bottom: 1px dotted #1E2124;
+    }
+    
+    .BH-qabox1 > ul > li > a{
+        text-indent: 3px;
+        display: block;
+        height: 20px;
+    } .BH-qabox1 > ul > li > a:hover {
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+    }
+    
+    .BH-qabox1 span {
+        text-align: center;
+        font-size: 0;
+        line-height: 7px;
+    } .BH-qabox1 span::before {
+        font-size: 13px;
+        content: "~出題者~\A";
+        white-space: pre;
+    }
+    
+    .BH-qabox1 span > a:nth-child(1) {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    
+    .BH-qabox1 span > a:nth-child(2) {
+        font-size: 13px;
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 5px;
+    } .BH-qabox1 span > a:nth-child(2)::before {
+        content: "[";
+    } .BH-qabox1 span > a:nth-child(2)::after {
+        content: "這道題目]";
     }
     
     /* 其他小東西_評分 */
