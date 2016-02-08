@@ -958,23 +958,16 @@
     }/* 列表的項目標題 (第一列) */
     
     .FM-blist {/*table*/
-        border:0;
-        /*border-top: 0;
-        border-bottom: 0;
-        border-left: 0;
-        border-right: 0px solid transparent;*/
+        border: 0;
         border-radius: 20px;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
-        
         margin-bottom: 15px;
-        
+        line-height: 20px;
         background-color: #3F4248;
         font-size: 12px;
-        line-height: 20px;
     }
 
-    
     .FM-row {
         background-color: transparent !important;
     }
@@ -984,7 +977,6 @@
     }
     
     .FM-blist tr:hover a{
-        
         /*background: linear-gradient(90deg,#2e3136 60%,#36393E);*/
         color: #FFFFFF;
     }
@@ -1255,6 +1247,79 @@
     } .BH-qabox1 span > a:nth-child(2)::after {
         content: "這道題目]";
     }
+    
+    /* 討論板 > 精華區 */
+    .FM-feature {
+        background: url(https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/quin_b.png) no-repeat right top;
+    }
+    .FM-stb1 {
+        border: 0;
+        border-radius: 20px;
+        background-color: #3F4248;
+    }
+    
+    .FM-stb1 tr:first-child, .FM-stb1 tr:first-child:hover {
+        background: none;
+    }
+    
+    .FM-stb1 tr:first-child td:nth-child(1), .FM-stb1 tr:first-child td:nth-child(2), .FM-stb1 tr:first-child td:nth-child(3), .FM-stb1 tr:first-child td:nth-child(4), .FM-stb1 tr:first-child td:nth-child(5){
+        height: 30px;
+        border: 0;
+        font-size: 13px;
+        margin-bottom: 10px;
+        background: linear-gradient(0deg,#1E2124 30%,#383E43) !important;
+    }/* 列表的項目標題 (第一列)，之所以不用 TR 都是為了圓角 (只能套用到 TD) */
+    
+    .FM-stb1 tr:first-child td:nth-child(1) {
+        border-top-left-radius: 20px;
+    }
+    .FM-stb1 tr:first-child td:nth-child(5) {
+        border-top-right-radius: 20px;
+    }
+    
+    .FM-stb1 td {
+        border: 0;
+        padding: 0;
+        min-width: 50px;
+        white-space: nowrap;
+        height: 30px;
+    }
+    
+    .FM-stb1 strong {
+        padding-left: 470px;
+    } /*NEW TEXT*/
+    
+    .FM-fav a::before {
+        font-size: 15px;
+        content: "🏠";
+    }
+    
+    .FM-stb1 td a{
+        display: inline-block;/*與white-space互為父子*/
+        margin-left: -68px;/*X軸位置修正，inline-block 會造成寬度計算錯誤*/
+        margin-top: -6px;
+        text-indent: 68px;
+        width: 850px;
+        position: absolute;
+        height: 30px;
+        color: #9CB8B9;
+        line-height: 28px;
+        /*這邊用的方式是直接讓連結浮在 TR 上，就可以上整排都變成可點選連結了。*/
+    } .FM-stb1 td a:hover{
+        color: #FFFFFF;
+    }
+    
+    .FM-stb1 tr:nth-child(2n+1) {
+        background-color: transparent;
+    }
+    
+    
+    .FM-stb1 tr:hover {
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        color: #FFFFFF; 
+    }
+    
+    
     
     /* 其他小東西_評分 */
     .ACG-score {
