@@ -51,11 +51,11 @@
     }
     
     /* 隱藏廣告 */
-    #flySalve, #BH-bigbanner, #BH-footer iframe {
-        visibility: hidden;
-        position: absolute;
-        top: -800px;
-        left: 0px;
+    #flySalve, #BH-bigbanner, #BH-footer iframe, .BA-billboard, #flyRightBox {
+        visibility: hidden !important;
+        position: absolute !important;
+        top: -800px !important;
+        left: 0px !important;
     }
     /***************/
     /** 暗色系開始 **/
@@ -70,6 +70,9 @@
     }*/
     
     body {
+        background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
+        background-color: #1E2124;
+        background-size: 900px 900px;
         font-family:"Noto Sans CJK TC DemiLight",sans-serif;
         color: #C0C1C2;
     }
