@@ -64,6 +64,7 @@
     /*基本共同設定*/
     
     body {
+        background-image: none;
         background-image: url("http://www.nwaction.com/metroalbum/images/bg1.jpg");
         background-color: #1E2124;
         font-family:"Noto Sans CJK TC DemiLight",sans-serif;
@@ -126,20 +127,49 @@
         top:1px;
     }
 
-    
     #BH-wrapper {
         background-color: #2E3136;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
         border-radius: 0 0 20px 20px;
     }
-    /* 首頁 */
+    
     #BA-center-id {
         
     }
     
+    /* 首頁 */
+    /*.BA-left .BA-serve + .BA-ltitle*/
+    .BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
+        /*rearrange_1, 2_h1*/
+        position: relative;
+        left: 950px;
+        top: -710px;
+    }
+    
+    .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
+        /*rearrange_3, 4_h1*/
+        position: relative;
+        top: -3040px;
+    }
+    
+    .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
+        /*rearrange_3, 4_div*/
+        position: relative;
+        top: -3040px;
+    }
+    
+    .BA-lbox3 {
+        /*rearrange*/
+        position: relative;
+        left: 950px;
+        top: -710px;
+    } .BA-left {
+        overflow: visible;
+    }
+    
     .BA-topbg {
-        filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg);
+        /*filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);*/
     }
     /*filter: hue-rotate(180deg);
         -webkit-filter: hue-rotate(180deg);*/
@@ -409,6 +439,11 @@
     
     /* 文章區 */
     
+    .FM-cbox1 a:hover {
+        text-decoration: underline;
+        -webkit-filter: brightness(1.25); filter: brightness(1.25);
+    }/*囊括整個框框_連結加底線*/
+    
     #BH-slave h5 {
         background-color: #1E2124;position: relative; top: 20px; border-radius: 10px;
     }
@@ -456,7 +491,7 @@
         background-color: transparent;
     }
     
-    .FM-cbox10 textarea, .FM-reply textarea { /*留言、快速回覆*/
+    .FM-cbox10 textarea, .FM-reply textarea, .msgright textarea, #msgtalk { /*留言、快速回覆 (包含公會)*/
         /*display: flex;*/
         position: relative;
         padding: 8px 10px;
@@ -476,7 +511,7 @@
         margin-bottom: 10px;
     }
     
-    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img {
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         border-radius: 40px;
@@ -498,6 +533,169 @@
         color: #999999;
         overflow: auto;
     }
+    
+    /*留言區開始*/
+    
+    .FM-cbox4 a {
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 21px;
+        height: 21px;
+        border: 2px solid #DADBE8;
+        background: none;
+        color: #DADBE8;
+        margin-left: 3px;
+        border-radius: 10px;
+    } .FM-cbox4 a:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #808793;
+    }
+    
+    .FM-cbox9 a {
+        color: black;
+        -webkit-filter: brightness(0.75); filter: brightness(0.75);
+    }
+    
+    .FM-cbox9 .gp, .FM-cbox9 .bp {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    } .FM-cbox9 .gpn, .FM-cbox9 .bpn  {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-right: 10px;
+    }/*GP and BP buttons*/
+    
+    
+    .FM-cbox9 .blue {
+        background: url(http://i2.bahamut.com.tw/forum/main_btnbg2.gif) repeat-x 0 -530px;
+        border: 1px solid #6e93b8;
+        width: 50px;
+        line-height: 23px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 5px;
+        /*position: relative;
+        left: -200px;*/
+    }/* 收藏按鈕_ adding to collection button */
+    
+    .FM-cbox9 a:nth-last-child(2) {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin-right: 0;
+    } .FM-cbox9 a:last-child {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-left: 0;
+        border-left: 0;
+        margin-right: 10px;
+    }/* 留言、回覆按鈕 comment button and reply button*/
+    
+    .FM-cbox9 button, .FM-cbox10 button {
+        height: 15px !important;
+        min-width: 40px !important;
+        width: 40px;
+        font-size: 12px;
+        line-height: 0px;
+        color: #5B1816;
+        text-shadow: none;
+        margin-top: 6px;
+    } /*  檢舉按鈕_變小 */
+    
+    .FM-cbox10A a {
+        font-weight: normal;
+        color: #C6CCD5;
+        border: 1px solid #FFFFFF;
+        padding-left: 2px;
+        padding-right: 2px;
+        border-radius: 5px;
+    }/*下方留言者名稱*/
+    
+    .FM-cbox10A {
+        font-family: "Noto Sans Mono CJK TC";
+        font-size: 14px;
+        border: 0px;
+        color: #C1C1C1;
+        padding: 0px;
+        height: 28px;
+        line-height: 28px;
+    } .FM-cbox10A:hover {
+        background: linear-gradient(90deg,#2e3136 60%,#36393E) !important;
+        color: #FFFFFF !important;
+    } /*下方留言*/
+    
+    
+    .FM-msgbg p:first-child {
+        background-image: none;
+        padding-top: 0px;
+    }
+    
+    .BH-list1 li {
+        border-bottom: 0px solid #1E2124;
+        padding: 3px 0px 3px 12px;
+        background: url(http://i2.bahamut.com.tw/icon_blue.gif) no-repeat left 8px;
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    
+    .BH-list1 a  {
+        color: #FF6D2C;
+        text-decoration: none;
+    }
+    
+    .BH-list1 a:hover  {
+        color: #FFFFFF;
+        background: linear-gradient(90deg,#2e3136 60%,#36393E);
+        text-decoration: none;
+    }
+    
+    
+    
+    .FM-cbox10D {/*顯示稍舊的 16 則留言*/
+        display: block;
+        text-align: center;
+        padding: 3px 5px;
+        background-color: transparent;
+        border-top: 0px solid #e5e5e5;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    
+    .FM-cbox10D > a {
+        display: block;
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        margin-left: 0px;
+    }
+    
+    .FM-cbox10D > a:hover {
+        text-decoration: none;
+        background: linear-gradient(90deg,#2e3136 0%,#36393E 50%,#2e3136);
+    }
+    
+    /*留言區結束*/
+    
+    .FM-cbox11 {
+        padding: 5px 0;
+        border-top: 0px dotted #CCCCCC;
+        margin: 0 10px;
+        background-color: #36393E;
+    }
+    
+    .FM-cbox11 iframe{
+        width: 100%;
+        border: 2px solid black;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 5px;
+    }/*簽名檔*/
+    
+    .FM-rbox15C {
+        padding-bottom: 15px;
+    }
+    
     .BH-rbox {
         background-color: #36393E;
         border-radius: 20px;
@@ -531,6 +729,8 @@
     }
     
     .FM-abox2A {
+        overflow-x: hidden;
+        overflow-y: auto;
         filter: grayscale(100%);-webkit-filter: grayscale(100%);
     }
     
@@ -559,18 +759,21 @@
         display: block;
         border-bottom: 0px dotted #CCCCCC;
         margin-bottom: 0px;
-        margin-left: 130px;
+        margin-left: 125px;
+        width: 290px;
         height: 30px;
         line-height: 29px;
-        vertical-align: middle;
         font-size: 15px;
+        white-space: nowrap;
     }
     
     .FM-abox2B:hover {
         color: #66C1FF !important;
         text-decoration: none;
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
-        border-radius: 5px;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
     
     .FM-abox5B a:link, .FM-abox5B a:visited {
@@ -699,59 +902,8 @@
         width: 100%;
     }
     
-    .FM-cbox10A {
-        border: 0px;
-        color: #C1C1C1;
-    }
-    
-    .FM-cbox10D {/*顯示稍舊的 16 則留言*/
-        display: block;
-        text-align: center;
-        padding: 3px 5px;
-        background-color: transparent;
-        border-top: 0px solid #e5e5e5;
-        border-bottom: 0px solid #e5e5e5;
-    }
-    
-    .FM-cbox10D > a {
-        display: block;
-        width: 100%;
-        height: 30px;
-        font-size: 18px;
-        line-height: 30px;
-        margin-left: 0px;
-    }
-    
-    .FM-cbox10D > a:hover {
-        text-decoration: none;
-        background: linear-gradient(90deg,#2e3136 0%,#36393E 50%,#2e3136);
-    }
-    
-    .FM-cbox11 {
-        padding: 5px 0;
-        border-top: 0px dotted #CCCCCC;
-        margin: 0 10px;
-        background-color: #36393E;
-    }
-    
-    .FM-cbox11 iframe{
-        width: 100%;
-        border: 2px solid black;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 5px;
-    }
-    
-    .FM-rbox15C {
-        padding-bottom: 15px;
-    }
-    
-    .FM-rbox15C a:hover {
-        text-decoration: none;
-        color: #FFFFFF;
-        background-color: #999999;
-    }
-    .FM-rbox15C a {
+    /*右側實況中小按鈕*/
+    /*.FM-rbox15C a {
         display: block;
         width: 25px;
         line-height: 25px;
@@ -759,13 +911,45 @@
         border: 1px solid #CCC;
         border-radius: 3px;
         text-align: center;
+    } .FM-rbox15C a:hover {
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #999999;
+    }*/
+    
+    .FM-rbox15C a {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 0;
+        border-radius: 5px;
     }
     
+    .FM-rbox15C a:first-child {
+        float: left;
+        background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat left -780px;
+    } .FM-rbox15C a:first-child:hover {
+        float: left;
+        background-position: left -800px;
+    } /* ＜ */
+    
+    .FM-rbox15C a + a {
+        float: right;
+        background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat -20px -780px;
+    } .FM-rbox15C a + a:hover {
+        float: right;
+        background-position: -20px -800px;
+    } /* ＞ */
+    
+    /*background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat left -780px;
+        border-radius: 5px;*/
+    
     .FM-rbox15C span {
-        line-height: 27px;
+        line-height: 20px;
         font-size: 15px;
         display: block;
-        margin: 0 50px;
+        margin: 0 45px;
         width: 50px;
     }
     
@@ -862,44 +1046,6 @@
         
     }
     
-    /*留言區*/
-    .FM-msgbg, .FM-cbox10A {
-        font-family: "Noto Sans Mono CJK TC";
-        /*letter-spacing: 0.2px;*/
-        font-size: 14px;
-    }
-    
-    .FM-msgbg > .FM-cbox10A:hover{
-        background: linear-gradient(90deg,#2e3136 60%,#36393E);
-    }
-    
-    .FM-msgbg a {
-        color: #FFFFFF;
-    }
-    
-    .FM-msgbg p:first-child {
-        background-image: none;
-        padding-top: 0px;
-    }
-    
-    .BH-list1 li {
-        border-bottom: 0px solid #1E2124;
-        padding: 3px 0px 3px 12px;
-        background: url(http://i2.bahamut.com.tw/icon_blue.gif) no-repeat left 8px;
-        filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg);
-    }
-    
-    .BH-list1 a  {
-        color: #FF6D2C;
-        text-decoration: none;
-    }
-    
-    .BH-list1 a:hover  {
-        color: #FFFFFF;
-        background: linear-gradient(90deg,#2e3136 60%,#36393E);
-        text-decoration: none;
-    }
     
     /* 討論區文章列表 */
     
@@ -1036,7 +1182,7 @@
         color: #BDC0C8;
     }
     
-    .FM-blist3 > span::before{/*標題文章頁數*/
+    .FM-blist3 > span::before{/*頁數*/
         visibility: visible;
         display:inline;
         font-size: 10px;
@@ -1045,7 +1191,7 @@
         color: #C0C0C0;
     }
     
-    .FM-blist3 > span::after{/*標題文章頁數*/
+    .FM-blist3 > span::after{/*頁數*/
         visibility: visible;
         display:inline;
         font-size: 10px;
@@ -1054,11 +1200,11 @@
         color: #C0C0C0;
     }
     
-    .FM-blist3 > span > a::before{/*標題文章頁數*/
+    .FM-blist3 > span > a::before{/*頁數*/
         content:"[";
     }
     
-    .FM-blist3 > span > a::after{/*標題文章頁數*/
+    .FM-blist3 > span > a::after{/*頁數*/
         content:"]";
     }
     
@@ -1188,6 +1334,7 @@
         top: auto;
         bottom: 10px;
         right: 5px;
+        z-index: 10;
     } .FM-lbox1 button:active {
         /*與通用按鈕的按下相對位移效果抵銷*/
         position: fixed !important;
@@ -1195,7 +1342,162 @@
         bottom: 9px;
     }/*回上方_back to top_修_浮動回上方按鈕*/
     
-    /* 其他小東西_動漫電玩通(riddle)_詳細設定 (其實很多都在前面定義好了) */
+    /* 右側小東西_作品介紹+評分 */
+    
+     .FM-abox6B {
+        padding: 0px;
+        width: 100% !important;
+        float: left;
+        
+        /*reorder_parent*/
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .FM-abox6B > a:first-child {
+        
+        
+        vertical-align: bottom;
+        border-bottom: 1px dotted #e5e5e5;
+        font-size: 13px !important;
+        font-weight: bold;
+        padding-bottom: 0px;
+        color: #0055aa;
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+        overflow: hidden !important;
+        
+        
+        /*reorder*/
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 3;
+    }
+    
+    .FM-abox6B > a + a {
+        display: block;;
+        height: 120px !important;
+        width: 120px !important;
+        float: none;
+        border: 2px solid #e5e5e5;
+        border-radius: 5px;
+        
+        /*reorder*/
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+    } /* 作品封面 */
+    
+    .FM-abox6B p {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        line-height: 19px;
+        float: none;
+        width: 100% !important;
+        min-height: 155px;
+        
+        /*reorder*/
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 4;
+    } /* 右側作品介紹 */
+    
+    .FM-abox6Bpage {
+        display: block;
+        color: #999999;
+        width: 120px;
+        text-align: right;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        float: none;
+        
+        /*reorder*/
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    } .FM-abox6Bpage a {
+        background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat left -780px;
+        border-radius: 5px;
+    } .FM-abox6Bpage a:hover {
+        background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat left -800px;
+        border-radius: 5px;
+    } /* 介紹選擇按鈕 */
+    
+    .BH-rbox .ACG-box {
+        width: 100%;
+    }
+    
+    .BH-rbox .ACG-rbox4B {
+        white-space: nowrap;
+        margin-left: -10px;
+        text-indent: -45px;
+        line-height: 25px;
+    }
+    
+    .BH-rbox .ACG-rbox4B a:first-child::before {
+        content: "\A";
+        white-space: pre;
+    }
+    
+    .BH-rbox .FM-abox6A .BH-acgbox a {
+        background-size: 120px 30px;
+        background-repeat: no-repeat;
+        width: 120px;
+        height: 30px;
+        line-height: 30px;
+    } .BH-rbox .BH-acgbox a > span {
+        color: #FFFFFF;
+        text-indent: 30px;
+        font-size: 16px;
+        width: 95px;
+        text-align: center;
+        display: block;
+        float: right;
+        overflow: hidden;
+        white-space: nowrap;
+    } /* 想玩按鈕 */
+    
+    .BH-rbox .ACG-data ul {
+        font-size: 13px;
+        overflow: hidden;
+        width: 4em;
+        white-space: nowrap;
+        margin-top: 1px;
+    }
+    
+    .BH-rbox .ACG-persent {
+        float: none;
+        width: 70px !important;
+        margin-left: 55px;
+    }
+    
+    .BH-rbox .ACG-persent span {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: #000;
+        text-shadow: -1px 0 #36393E, 0 1px #36393E, 1px 0 #36393E, 0 -1px #36393E;
+    }
+    
+    
+    /* 右側小東西_動漫電玩通(riddle)_詳細設定 */
     .BH-qabox1 {
         padding: 22px 0 0 0;
         /*padding-top: 22px;*/
@@ -1216,7 +1518,9 @@
     .BH-qabox1 > ul > li > a{
         text-indent: 3px;
         display: block;
-        height: 20px;
+        min-height: 20px;
+        margin-bottom: 2px;
+        border-bottom: 1px dotted #7A7993;
     } .BH-qabox1 > ul > li > a:hover {
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
     }
@@ -1251,6 +1555,7 @@
     /* 討論板 > 精華區 */
     .FM-feature {
         background: url(https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/quin_b.png) no-repeat right top;
+        background-size: 80px 80px;
     }
     .FM-stb1 {
         border: 0;
@@ -1358,5 +1663,169 @@
         color: #B46325 !important;;
         font-family: Helvetica, Arial, sans-serif;
         line-height: 27px;
+    }
+
+/* 公會 (不獨立的原因是為了盡量不拆檔案) */
+    #msgtalk {
+        font-size: 16px !important;
+    }
+    
+    .AT1 {
+        color: #FFFFFF !important;
+    }
+    
+    
+    .IMG-E26::after {
+        content: "回覆";
+    }
+    
+    .GU-rbox5 p {
+        display: inline-block;
+        width: 120px;
+        height: 38px;
+        margin-left: 5px;
+        border: 0;
+        background-color: transparent;
+        padding: 5px;
+    } /* 會旗 */
+    
+    .GU-lbox2 h1 {
+        filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+    }
+    
+    .GU-lbox2B {
+        width: 90px;
+        height: 30px;
+        color: #FFFFFF;
+        font-weight: bold;
+        float: right;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 10px;
+        color: #FFFFFF !important;
+    } /* 我要退出_按鈕*/
+    
+    .GU-lbox2C {
+        font-size: 12px;
+        padding: 3px 0;
+        border-bottom: 1px dotted #CCCCCC;
+        background-color: transparent;        
+    }
+    
+    .GU-lbox2E span {
+        color: #BD3636;
+        white-space: nowrap;
+    }
+    
+    .GU-lbox2A {
+        background-color: #36393E;
+        border: 0;
+        border-radius: 20px;
+        padding: 10px;
+        line-height: 24px;
+        overflow: hidden;
+    }
+    
+    .MSG-box1 .btn {
+        display: block;
+        background-image: url(http://i2.bahamut.com.tw/home/msg-sendbtn.gif);
+        width: 69px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        float: left;
+        margin-top: 2px;
+        border-radius: 7px;
+        color: #000000;
+    }
+    
+    .BC1 {
+        border: 0px solid #81bddc;
+        background-color: #36393E;
+        border-radius: 20px;
+    }
+    
+    .BC2 {
+        background-color: #36393E;
+        border-bottom: 1px solid #3E4146;
+    }
+    
+    #emotionlist {
+        background-color: hsla(227,9%,28%,0.9);
+        border-radius: 10px;
+    }
+    
+    #emotionlist .BH-master_tag1 {
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 0px;
+        width: 300px;
+    }
+    
+    #emotionlist .BH-master_tag1 li a{
+        color: #909296;
+        border-color: black;
+        background-color: #282B30;
+    } #emotionlist .BH-master_tag1 li a:hover{
+        
+    } #emotionlist .BH-master_tag1 li a:active {
+        background-color: #1F2125;
+    }
+    
+    #emotionlist .BH-master_tag1 .BH-master_tag1now {
+        background-color: #565D68;
+    }
+    
+    #emotionlist .BH-master_tag1 li:first-child a{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: 0;
+    } #emotionlist .BH-master_tag1 li:last-child a{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-left: 0;
+    }
+    
+    #emotionlist .BH-master_tag1 li {
+        margin: 0;
+    }
+    
+    #emotionlist div {
+        margin: 2px !important; 
+    }
+    
+    #emotionlist img {
+        border: 2px solid transparent;
+    }
+    #emotionlist img:hover {
+        background-color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+    }
+    
+    /* 行事曆 */
+    .BH-table {
+        background-color: #36393E;
+        margin-bottom: 10px;
+        border: 0;
+    }
+    
+    .MSG-list5 td {
+        border: 0px solid #d2e2e9;
+    }
+    
+    .MSG-list5C {
+        background: none;
+        color: #FFFFFF;
+        text-decoration: underline !important;
+    } .MSG-list5C:hover {
+        background-color: #2E3136;
+        border-radius: 20px;
+    }
+    
+    .MSG-list5D {
+        background-color: transparent;
+        border: 1px solid #FFFFFF !important;
+        border-radius: 20px;
     }
 }
