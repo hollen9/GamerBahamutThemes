@@ -14,6 +14,7 @@
 @-moz-document domain("gc.bahamut.com.tw") {
     body {
         background-color: #36393E;
+        font-family: "Noto Sans CJK TC DemiLight", "MS Gothic";
     }
 }
 
@@ -72,21 +73,27 @@
     body {
         background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
         background-color: #1E2124;
-        background-size: 900px 900px;
-        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
+        
+        font-family:"Noto Sans CJK TC DemiLight","MS Gothic", sans-serif;
         color: #C0C1C2;
+        /*overflow-x: hidden;*/
     }
-    a:hover {
-        color: #A6DBFF;
-        text-decoration: underline;
-    }
+    
     a:link, a:visited {
         color: #3BAFFF;
         text-decoration: none;
+    } a:hover {
+        color: #A6DBFF;
+        text-decoration: underline;
     }
     
     input, select, textarea {
-        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
+        font-family:"Noto Sans CJK TC DemiLight", "MS Gothic", sans-serif;
+    }
+    
+    input[type="checkbox"] {
+        border-radius: 10px;
+        border: 2px solid black;
     }
     
     Button {
@@ -94,7 +101,7 @@
         overflow: hidden;
         white-space: nowrap;
         color:#ffffff;
-        font-family:"Noto Sans CJK TC DemiLight",sans-serif;
+        font-family:"Noto Sans CJK TC DemiLight", "MS Gothic", sans-serif;
         font-size:15px;
         font-weight: bold;
         font-style:normal;
@@ -142,22 +149,209 @@
         
     }
     
-    /* 首頁 */
-    /*.BA-left .BA-serve + .BA-ltitle*/
+    /* 登入頁面 */
+    
+    .TOP-nologin ul a {
+        white-space: nowrap;
+    }
+    
+    .biricon {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAD2ElEQVRIie2VP4gVVxTGx6ykERWLsAQb0RhsQrCwkDSLAS2WRCK+KOQPCLFLwCKN3YAv6uP59r3dmXu+77vz1rCIkkJE1I0R1G2MTWIgVcCsFiJbxKjIiiL+mRSZa4Z5m8jbuFVy4TTfd8/53Zlz50wU/b8qi+SnJN+u6u12+3Uz+6zZbC6pek1g6Gvn3vtXYEl1pum7Vd059wbJlpmtqHqHgI8OO/f5vKHtdnt11/sZAYeqnpl9QfJekiRDFWtR6v1Ul/yh0Wgs7Rt64MCBFWb2nfc+l/TL/v37XwtekiRDAH6TlJMcC3qtVhsYl+JuluWUcgCb+gaT/Nh7n1PKM+nRhPdvPve8n5SUF3E26Ga2mtLT4Hngk77BI0nyFsmfxrPsyZhZVovjV4PnnNstaZbkPQAfBv3LZnOJyG8y759I+n50dHRt3+AoiqJ2u71qIsu2x3H8StUDsAnAO1U9juPFXak2MjKycn7QJBkieQbkiUw6Uq/Xnxcys72Szkg6Q3Jv0Ov1+kqSR0ieADDZ7r14L16HyV2Sckq5l54lSbIueFmWnQ19zLLseY+TJFkn6RkL7zC5q2+wc25bKE7yBoBVwQNwNHgAjpb0VSRvBM85t20+4O0l8E1Ja0qAYyXwsaBLWlPsDeDtfYMBbCEZil+L43hZ8MysG4qbWTfocRwvA3CtOGwOYEtf0EajsRTAbkm59z4HcLPVaq2XtLzT6QwCOF564uOdTmdQ0vJWq7UewM1i6OQAdr9wejWbzSWdTmfQzPaRvCrpbmlIPJM0I+lXSddJPii14YGk64U3U+wNeXdJXjWzfZ1OZ3CuH0pE8iDJc6Wklxokz5E8OBd4StJDSXnmfe6lHEWPqwEyH/c+H/f+H/f4olahPSQ51QMWeSX0NAWmnHM75NxmM9sj6Xapp3lGTjTHxoabY2PDGTlRgd82sz1ybrNzbkcKTIWei7zSA/ben5Q0bWmaBi2O48VRFEXOuQ0AfpR0HcDOam6apjtJXgPws3NuQzk3iqLI0jSVNO29P9kDrtVqA7VabSCKooijo2u70nkD7gCoV/c657aJnJY0nabp1kJeFHwAXxlwpyudZ/GjKNevnnqjmQ1LqoOcZen1kTxlZjUze5/kEf05RnP/16AYT9N0K4APSJ4s5eUgZyXVzWw4TdONvT2WLpN8yr+5LKH/87zROcmnki73gElekHR/oT4nSfdJXugBA5gkeWsBv+NbACbnAl8C8HihwAAeA7g016s+LWkGwGxxut9fRhS1ZiXNkDw91xM3SJ4ieRHAty8zSF4keQpAowf8n1l/AM+0t25hPvg2AAAAAElFTkSuQmCC") 4px 4px no-repeat;
+    }/*生日蛋糕*/
+    
+    .LN_main1 table {
+        padding-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 0;
+        background-color: transparent;
+        border-collapse: separate;
+        border-spacing: 2px 2px;
+    }
+    
+    .LN_main1 td {
+        border: 0;
+    } .LN_main1 td a, .R_code a {
+        color: #FFFFFF;
+        border: 2px solid #5F3B3B;
+        border-radius: 5px;
+        background-color: rgba(45, 46, 56, 0.2);
+    }  .LN_main1 td a:hover, .R_code a:hover {
+        color: #FFFFFF;        
+        border: 2px solid #FF6767;
+        background-color: rgba(45, 46, 56, 0.5);
+        text-decoration: none;
+    } .LN_main1 td a:active, .R_code a:active {
+        color: #464646;
+        background-color: #FF6767;
+    }
+    
+    #captchaImg {
+        border-radius: 5px;
+        border: 2px solid #5F3B3B;
+        position: relative;
+        left: -60px;
+    } #captchaImg:hover {
+        border-color: #FF6767;
+    }
+    
+    #checkb1 > .container, #checkb2 > .LN_main1 {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        background:  rgba(45, 46, 56, 0.2);
+        border-radius: 20px;
+        text-align: center;
+    } /*帳密輸入大框格*/
+    
+    .LN_txt p {
+        background:  rgba(45, 46, 56, 0.2);
+        border-color: #CA1515;
+        border: 2px solid #CA1515;
+        font-size: 16px;
+    } /*錯誤訊息框格*/
+    
+    .LN_wrapper h1 {
+        color: #FFFFFF;
+    }
+    
+    .LN_main1 .login_btn a {
+        font-family: "Noto Sans CJK TC DemiLight", "MS Gothic";
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 0 !important;
+        width: 109px;
+        height: 40px;
+        line-height: 35px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: none;
+        color: #666666;
+        border-radius: 5px;
+        border: 2px solid #5F3B3B;
+        background-color: rgba(45, 46, 56, 0.5);
+    } .LN_main1 .login_btn a:hover {
+        text-decoration: none;
+        border-color: #FF6767;
+        color: #FFFFFF;
+    } .LN_main1 .login_btn a:active {
+        position: relative;
+        top: 1px;
+        background-color: #FF6767;
+    }
+    
+    .LN_main1 button, .LN_wrapper input[type="submit"] {
+        font-family: "Noto Sans CJK TC DemiLight", "MS Gothic";
+        height: 40px !important;
+        background: none;
+        background-color: rgba(45, 46, 56, 0.5);
+        border: 2px solid #5F3B3B;
+        box-shadow: none;
+        color: #666666;
+    } .LN_main1 button:hover, .LN_wrapper input[type="submit"]:hover {
+        color: #FFFFFF;
+        background-color: rgba(45, 46, 56, 0.5);
+        cursor: pointer;
+        border: 2px solid #FF6767;
+    } .LN_main1 button:active, .LN_wrapper input[type="submit"]:active, , .LN_wrapper input[type="submit"] {
+        background-color: #FF6767;
+    }
+    
+    .LN_main1 .login_check {
+        text-shadow: 0 1px 0 #000000;
+    }
+    
+    .LN_main1 .note {
+        background: transparent;
+        color: #CA1515;
+    }
+    
+    .sign input[type="text"], .sign input[type="password"] {
+        background-color: rgba(45, 46, 56, 0.2);
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        border: 2px solid #bbb;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 14px;
+        position: relative;
+        color: #FFDFDF;
+        border-color: #5F3B3B;
+    } .sign input[type="text"]:hover, .sign input[type="password"]:hover {
+        background-color: rgba(45, 46, 56, 0.5);
+        border-color: #FF6767;
+        color: #FFB8B8;
+    } .sign input[type="text"]:focus, .sign input[type="password"]:focus {
+        background-color: rgba(45, 46, 56, 1.0);
+        border-color: #FF6767;
+        color: #FFB8B8;
+    }
+    
+    .sign li {
+        list-style: none;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    
+    .sign label {
+        position: absolute;
+        width: 40px;
+        height: 50px;
+        left: 0;
+        top: -4px;
+    } .focus .regicon ~ label, .focus .passicon ~ label {
+        filter: hue-rotate(180deg) saturate(0.9);
+        -webkit-filter: hue-rotate(180deg) saturate(0.9);    
+    }
+    
+    .cancel {
+        width: 35px;
+        height: 40px;
+        right: 5px;
+        top: -5px;
+    }
+
+    .LN_main1 .login_amend {
+        border-top: 2px solid #D19494;
+    }
+    
+    /* 首頁︵開始 */
+    
+    .BA-topbg {
+        /*background:  rgba(45, 46, 56, 0.2);*/
+        background: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/26bf3e7c65dd8aeaf3ffc0952be7d063b28b8f50/images/top_bg_dark.png");
+        border-bottom: 0px;
+    }
+    
+    .BA-cbox {
+        border: 2px solid #CCCCCC;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #36393E;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }/*中間全部的框框*/
+    
+    /*首頁︵重新排版開始*/
+    
+    .BA-wrapper {
+        width: 1130px;
+        margin: 0 auto;
+    }
+    
     .BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
         /*rearrange_1, 2_h1*/
         position: relative;
         left: 950px;
         top: -710px;
-    }
-    
-    .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
+    } .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
         /*rearrange_3, 4_h1*/
         position: relative;
         top: -3040px;
-    }
-    
-    .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
+    } .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
         /*rearrange_3, 4_div*/
         position: relative;
         top: -3040px;
@@ -169,8 +363,161 @@
         left: 950px;
         top: -710px;
     } .BA-left {
-        overflow: visible;
+        overflow: visible;/*使rearrangement成為可能*/
     }
+    
+    /*reorder_start*/
+    
+    #BA-center-id {
+        overflow: visible;
+        /*reorder_parent*/
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    #BA-center-id .BA-ctag1 {
+        /*border: 10px solid black;*/
+        order: 2;
+    }/*GNN縮圖新聞_標籤*/
+    #BA-center-id #gnn_head {
+        /*border: 10px solid yellow;*/
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -ms-flex-order: 3;
+        -webkit-order: 3;
+        order: 3;
+    }/*GNN縮圖新聞*/
+    #BA-center-id #gnn_normal {
+        /*border: 10px solid red;*/
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        -ms-flex-order: 4;
+        -webkit-order: 4;
+        order: 4;
+    }/*完整GNN*/
+    #BA-center-id .anime_recommend {
+        /*border: 10px solid aliceblue;*/
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    }/*動畫推薦*/
+    #BA-center-id .anime_recommend ~ .BA-ctag1 {
+        /*border: 10px solid antiquewhite;*/
+        -webkit-box-ordinal-group: 5;
+        -moz-box-ordinal-group: 5;
+        -ms-flex-order: 5;
+        -webkit-order: 5;
+        order: 5;
+    }/*實況_標籤*/
+    #BA-center-id #LiveBlock {
+        /*border: 10px solid aqua;*/
+        -webkit-box-ordinal-group: 6;
+        -moz-box-ordinal-group: 6;
+        -ms-flex-order: 6;
+        -webkit-order: 6;
+        order: 6;
+    }/*實況*/
+    #BA-center-id #LiveBlock ~ .BA-ctag1 {
+        /*border: 10px solid aquamarine;*/
+        -webkit-box-ordinal-group: 7;
+        -moz-box-ordinal-group: 7;
+        -ms-flex-order: 7;
+        -webkit-order: 7;
+        order: 7;
+    }/*小屋創作_標籤*/
+    #BA-center-id #homeOdata {
+        /*border: 10px solid azure;*/
+        -webkit-box-ordinal-group: 8;
+        -moz-box-ordinal-group: 8;
+        -ms-flex-order: 8;
+        -webkit-order: 8;
+        order: 8;
+    }/*小屋創作*/
+    #BA-center-id #homeOdata ~ .BA-ctag1 {
+        /*border: 10px solid beige;*/
+        -webkit-box-ordinal-group: 13;
+        -moz-box-ordinal-group: 13;
+        -ms-flex-order: 13;
+        -webkit-order: 13;
+        order: 13;
+    }/*公會_標籤*/
+    #BA-center-id #guildshowdata_hotwiki, #BA-center-id #guildshowdata_hot, #BA-center-id #guildshowdata_push_guild, #BA-center-id #guildshowdata_push {
+        /*border: 10px solid bisque;*/
+        -webkit-box-ordinal-group: 14;
+        -moz-box-ordinal-group: 14;
+        -ms-flex-order: 14;
+        -webkit-order: 14;
+        order: 14;
+    }/*公會各種*/
+    #BA-center-id #guildshowdata_hot ~ .BA-ctag1 {
+        -webkit-box-ordinal-group: 11;
+        -moz-box-ordinal-group: 11;
+        -ms-flex-order: 11;
+        -webkit-order: 11;
+        order: 11;
+    }/*看板群_標籤*/
+    #BA-center-id #hotboard {
+        /*border: 10px solid orchid;*/
+        -webkit-box-ordinal-group: 12;
+        -moz-box-ordinal-group: 12;
+        -ms-flex-order: 12;
+        -webkit-order: 12;
+        order: 12;
+    }/*看板群*/
+    #BA-center-id #hotboard ~ .BA-ctag1 {
+        /*border: 10px solid brown;*/
+        -webkit-box-ordinal-group: 9;
+        -moz-box-ordinal-group: 9;
+        -ms-flex-order: 9;
+        -webkit-order: 9;
+        order: 9;
+    }/*新作品_標籤*/
+    #BA-center-id .BA-cbox6 {
+        /*border: 10px solid pink;*/
+        -webkit-box-ordinal-group: 10;
+        -moz-box-ordinal-group: 10;
+        -ms-flex-order: 10;
+        -webkit-order: 10;
+        order: 10;
+    }/*新作品*/
+    #BA-center-id .BA-cbox6 ~ .BA-ctag1 {
+        /*border: 10px solid green !important;*/
+        -webkit-box-ordinal-group: 15 !important;
+        -moz-box-ordinal-group: 15 !important;
+        -ms-flex-order: 15 !important;
+        -webkit-order: 15 !important;
+        order: 15 !important;
+    }/*話題_標籤*/
+    #BA-center-id #hothala {
+        /*border: 10px solid purple;*/
+        -webkit-box-ordinal-group: 16;
+        -moz-box-ordinal-group: 16;
+        -ms-flex-order: 16;
+        -webkit-order: 16;
+        order: 16;
+    }/*話題*/
+    #BA-center-id .BA-footer {
+        /*border: 10px solid whitesmoke;*/
+        -webkit-box-ordinal-group: 17;
+        -moz-box-ordinal-group: 17;
+        -ms-flex-order: 17;
+        -webkit-order: 17;
+        order: 17;
+    }/*中央頁尾*/
+  
+    /*reorder_end*/
+    
+    /*首頁︶重新排版結束*/
     
     .BA-topbg {
         /*filter: hue-rotate(180deg);
@@ -178,6 +525,8 @@
     }
     /*filter: hue-rotate(180deg);
         -webkit-filter: hue-rotate(180deg);*/
+    
+    /* 首頁︶結束 */
     
     /* 置頂導覽列 */
     
@@ -375,7 +724,8 @@
         background-color: #37363E;
         border-top: 0px solid #117E96;
         height: 40px;
-        font-family: "Noto Sans CJK TC Bold", "Noto Sans CJK TC DemiLight", sans-serif;
+        font-family: "Noto Sans CJK TC DemiLight", "MS Gothic", sans-serif;
+        font-weight: bold;
         position: relative;
         z-index: 2;
         filter: hue-rotate(180deg);
