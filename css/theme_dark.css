@@ -2,7 +2,7 @@
 
 名稱: 巴哈姆特之夜
 作者: 好冷酒 (hollen9)
-更新: 2016/02/08
+更新: 2016/02/11
 始於: 2016/02/06
 
 */
@@ -19,9 +19,9 @@
 }
 
 @-moz-document domain("gamer.com.tw") {
-    #BH-footer::after {
+    #BH-footer::after, .BA-footer::after {
         visibility: visible;
-        content: "\A\A BahaRevisualization: Dark v0.1\A Created by Hollen9 (好冷酒)\A　";
+        content: "\A\A BahaRevisualization: Dark v0.2\A Created by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
     }
@@ -71,12 +71,18 @@
     }*/
     
     body {
-        background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
-        background-color: #1E2124;
+        /*background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
+        background-color: #1E2124;*/
+        background-image: none;
+        background-color: #1d1c2e;
         
         font-family:"Noto Sans CJK TC DemiLight","MS Gothic", sans-serif;
         color: #C0C1C2;
         /*overflow-x: hidden;*/
+    }
+    
+    #BA-main {
+        overflow-x: hidden;
     }
     
     a:link, a:visited {
@@ -149,7 +155,7 @@
         
     }
     
-    /* 登入頁面 */
+    /* 登入頁面︵開始 */
     
     .TOP-nologin ul a {
         white-space: nowrap;
@@ -318,29 +324,187 @@
     .LN_main1 .login_amend {
         border-top: 2px solid #D19494;
     }
-    
+    /*登入頁面︶結束*/
     /* 首頁︵開始 */
-    
+    .BA-logo{
+        filter: contrast(5) invert(1);
+        -webkit-filter: contrast(5) invert(1);
+    }
     .BA-topbg {
         /*background:  rgba(45, 46, 56, 0.2);*/
-        background: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/26bf3e7c65dd8aeaf3ffc0952be7d063b28b8f50/images/top_bg_dark.png");
+        background: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/top_bg_dark.png") right no-repeat;
+        background-size: 100% 107px;
         border-bottom: 0px;
+    }/*背景圖*/
+    
+    
+    /*[左邊&右邊]*/
+    .BA-lbox {
+        padding-bottom: 1px;
+    }
+    
+    h1.BA-ltitle {
+        /*background-color: #2E3136;*/
+        background: linear-gradient(0deg, #2E3136 50%, #747A85 100%);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    } h1.BA-ltitle + .BA-lbox {
+        background-color: #36393E;
+        border: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    } h1.BA-ltitle + .BA-lbox > ul > li {
+        padding: 5px 0;
+        border-bottom: 0px dotted #CCCCCC;
+    }
+    
+    .BA-left > div > a > img {
+        border-radius: 5px;
+    }
+    
+    ul.BA-serve {
+        border-radius: 10px;
+        border: 0;
+        background-color: #36393E;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 50px;
+    } ul.BA-serve > li {
+        border-bottom: 0px dotted #e5e5e5;
+        padding: 0;
+        margin: 0 5px 0 10px;
+    } ul.BA-serve > li:hover {
+        
+    } ul.BA-serve > li > a {
+        display: block;
+        letter-spacing: 2px;
+        height: 30px;
+        line-height: 29px;
+        color: #BAB5B5;
+    } ul.BA-serve > li > a:hover {
+        background: linear-gradient(90deg,#0F1217 30%,#36393E);
+        /*border-radius: 30px;*/
+        text-decoration: none;
+        color: #FFFFFF;
+    } ul.BA-serve > li > a > img {
+        filter: hue-rotate(180deg) saturate(0.5);
+        -webkit-filter: hue-rotate(180deg) saturate(0.5); 
+        vertical-align: middle;
+        margin-left: 10px;
+    }/*主頁選單*/
+    
+    .newanime_img {
+        border: solid black;
+        border-width: 1px 1px 0 1px;
+        border-radius: 5px 5px 0 0;
+        width: 173px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .BA-lbox3 a:nth-child(2n) {
+        color: #FFE1FF;
+        background-color: transparent;
+        border: solid black;
+        border-width: 0 1px 1px 1px;
+        border-radius: 0 0 5px 5px;
+        /*border-bottom: 1px dotted black;*/
+        width: 173px;
+    }
+    
+    
+    /*[中間]*/
+    
+    .BA-cbox9A div a {
+        border-radius: 5px;
+        background-color: transparent;
+        border: 0;
     }
     
     .BA-cbox {
-        border: 2px solid #CCCCCC;
+        border: 0px solid #1C1E21;
         border-radius: 10px;
         margin-bottom: 10px;
         background-color: #36393E;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 0;
     }/*中間全部的框框*/
     
-    /*首頁︵重新排版開始*/
+    .BA-ctag1 {
+        margin-left: 10px;
+        overflow-y: visible !important;
+    } .BA-ctag1 > li > a{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .BA-cbox9C, .BA-cbox10B {
+        border: 0;
+        background: none;
+        margin-top: -5px;
+    } .BA-cbox9C::before, .BA-cbox10B::before {
+        display: none;
+    } .BA-cbox9C a::after {
+        content: "直播＠實況大廳";
+    } .BA-cbox10B a::after {
+        content: "作品＠創作大廳";
+    }
+    .BA-ctag1 {
+        margin-top: 10px;
+        height: 26px;
+        position: relative;
+        top: 3px;
+        z-index: 0;
+    }
+    
+    .BA-ctag1 a {
+        background-image: none;
+        background-color: #232529;
+        border: 0;
+        color: #A2A5AE;
+        min-width: 50px;
+        cursor: default;
+        position: relative;
+        top: 3px;
+    } .BA-ctag1 a:hover {
+        background-image: none;
+        background-color: #36393E;
+        color: #D2D6DC;
+        position: relative;
+        top: 0px;
+    } .BA-ctag1 .BA-ctag1now {
+        color: #FFFFFF;
+        background-image: none;
+        background-image: linear-gradient(0deg, #36393E 50%, #747A85 100%);
+        position: relative;
+        top: 0px;
+        font-weight: normal;
+        border: 0 !important;
+    } .BA-ctag1 .show, .BA-ctag1 .show:hover {
+        background-color: 36D1818;
+        background-image: linear-gradient(0deg, #232529 80%, #6D1818 100%);
+        color: #D93030;
+    }/*標籤TAB*/
+    
+    .BA-cbox3 span, span.BA-cbox6E {
+        background-color: #CE4949;
+        color: #CED9EC;
+        border-radius: 2px;
+        font-family: "MS Gothic";
+    } span.BA-cbox6E {
+        width: 70px;
+    }
+    
+    /*首頁的︵重新排版開始*/
     
     .BA-wrapper {
-        width: 1130px;
+        width: 1135px;
         margin: 0 auto;
     }
+    
+    /*rearrangement_start*/
     
     .BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
         /*rearrange_1, 2_h1*/
@@ -365,6 +529,8 @@
     } .BA-left {
         overflow: visible;/*使rearrangement成為可能*/
     }
+    
+    /*rearrangement_end*/
     
     /*reorder_start*/
     
@@ -517,15 +683,7 @@
   
     /*reorder_end*/
     
-    /*首頁︶重新排版結束*/
-    
-    .BA-topbg {
-        /*filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg);*/
-    }
-    /*filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg);*/
-    
+    /*首頁的︶重新排版結束*/
     /* 首頁︶結束 */
     
     /* 置頂導覽列 */
@@ -602,7 +760,7 @@
         text-decoration: none;
     }
     
-    .TOP-data .topb1, .TOP-data .topb2, .TOP-data .topb3 {   /* 通知鈕 */
+    .topb1, .topb2, .topb3 {   /* 通知鈕 */
         filter: grayscale(100%);
         -webkit-filter: grayscale(100%);
     }
@@ -1600,11 +1758,7 @@
     }
     
     /*其他個別按鈕、ICON (通用按鈕設定在CSS最上面)*/
-    /*filter: hue-rotate(180deg);
-        -webkit-filter: hue-rotate(180deg); 偷懶作法*/
-    
-    
-    
+
     #BH-pagebtn a {
         padding: 0px;
     }
@@ -2020,15 +2174,9 @@
         line-height: 27px;
     }
 
-/* 公會 (不獨立的原因是為了盡量不拆檔案) */
-    #msgtalk {
-        font-size: 16px !important;
-    }
-    
-    .AT1 {
-        color: #FFFFFF !important;
-    }
-    
+/* 公會 (不獨立的原因是為了盡量不拆檔案，而且也真的不多) */
+    #msgtalk { font-size: 16px !important; }
+    .AT1 { color: #FFFFFF !important; }
     
     .IMG-E26::after {
         content: "回覆";
