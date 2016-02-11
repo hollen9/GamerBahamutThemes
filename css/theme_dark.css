@@ -765,12 +765,12 @@
         -webkit-filter: grayscale(100%);
     }
     
-    .TOP-data .topbnow2 {
+    .topbnow2 {
         filter: grayscale(0%);
         -webkit-filter: grayscale(0%);
     }
     
-    .TOP-data .topbnow {
+    .topbnow {
         background-color: #282B30;
         background-position: bottom;
         filter: grayscale(0%);
@@ -1132,8 +1132,9 @@
         border: 0px;
         color: #C1C1C1;
         padding: 0px;
-        height: 28px;
-        line-height: 28px;
+        min-height: 28px;
+        line-height: 24px;
+        
     } .FM-cbox10A:hover {
         background: linear-gradient(90deg,#2e3136 60%,#36393E) !important;
         color: #FFFFFF !important;
@@ -1163,7 +1164,6 @@
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
         text-decoration: none;
     }
-    
     
     
     .FM-cbox10D {/*顯示稍舊的 16 則留言*/
@@ -1307,6 +1307,7 @@
         border: 0px solid #CCCCCC;
         border-top-color: #5A9ACC;
         border-bottom-color: #5A9ACC;
+        
     } /* DIV_CONTAINER */
     
     .FM-cbox2 {
