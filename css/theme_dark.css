@@ -1,15 +1,28 @@
-﻿/*
+﻿@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain("forum.gamer.com.tw") {
+    /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
+    #BH-slave {
+       width: 147px;
+       box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+       /*右邊框框留白*/
+       padding-left: 3px;
+       padding-right: 3px;
+    }
 
-名稱: 巴哈姆特之夜
-作者: 好冷酒 (hollen9)
-更新: 2016/02/11
-始於: 2016/02/06
+     #BH-master {
+       width: 850px;
+       padding-left: 3px;
+    /*background-color: #36393E;*/
+    }
 
-*/
-
-@namespace url(http://www.w3.org/1999/xhtml);
-@keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
-@keyframes PaintColor { from { filter: grayscale(100%);-webkit-filter: grayscale(100%);} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
+    .FM-abox2A {
+            width: 400px;
+    } /*這個是分類版的 熱門推薦_文章預覽小框框*/
+    .FM-abox2A p {
+        width: 270px;/*<=280*/
+    }
+}
 
 @-moz-document domain("gc.bahamut.com.tw") {
     body {
@@ -19,36 +32,22 @@
 }
 
 @-moz-document domain("gamer.com.tw") {
+    /*
+
+    名稱: 巴哈姆特之夜
+    作者: 好冷酒 (hollen9)
+    更新: 2016/02/11
+    始於: 2016/02/06
+
+    */
+    @keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
+    @keyframes PaintColor { from { filter: grayscale(100%);-webkit-filter: grayscale(100%);} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
+
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
         content: "\A\A BahaRevisualization: Dark v0.2\A Created by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
-    }
-    
-    @-moz-document domain("forum.gamer.com.tw") {
-        /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
-        #BH-slave {
-            width: 147px;
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            /*右邊框框留白*/
-            padding-left: 3px;
-            padding-right: 3px;
-        }
-
-        #BH-master {
-            width: 850px;
-            padding-left: 3px;
-            /*background-color: #36393E;*/
-        }
-
-        .FM-abox2A {
-            width: 400px;
-        } /*這個是分類版的 熱門推薦_文章預覽小框框*/
-        .FM-abox2A p {
-            width: 270px;/*<=280*/
-        }
     }
     
     /* 隱藏廣告 */
@@ -58,6 +57,7 @@
         top: -800px !important;
         left: 0px !important;
     }
+
     /***************/
     /** 暗色系開始 **/
     /***************/
@@ -101,7 +101,7 @@
         border-radius: 10px;
         border: 2px solid black;
     }
-    
+   
     Button {
         margin-right: 2px;
         overflow: hidden;
@@ -154,7 +154,7 @@
     #BA-center-id {
         
     }
-    
+
     /* 登入頁面︵開始 */
     
     .TOP-nologin ul a {
@@ -261,7 +261,7 @@
         background-color: rgba(45, 46, 56, 0.5);
         cursor: pointer;
         border: 2px solid #FF6767;
-    } .LN_main1 button:active, .LN_wrapper input[type="submit"]:active, , .LN_wrapper input[type="submit"] {
+    } .LN_main1 button:active, .LN_wrapper input[type="submit"]:active,  .LN_wrapper input[type="submit"] {
         background-color: #FF6767;
     }
     
@@ -326,7 +326,7 @@
     }
     /*登入頁面︶結束*/
     /* 首頁︵開始 */
-    .BA-logo{
+    .BA-logo {
         filter: contrast(5) invert(1);
         -webkit-filter: contrast(5) invert(1);
     }
@@ -375,7 +375,7 @@
         padding: 0;
         margin: 0 5px 0 10px;
     } ul.BA-serve > li:hover {
-        
+        /*empty*/
     } ul.BA-serve > li > a {
         display: block;
         letter-spacing: 2px;
@@ -483,7 +483,7 @@
         font-weight: normal;
         border: 0 !important;
     } .BA-ctag1 .show, .BA-ctag1 .show:hover {
-        background-color: 36D1818;
+        background-color: #6D1818;
         background-image: linear-gradient(0deg, #232529 80%, #6D1818 100%);
         color: #D93030;
     }/*標籤TAB*/
@@ -949,7 +949,8 @@
         color: #C1C1C1;
     }
     
-    
+
+
     /* 文章區 */
     
     .FM-cbox1 a:hover {
@@ -1948,7 +1949,7 @@
         background: url(http://i2.bahamut.com.tw/bh_images.png) no-repeat left -800px;
         border-radius: 5px;
     } /* 介紹選擇按鈕 */
-    
+
     .BH-rbox .ACG-box {
         width: 100%;
     }
@@ -2253,7 +2254,7 @@
         background-color: #36393E;
         border-bottom: 1px solid #3E4146;
     }
-    
+
     #emotionlist {
         background-color: hsla(227,9%,28%,0.9);
         border-radius: 10px;
@@ -2272,7 +2273,8 @@
         background-color: #282B30;
     } #emotionlist .BH-master_tag1 li a:hover{
         
-    } #emotionlist .BH-master_tag1 li a:active {
+    }
+     #emotionlist .BH-master_tag1 li a:active {
         background-color: #1F2125;
     }
     
