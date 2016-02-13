@@ -41,7 +41,7 @@
 
     */
     @keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
-    @keyframes PaintColor { from { filter: grayscale(100%);-webkit-filter: grayscale(100%);} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
+    @keyframes PaintColor { from { ;} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
@@ -136,9 +136,9 @@
         border:1px solid #9c7535;
         display:inline-block;
     } Button:hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
+        background:gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
         background:-moz-linear-gradient( center top, #fa2525 5%, #ff7878 100% );
-        /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');*/
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');
         background-color:#fa2525;
     } Button:active {
         position:relative;
@@ -343,6 +343,14 @@
         padding-bottom: 1px;
     }
     
+    .BH-rbox {
+        background-color: transparent;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        overflow: hidden;
+        padding: 8px;
+    } /*這也適用於其他網頁，例如討論區看板*/
+    
     h1.BA-ltitle {
         /*background-color: #2E3136;*/
         background: linear-gradient(0deg, #2E3136 50%, #747A85 100%);
@@ -415,6 +423,36 @@
     
     
     /*[中間]*/
+    
+    td#acg_list .BA-cbox6D {
+        width: 70px;
+    }
+    
+    #gnn_head > div:nth-child(2), #gnn_head > div:first-child, #LiveBlock > div.BA-cbox9A:first-child, #homeOdata > div:first-child {
+        margin-bottom: 0px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    } #gnn_normal, #gnn_head > div:nth-child(2), #LiveBlock > div.BA-cbox9A:nth-child(2), #homeOdata > div:nth-child(2) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding-bottom: 5px;
+    }
+    
+    .BA-cbox5 span, .BA-cbox8 span {
+        background-color: transparent;
+        border-radius: 20px;
+        border: 2px solid #CE4949;
+        color: #FFC5C5;
+        font-family: Arial;
+    }
+    
+    .BA-cbox6A p:first-child, .BA-cbox5 tr:first-child, .BA-cbox7 tr:first-child {
+        background-color: transparent !important;
+    }
+    
+    .BA-cbox6B {
+        background-color: transparent;
+    }
     
     .BA-cbox9A div a {
         border-radius: 5px;
@@ -688,6 +726,22 @@
     
     /* 置頂導覽列 */
     
+    .TOP-nologin a {
+        color: #FFFFFF !important;
+    }
+    
+    #top_search_q {
+        
+    }
+    
+    .TOP-search > a {
+        display: inline;
+        background-color: #FFFFFF;
+        padding: 0;
+    } .TOP-search > a > img {
+        vertical-align: middle;
+    }
+    
     .TOP-bh, #BH-top-data, .TOP-data {
         background-image: none;
         background-color: #36393E;
@@ -765,16 +819,14 @@
         -webkit-filter: grayscale(100%);
     }
     
-    .topbnow2 {
+    .topbnow, .topbnow2, .topb3now {
         filter: grayscale(0%);
         -webkit-filter: grayscale(0%);
     }
     
     .topbnow {
-        background-color: #282B30;
+        background-color: #282B30 !important;
         background-position: bottom;
-        filter: grayscale(0%);
-        -webkit-filter: grayscale(0%);
     }
     
     
@@ -911,13 +963,10 @@
     }*/
     
     /* 版務人員框框 MOD */
-    .BH-rbox {
-        background-color: transparent;
-        border: 0px solid #e5e5e5;
-        margin-bottom: 10px;
-        overflow: hidden;
-        padding: 8px;
-    }
+    .FM-rbox14 > a > img[src="http://i2.bahamut.com.tw/noimg110.gif"] {
+        width: 0;
+        height: 0;
+    } /*不需要 noimage 這種東西*/
     
     .FM-rbox14-master {
         padding-bottom: 2px;
@@ -1007,11 +1056,13 @@
     
     .FM-cbox10 textarea, .FM-reply textarea, .msgright textarea, #msgtalk { /*留言、快速回覆 (包含公會)*/
         /*display: flex;*/
+         
         position: relative;
         padding: 8px 10px;
         border-radius: 3px;
         border: 2px solid #dadddf;
         box-sizing: border-box;
+        min-height: 40px !important;
         height: 80px;
         border-color: hsla(0,0%,100%,.2);
         background-color: hsla(0,0%,100%,.06);
@@ -1025,12 +1076,19 @@
         margin-bottom: 10px;
     }
     
-    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img {
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-my img {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         border-radius: 40px;
         /*裁切迷你大頭貼 成圓形的*/
     }
+    
+    .user-info {
+        background-color: #1E2124;
+        color: #BEBAB5;
+        border-radius: 3px;
+        outline: none !important;
+    } /* 使用者詳細資料氣泡 */
     
     .FM-cboxfold {
         padding: 7px 10px;
@@ -1240,23 +1298,37 @@
     
     .FM-abox2 a:hover {
         color: #A6DBFF;
-    }
+    } /*繼續閱讀*/
     
     .FM-abox2A {
         overflow-x: hidden;
         overflow-y: auto;
-        filter: grayscale(100%);-webkit-filter: grayscale(100%);
-    }
-    
-    .FM-abox2A:hover {
+        filter: brightness(80%);-webkit-filter: brightness(80%);
+    } .FM-abox2A:hover {
+        filter: brightness(1);
+        -webkit-filter: brightness(1);
         /*滑鼠移過變彩色*/
-        animation:PaintColor ease-in 1;
-        animation-fill-mode:forwards;
+        /*animation:PaintColor ease-in 1;
+        animation-fill-mode:forwards;*/
         /*animation-direction: normal;*/
-        animation-duration:0.2s;
+        /*animation-duration:0.2s;
         animation-delay: 0s;
+        */
         border-radius: 15px;
         background-color: #51565D; 
+    } .FM-abox2A:hover .FM-abox2B {
+        color: #FFFFFF;
+        background-color: #6F767F;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    } .FM-abox2A:hover .FM-abox2B:hover {
+        /*color: #FFAA97;*/
+        text-decoration: none;
+        background-color: #7F6F6F;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
     
     .FM-abox2A > a:first-child {
@@ -1279,16 +1351,15 @@
         line-height: 29px;
         font-size: 15px;
         white-space: nowrap;
-    }
-    
-    .FM-abox2B:hover {
+    } /*.FM-abox2B:hover {
         color: #66C1FF !important;
         text-decoration: none;
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
-        border-radius: 20px;
+        background-color: #FC9680;
+        border-radius: 5px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-    }
+    }*/
     
     .FM-abox5B a:link, .FM-abox5B a:visited {
         color: #66C1FF;
@@ -1582,8 +1653,12 @@
         color: #FFFFFF !important;
     }/* 達人文章_連結設定 */
     
+    .FM-blist1 #gpnumBTN {
+        margin-left: 20px;
+    }
+    
     .FM-blist1 .gplist {
-        left: 1px;
+        left: 21px;
         top: 20px;
         width: 76px;
         padding: 0px 0px 6px 0px !important;
@@ -1612,17 +1687,28 @@
         padding: 0px !important;
     }
     
-    .FM-blist1, .FM-blist1:hover {
-        color: #FFFFFF;
+    tr.FM-blist1, tr.FM-blist1:hover {
+        background: none !important;
+        border: 0;
+    }
+    
+    tr.FM-blist1 td {
         background: linear-gradient(0deg,#1E2124 30%,#383E43) !important;
-        text-align: right;
+        text-align: right !important;
+        color: #FFFFFF;
+        
     }/* 列表的項目標題 (第一列) */
+    
+    tr.FM-blist1:first-child td:nth-child(1) {
+        border-top-left-radius: 20px;
+    }
+    tr.FM-blist1:first-child td:nth-child(4) {
+        border-top-right-radius: 20px;
+    }
     
     .FM-blist {/*table*/
         border: 0;
         border-radius: 20px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
         margin-bottom: 15px;
         line-height: 20px;
         background-color: #3F4248;
@@ -2281,6 +2367,7 @@
     
     #emotionlist .BH-master_tag1 .BH-master_tag1now {
         background-color: #565D68;
+        color: #FFF3F3;
     }
     
     #emotionlist .BH-master_tag1 li:first-child a{
