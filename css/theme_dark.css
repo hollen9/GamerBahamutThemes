@@ -517,16 +517,10 @@
         background-color: #36393E;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
         position: relative;
-        z-index: 0;
+        z-index: 0;    
     }/*中間全部的框框*/
     
-    .BA-ctag1 {
-        margin-left: 10px;
-        overflow-y: visible !important;
-    } .BA-ctag1 > li > a{
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
+
     
     .BA-cbox9C, .BA-cbox10B {
         border: 0;
@@ -539,12 +533,23 @@
     } .BA-cbox10B a::after {
         content: "作品＠創作大廳";
     }
+    
+    #BA-center-id {
+        margin-top: -7px;
+    }
+    
     .BA-ctag1 {
-        margin-top: 10px;
+        margin-left: 10px;
+        overflow-y: visible !important;
+        
+        margin-top: 7px;
         height: 26px;
         position: relative;
         top: 3px;
         z-index: 0;
+    } .BA-ctag1 > li > a{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
     
     .BA-ctag1 a {
@@ -637,6 +642,15 @@
         flex-direction: column;
     }
     
+    #demoList_container {
+        /*border: 10px solid red;*/
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        -ms-flex-order: 4;
+        -webkit-order: 4;
+        order: 5;
+    }
+    
     #BA-center-id .BA-ctag1 {
         /*border: 10px solid black;*/
         order: 2;
@@ -657,15 +671,15 @@
         -webkit-order: 4;
         order: 4;
     }/*完整GNN*/
-    #BA-center-id .anime_recommend {
-        /*border: 10px solid aliceblue;*/
+    /*#BA-center-id .anime_recommend {
+        border: 10px solid aliceblue;
         -webkit-box-ordinal-group: 1;
         -moz-box-ordinal-group: 1;
         -ms-flex-order: 1;
         -webkit-order: 1;
         order: 1;
-    }/*動畫推薦*/
-    #BA-center-id .anime_recommend ~ .BA-ctag1 {
+    }動畫推薦*/
+    #BA-center-id #gnn_normal ~ .BA-ctag1 {/*#gnn_normal 替換 .anime_recommend*/
         /*border: 10px solid antiquewhite;*/
         -webkit-box-ordinal-group: 5;
         -moz-box-ordinal-group: 5;
@@ -1157,14 +1171,11 @@
         margin-bottom: 10px;
     }
     
-    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-my img {
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-nologin img {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         border-radius: 40px;
-        /*裁切迷你大頭貼 成圓形的*/
-    } #topBar_more > img {
-        border-radius: 0px;
-    }
+    } /*裁切迷你大頭貼 成圓形的*/
     
     .user-info {
         background-color: #1E2124;
