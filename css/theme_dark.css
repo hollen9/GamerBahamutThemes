@@ -45,7 +45,7 @@
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
-        content: "\A\A BahaRevisualization: Dark v0.2\A Created by Hollen9 (好冷酒)\A　";
+        content: "\A\A NightlyBahamut v0.21\A Created by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
     }
@@ -138,7 +138,6 @@
     } Button:hover {
         background:gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
         background:-moz-linear-gradient( center top, #fa2525 5%, #ff7878 100% );
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');
         background-color:#fa2525;
     } Button:active {
         position:relative;
@@ -155,6 +154,23 @@
         
     }
 
+    /* 全頁對話方塊︵開始 */
+    .frame {
+        background: #2E3136;
+        border-radius: 20px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    } .frame > h1 {
+        background: #1E2124;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    } .frame button {
+        font-size: 0;
+    } .frame button::after {
+        font-size: 17px;
+        content: "返回上一頁"; /*非必要之改動*/
+    }
+    /* 全頁對話方塊︶結束 */
+    
     /* 登入頁面︵開始 */
     
     .TOP-nologin ul a {
@@ -778,35 +794,42 @@
     
     .TOP-bh, #BH-top-data, .TOP-data {
         background-image: none;
-        background-color: #36393E;
+        background-color: #1E2124;
         color: #FFFFF1;
     }
     
     .TOP-msg {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
         font-size: 13px;
         width: 387px;
         position: absolute;
-        right: -1px;
-        top: 35px;
-        background-color: #36393E;
-        border: 15px solid #2E3136;
-        border-top: none;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        right: -5px;
+        top: 34px;
+        background-color: hsla(210, 9%, 13%, 0.99);
+;/*#1E2124;*/
+        padding: 0 15px 15px 15px;
+        border: none;
+        box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.5);
         word-break: break-all;
         word-wrap: break-word;
-        z-index: 1000;
         /*animation*/
         opacity:0;  /* make things invisible upon start */        
         animation:fadeIn ease-in 1;
         animation-fill-mode:forwards;
         animation-duration:0.2s;
         animation-delay: 0s;
-        border-radius: 15px;
-    } /*上方跳出小窗*/
+        border: 1px solid transparent;
+        border-top: none;
+        
+    } .TOP-msg:hover {
+        border: 1px solid #1D1C2E;
+        border-top: none;
+        background-color: hsla(210, 9%, 13%, 1.0);
+    }/*上方跳出小窗*/
     
     .TOP-msg > span {/*子選單標題文字*/
-        display: block;
-        background-color: #2E3136;
+        background-color: transparent;
         color: #FFFFFF;
         padding: 3px 30px 6px 0px;
         text-align: right;
@@ -814,15 +837,11 @@
         letter-spacing: 1px;
         font-family: "Noto Sans CJK TC", sans-serif;
         font-weight: bold;
-
     }
     
     .TOP-msgbtn {
-        display: block;
-        padding: 5px;
-        text-align: center;
-        border-top: 0px solid #e5e5e5;
-        background-color: #2E3136;
+        border-top: 0px;
+        background-color: transparent;
     }
     .TOP-msgbtn a {
         color: #D9E7FF;
@@ -841,9 +860,7 @@
         width: 45px;
         height: 35px;
         position: relative;
-    }
-    
-    .TOP-my li a:hover {
+    } .TOP-my li a:hover {
         background-color: #282B30;
         text-decoration: none;
     }
@@ -865,6 +882,16 @@
     
     
     /* 導覽列 > 子選單 */
+    .TOP-msglist {
+        /*background-color: #2E3136;*/
+        background-color: hsla(217, 8%, 20%, 0.5);
+
+    }
+    
+    .TOP-board {
+        border-radius: 5px;
+    }
+    
     .TOP-msglist .new {
         background-color: #36393E;
         border-left: 5px solid #C00000;
