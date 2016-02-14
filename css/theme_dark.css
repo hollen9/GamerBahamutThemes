@@ -2,22 +2,22 @@
 @-moz-document domain("forum.gamer.com.tw") {
     /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
     #BH-slave {
-       width: 147px;
-       box-sizing: border-box;
-       -webkit-box-sizing: border-box;
-       /*右邊框框留白*/
-       padding-left: 3px;
-       padding-right: 3px;
+        width: 147px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        /*右邊框框留白*/
+        padding-left: 3px;
+        padding-right: 3px;
     }
 
-     #BH-master {
-       width: 850px;
-       padding-left: 3px;
+    #BH-master {
+        width: 850px;
+        padding-left: 3px;
     /*background-color: #36393E;*/
     }
 
     .FM-abox2A {
-            width: 400px;
+        width: 400px;
     } /*這個是分類版的 熱門推薦_文章預覽小框框*/
     .FM-abox2A p {
         width: 270px;/*<=280*/
@@ -41,7 +41,7 @@
 
     */
     @keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
-    @keyframes PaintColor { from { filter: grayscale(100%);-webkit-filter: grayscale(100%);} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
+    @keyframes PaintColor { from { ;} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
@@ -136,9 +136,9 @@
         border:1px solid #9c7535;
         display:inline-block;
     } Button:hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
+        background:gradient( linear, left top, left bottom, color-stop(0.05, #fa2525), color-stop(1, #ff7878) );
         background:-moz-linear-gradient( center top, #fa2525 5%, #ff7878 100% );
-        /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');*/
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa2525', endColorstr='#ff7878');
         background-color:#fa2525;
     } Button:active {
         position:relative;
@@ -227,7 +227,7 @@
         display: inline-block;
         font-size: 20px;
         font-weight: bold;
-        text-shadow: 0 !important;
+        text-shadow: none !important;
         width: 109px;
         height: 40px;
         line-height: 35px;
@@ -336,12 +336,38 @@
         background-size: 100% 107px;
         border-bottom: 0px;
     }/*背景圖*/
-    
+    ul.BA-menu {
+        background-color: hsla(246, 100%, 3%, 0.2);
+        border-radius: 10px;
+        height: 29px;
+        border: none;
+
+    } .BA-menu li {
+        margin-top: 3px;
+        border-right: 0px dotted #CDD1FF;
+    } .BA-menu li:hover {
+        border-radius: 5px;
+        background-color: hsla(245, 27%, 86%, 0.12);
+    } .BA-menu a, .BA-menu a:hover {
+        border-radius: 5px;
+        background: none;
+        border: none;
+        height: 100%;
+        width: 100%;
+    }/*homepage頂部導覽列*/
     
     /*[左邊&右邊]*/
     .BA-lbox {
         padding-bottom: 1px;
     }
+    
+    .BH-rbox {
+        background-color: transparent;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        overflow: hidden;
+        padding: 8px;
+    } /*這也適用於其他網頁，例如討論區看板*/
     
     h1.BA-ltitle {
         /*background-color: #2E3136;*/
@@ -415,6 +441,52 @@
     
     
     /*[中間]*/
+    .BA-cbox6A a {
+        width: 380px;
+        display: inline-block;
+        overflow: hidden;
+        
+    } .BA-cbox6A p {
+        padding: 0px 0;
+        border-bottom: 1px dotted #CCCCCC;
+        margin-right: 3px;
+        height: 31px; 
+    } .BA-cbox6A p:hover {
+        background-color: #1A283E;
+    } .BA-cbox6C {
+        width: 40px;
+        padding: 0 0 3px 0;
+    }
+    
+    td#acg_list .BA-cbox6D {
+        width: 70px;
+    }
+    
+    #gnn_head > div:nth-child(2), #gnn_head > div:first-child, #LiveBlock > div.BA-cbox9A:first-child, #homeOdata > div:first-child {
+        margin-bottom: 0px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    } #gnn_normal, #gnn_head > div:nth-child(2), #LiveBlock > div.BA-cbox9A:nth-child(2), #homeOdata > div:nth-child(2) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding-bottom: 5px;
+    }
+    
+    .BA-cbox5 span, .BA-cbox8 span {
+        background-color: transparent;
+        border-radius: 20px;
+        border: 2px solid #CE4949;
+        color: #FFC5C5;
+        font-family: Arial;
+    }
+    
+    .BA-cbox6A p:first-child, .BA-cbox5 tr:first-child, .BA-cbox7 tr:first-child {
+        background-color: transparent !important;
+    }
+    
+    .BA-cbox6B {
+        background-color: transparent;
+    }
     
     .BA-cbox9A div a {
         border-radius: 5px;
@@ -500,7 +572,7 @@
     /*首頁的︵重新排版開始*/
     
     .BA-wrapper {
-        width: 1135px;
+        width: 1130px;
         margin: 0 auto;
     }
     
@@ -688,6 +760,22 @@
     
     /* 置頂導覽列 */
     
+    .TOP-nologin a {
+        color: #FFFFFF !important;
+    }
+    
+    #top_search_q {
+        
+    }
+    
+    .TOP-search > a {
+        display: inline;
+        background-color: #FFFFFF;
+        padding: 0;
+    } .TOP-search > a > img {
+        vertical-align: middle;
+    }
+    
     .TOP-bh, #BH-top-data, .TOP-data {
         background-image: none;
         background-color: #36393E;
@@ -765,16 +853,14 @@
         -webkit-filter: grayscale(100%);
     }
     
-    .topbnow2 {
+    .topbnow, .topbnow2, .topb3now {
         filter: grayscale(0%);
         -webkit-filter: grayscale(0%);
     }
     
     .topbnow {
-        background-color: #282B30;
+        background-color: #282B30 !important;
         background-position: bottom;
-        filter: grayscale(0%);
-        -webkit-filter: grayscale(0%);
     }
     
     
@@ -911,13 +997,10 @@
     }*/
     
     /* 版務人員框框 MOD */
-    .BH-rbox {
-        background-color: transparent;
-        border: 0px solid #e5e5e5;
-        margin-bottom: 10px;
-        overflow: hidden;
-        padding: 8px;
-    }
+    .FM-rbox14 > a > img[src="http://i2.bahamut.com.tw/noimg110.gif"] {
+        width: 0;
+        height: 0;
+    } /*不需要 noimage 這種東西*/
     
     .FM-rbox14-master {
         padding-bottom: 2px;
@@ -951,11 +1034,31 @@
     
 
 
-    /* 文章區 */
+    /* 文章區︵開始*/
+    
+    /* override 內文文字自訂格式_開始 */
+    /*.FM-cbox7 font[color="#141823"] {
+        color: #BFC6DB;
+    } .FM-cbox7 font[color="#131313"] {
+        color: #EDEDED;
+    }*/
+    .FM-cbox7 font[color] {
+        filter: invert(1) hue-rotate(180deg);
+    }
+    .FM-cbox7 font[color] img {
+        filter: invert(1) hue-rotate(180deg) saturate(1.25);
+    } .FM-cbox7 font[color] a[name=attachImgName]::after {
+        display: block;
+        content: "⏫點開或停用 Nightly Bahamut 以觀看沒失真的原始圖片";
+        font-family: "Noto Sans CJK TC";
+        margin-top: -5px;
+    } /*為目前最有效率的解決辦法，缺點是圖片會失真；另一個方法是將改變顏色獨立成另一個 CSS，針對個別顏色做校正。(非常耗效能，因為共有 16^6 種組合，將近一千七百萬種...靠邀。)*/
+    /* override 內文文字自訂格式_結束 */
+    
     
     .FM-cbox1 a:hover {
         text-decoration: underline;
-        -webkit-filter: brightness(1.25); filter: brightness(1.25);
+        -webkit-filter: brightness(1); filter: brightness(1);
     }/*囊括整個框框_連結加底線*/
     
     #BH-slave h5 {
@@ -1007,11 +1110,13 @@
     
     .FM-cbox10 textarea, .FM-reply textarea, .msgright textarea, #msgtalk { /*留言、快速回覆 (包含公會)*/
         /*display: flex;*/
+         
         position: relative;
         padding: 8px 10px;
         border-radius: 3px;
         border: 2px solid #dadddf;
         box-sizing: border-box;
+        min-height: 40px !important;
         height: 80px;
         border-color: hsla(0,0%,100%,.2);
         background-color: hsla(0,0%,100%,.06);
@@ -1025,12 +1130,21 @@
         margin-bottom: 10px;
     }
     
-    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img {
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-my img {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         border-radius: 40px;
         /*裁切迷你大頭貼 成圓形的*/
+    } #topBar_more > img {
+        border-radius: 0px;
     }
+    
+    .user-info {
+        background-color: #1E2124;
+        color: #BEBAB5;
+        border-radius: 3px;
+        outline: none !important;
+    } /* 使用者詳細資料氣泡 */
     
     .FM-cboxfold {
         padding: 7px 10px;
@@ -1198,12 +1312,23 @@
         background-color: #36393E;
     }
     
-    .FM-cbox11 iframe{
+    .FM-cbox11::before{
+        white-space: pre;
+        padding-left: 4px;
+        content: "個性簽名檔\A";
+        color: #1E2023;
+        font-family: "Noto Sans CJK TC";
+        font-weight: bold;
+        letter-spacing: 4px;
+        cursor: default;
+    } .FM-cbox11 iframe{
         width: 100%;
-        border: 2px solid black;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 5px;
+        border: solid #2E3136;
+        border-width: 2px 0 0 0;
+        box-sizing: padding-box;
+        padding-top: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }/*簽名檔*/
     
     .FM-rbox15C {
@@ -1240,23 +1365,37 @@
     
     .FM-abox2 a:hover {
         color: #A6DBFF;
-    }
+    } /*繼續閱讀*/
     
     .FM-abox2A {
         overflow-x: hidden;
         overflow-y: auto;
-        filter: grayscale(100%);-webkit-filter: grayscale(100%);
-    }
-    
-    .FM-abox2A:hover {
+        filter: brightness(80%);-webkit-filter: brightness(80%);
+    } .FM-abox2A:hover {
+        filter: brightness(1);
+        -webkit-filter: brightness(1);
         /*滑鼠移過變彩色*/
-        animation:PaintColor ease-in 1;
-        animation-fill-mode:forwards;
+        /*animation:PaintColor ease-in 1;
+        animation-fill-mode:forwards;*/
         /*animation-direction: normal;*/
-        animation-duration:0.2s;
+        /*animation-duration:0.2s;
         animation-delay: 0s;
+        */
         border-radius: 15px;
         background-color: #51565D; 
+    } .FM-abox2A:hover .FM-abox2B {
+        color: #FFFFFF;
+        background-color: #6F767F;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    } .FM-abox2A:hover .FM-abox2B:hover {
+        /*color: #FFAA97;*/
+        text-decoration: none;
+        background-color: #7F6F6F;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
     
     .FM-abox2A > a:first-child {
@@ -1279,16 +1418,15 @@
         line-height: 29px;
         font-size: 15px;
         white-space: nowrap;
-    }
-    
-    .FM-abox2B:hover {
+    } /*.FM-abox2B:hover {
         color: #66C1FF !important;
         text-decoration: none;
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
-        border-radius: 20px;
+        background-color: #FC9680;
+        border-radius: 5px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-    }
+    }*/
     
     .FM-abox5B a:link, .FM-abox5B a:visited {
         color: #66C1FF;
@@ -1482,7 +1620,7 @@
         white-space: nowrap;
     } .FM-rbox16A > a:hover {
         color: #FFFFFF;
-        -webkit-filter: brightness(1.25); filter: brightness(1.25);
+        -webkit-filter: brightness(1); filter: brightness(1);
     } .FM-rbox16A > a:active {
         color: #FFFFFF;
         -webkit-filter: brightness(0.70); filter: brightness(0.70);
@@ -1560,7 +1698,7 @@
         padding: 5px 0;
         
     }
-    
+    /* 文章區︶結束*/
     
     /* 討論區文章列表 */
     
@@ -1582,8 +1720,12 @@
         color: #FFFFFF !important;
     }/* 達人文章_連結設定 */
     
+    .FM-blist1 #gpnumBTN {
+        margin-left: 20px;
+    }
+    
     .FM-blist1 .gplist {
-        left: 1px;
+        left: 21px;
         top: 20px;
         width: 76px;
         padding: 0px 0px 6px 0px !important;
@@ -1612,17 +1754,28 @@
         padding: 0px !important;
     }
     
-    .FM-blist1, .FM-blist1:hover {
-        color: #FFFFFF;
+    tr.FM-blist1, tr.FM-blist1:hover {
+        background: none !important;
+        border: 0;
+    }
+    
+    tr.FM-blist1 td {
         background: linear-gradient(0deg,#1E2124 30%,#383E43) !important;
-        text-align: right;
+        text-align: right !important;
+        color: #FFFFFF;
+        
     }/* 列表的項目標題 (第一列) */
+    
+    tr.FM-blist1:first-child td:nth-child(1) {
+        border-top-left-radius: 20px;
+    }
+    tr.FM-blist1:first-child td:nth-child(4) {
+        border-top-right-radius: 20px;
+    }
     
     .FM-blist {/*table*/
         border: 0;
         border-radius: 20px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
         margin-bottom: 15px;
         line-height: 20px;
         background-color: #3F4248;
@@ -2281,6 +2434,7 @@
     
     #emotionlist .BH-master_tag1 .BH-master_tag1now {
         background-color: #565D68;
+        color: #FFF3F3;
     }
     
     #emotionlist .BH-master_tag1 li:first-child a{
