@@ -2,22 +2,22 @@
 @-moz-document domain("forum.gamer.com.tw") {
     /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
     #BH-slave {
-       width: 147px;
-       box-sizing: border-box;
-       -webkit-box-sizing: border-box;
-       /*右邊框框留白*/
-       padding-left: 3px;
-       padding-right: 3px;
+        width: 147px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        /*右邊框框留白*/
+        padding-left: 3px;
+        padding-right: 3px;
     }
 
-     #BH-master {
-       width: 850px;
-       padding-left: 3px;
+    #BH-master {
+        width: 850px;
+        padding-left: 3px;
     /*background-color: #36393E;*/
     }
 
     .FM-abox2A {
-            width: 400px;
+        width: 400px;
     } /*這個是分類版的 熱門推薦_文章預覽小框框*/
     .FM-abox2A p {
         width: 270px;/*<=280*/
@@ -227,7 +227,7 @@
         display: inline-block;
         font-size: 20px;
         font-weight: bold;
-        text-shadow: 0 !important;
+        text-shadow: none !important;
         width: 109px;
         height: 40px;
         line-height: 35px;
@@ -336,7 +336,25 @@
         background-size: 100% 107px;
         border-bottom: 0px;
     }/*背景圖*/
-    
+    ul.BA-menu {
+        background-color: hsla(246, 100%, 3%, 0.2);
+        border-radius: 10px;
+        height: 29px;
+        border: none;
+
+    } .BA-menu li {
+        margin-top: 3px;
+        border-right: 0px dotted #CDD1FF;
+    } .BA-menu li:hover {
+        border-radius: 5px;
+        background-color: hsla(245, 27%, 86%, 0.12);
+    } .BA-menu a, .BA-menu a:hover {
+        border-radius: 5px;
+        background: none;
+        border: none;
+        height: 100%;
+        width: 100%;
+    }/*homepage頂部導覽列*/
     
     /*[左邊&右邊]*/
     .BA-lbox {
@@ -423,6 +441,22 @@
     
     
     /*[中間]*/
+    .BA-cbox6A a {
+        width: 380px;
+        display: inline-block;
+        overflow: hidden;
+        
+    } .BA-cbox6A p {
+        padding: 0px 0;
+        border-bottom: 1px dotted #CCCCCC;
+        margin-right: 3px;
+        height: 31px; 
+    } .BA-cbox6A p:hover {
+        background-color: #1A283E;
+    } .BA-cbox6C {
+        width: 40px;
+        padding: 0 0 3px 0;
+    }
     
     td#acg_list .BA-cbox6D {
         width: 70px;
@@ -538,7 +572,7 @@
     /*首頁的︵重新排版開始*/
     
     .BA-wrapper {
-        width: 1135px;
+        width: 1130px;
         margin: 0 auto;
     }
     
@@ -1081,6 +1115,8 @@
         -webkit-box-sizing: border-box;
         border-radius: 40px;
         /*裁切迷你大頭貼 成圓形的*/
+    } #topBar_more > img {
+        border-radius: 0px;
     }
     
     .user-info {
