@@ -45,7 +45,7 @@
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
-        content: "\A\A NightlyBahamut v0.21\A Created by Hollen9 (好冷酒)\A　";
+        content: "\A\A NightlyBahamut v0.22\A Created by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
     }
@@ -374,7 +374,7 @@
     
     /*[左邊&右邊]*/
     .BA-lbox {
-        padding-bottom: 1px;
+        padding-bottom: 30px;
     }
     
     .BH-rbox {
@@ -403,6 +403,9 @@
     .BA-left > div > a > img {
         border-radius: 5px;
     }
+    .BA-ltitle:nth-of-type(3) {
+        margin-top: 150px;
+    } /*學術研究*/
     
     ul.BA-serve {
         border-radius: 10px;
