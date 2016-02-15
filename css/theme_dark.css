@@ -1424,10 +1424,10 @@
     .FM-abox2A {
         overflow-x: hidden;
         overflow-y: auto;
-        filter: brightness(80%);-webkit-filter: brightness(80%);
+        /*filter: brightness(80%);-webkit-filter: brightness(80%);*/
     } .FM-abox2A:hover {
-        filter: brightness(1);
-        -webkit-filter: brightness(1);
+        /*filter: brightness(1);
+        -webkit-filter: brightness(1);*/
         /*滑鼠移過變彩色*/
         /*animation:PaintColor ease-in 1;
         animation-fill-mode:forwards;*/
@@ -1436,10 +1436,10 @@
         animation-delay: 0s;
         */
         border-radius: 15px;
-        background-color: #51565D; 
+        background-color: #3D4046;
     } .FM-abox2A:hover .FM-abox2B {
         color: #FFFFFF;
-        background-color: #6F767F;
+        background-color: #545860;
         border-radius: 5px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
