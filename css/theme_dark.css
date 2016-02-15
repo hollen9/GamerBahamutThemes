@@ -457,19 +457,29 @@
     
     
     /*[中間]*/
-    .BA-cbox6A a {
-        width: 380px;
+    .BA-cbox6A a.IN-acg5 {
+        padding-left: 80px;
         display: inline-block;
-        overflow: hidden;
+        margin-left: 10px;
+        width: 447px !important;
+        max-width: none !important;
+        height: 30px;
         
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        line-height: 28px;
     } .BA-cbox6A p {
+        white-space: nowrap;
         padding: 0px 0;
-        border-bottom: 1px dotted #CCCCCC;
+        border-bottom: 0px dotted #CCCCCC;
         margin-right: 3px;
-        height: 31px; 
+        height: 30px;
     } .BA-cbox6A p:hover {
-        background-color: #1A283E;
-    } .BA-cbox6C {
+        background-color: #4D5158;
+    } .BA-cbox6A p span {
+        margin-top: 6px;
+    }.BA-cbox6C {
         width: 40px;
         padding: 0 0 3px 0;
     }
@@ -625,7 +635,7 @@
     
     /*rearrangement_end*/
     
-    /*reorder_start*/
+    /*reorder_start: the numbers of orders are unstable. All of them must be kept up-to-date as Bahamut does.*/
     
     #BA-center-id {
         overflow: visible;
@@ -808,7 +818,7 @@
     
     .TOP-bh, #BH-top-data, .TOP-data {
         background-image: none;
-        background-color: #1E2124;
+        background-color: #25282C;/*#1E2124;*/
         color: #FFFFF1;
     }
     
@@ -820,11 +830,11 @@
         position: absolute;
         right: -5px;
         top: 34px;
-        background-color: hsla(210, 9%, 13%, 0.99);
+        background-color: hsla(210, 9%, 13%, 0.98);
 ;/*#1E2124;*/
         padding: 0 15px 15px 15px;
         border: none;
-        box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.3);
         word-break: break-all;
         word-wrap: break-word;
         /*animation*/
@@ -839,7 +849,7 @@
     } .TOP-msg:hover {
         border: 1px solid #1D1C2E;
         border-top: none;
-        background-color: hsla(210, 9%, 13%, 1.0);
+        /*background-color: hsla(210, 9%, 13%, 0.98);*/
     }/*上方跳出小窗*/
     
     .TOP-msg > span {/*子選單標題文字*/
@@ -864,20 +874,18 @@
         color: #D9E7FF;
     }
     
-    .TOP-btn a:hover {
-        background-color: #282B30;
+    .TOP-my li a {
+        border-left: none;
+    } .TOP-my li a:hover, .TOP-btn a:hover {
+        background-color: #454A53;
+    } .topbnow {
+        background-color: #373B42 !important;
+    } .BA-top li a:hover, .TOP-btn a:hover {
+        background-color: transparent;
+    } .topb1now, .topb2now, .topb3now, .topbtn1now {
+        background-color: #1E2124 !important;
     }
     
-    .TOP-my li a {
-        display: block;
-        border-left: 0px solid #282B30;
-        width: 45px;
-        height: 35px;
-        position: relative;
-    } .TOP-my li a:hover {
-        background-color: #282B30;
-        text-decoration: none;
-    }
     
     .topb1, .topb2, .topb3 {   /* 通知鈕 */
         filter: grayscale(100%);
@@ -888,13 +896,7 @@
         filter: grayscale(0%);
         -webkit-filter: grayscale(0%);
     }
-    
-    .topbnow {
-        background-color: #282B30 !important;
-        background-position: bottom;
-    }
-    
-    
+
     /* 導覽列 > 子選單 */
     .TOP-msglist {
         /*background-color: #2E3136;*/
@@ -1093,7 +1095,18 @@
         content: "⏫點開或停用 Nightly Bahamut 以觀看沒失真的原始圖片";
         font-family: "Noto Sans CJK TC";
         margin-top: -5px;
-    } /*為目前最有效率的解決辦法，缺點是圖片會失真；另一個方法是將改變顏色獨立成另一個 CSS，針對個別顏色做校正。(非常耗效能，因為共有 16^6 種組合，將近一千七百萬種...靠邀。)*/
+    } .FM-cbox7 font[color="#B8B1A9"] {
+        filter: none;
+        background: #41454C;
+        display: block;
+        padding: 0 10px 0 10px;
+    } .FM-cbox7 font[color="#B8B1A9"] + br {
+        display: none;
+    } .FM-cbox7 font[color="#B8B1A9"]:first-of-type > font:first-of-type {
+        font-style: italic;
+    }/*引用*/
+    
+    /*為目前最有效率的解決辦法，缺點是圖片會失真；另一個方法是將改變顏色獨立成另一個 CSS，針對個別顏色做校正。(非常耗效能，因為共有 16^6 種組合，將近一千七百萬種...靠邀。)*/
     /* override 內文文字自訂格式_結束 */
     
     
