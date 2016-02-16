@@ -40,12 +40,13 @@
     始於: 2016/02/06
 
     */
-    @keyframes fadeIn { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
+    @keyframes fadeInwithbluring { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
     @keyframes PaintColor { from { ;} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
+    @keyframes fadeIn { from { opacity: 0;} to {opacity:1;} }
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
-        content: "\A\A NightlyBahamut v0.22\A Created by Hollen9 (好冷酒)\A　";
+        content: "\A\A NightlyBahamut v0.23\A Created by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
     }
@@ -88,6 +89,7 @@
     a:link, a:visited {
         color: #3BAFFF;
         text-decoration: none;
+        transition: 0.2s ease-out;/*實驗功能*/
     } a:hover {
         color: #A6DBFF;
         text-decoration: underline;
@@ -616,7 +618,7 @@
         /*rearrange_1, 2_h1*/
         position: relative;
         left: 950px;
-        top: -710px;
+        top: -650px;
     } .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
         /*rearrange_3, 4_h1*/
         position: relative;
@@ -631,7 +633,7 @@
         /*rearrange*/
         position: relative;
         left: 950px;
-        top: -710px;
+        top: -650px; /*710*/
     } .BA-left {
         overflow: visible;/*使rearrangement成為可能*/
     }
@@ -825,46 +827,7 @@
         color: #FFFFF1;
     }
     
-    .TOP-msg {
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        font-size: 13px;
-        width: 387px;
-        position: absolute;
-        right: -5px;
-        top: 34px;
-        background-color: hsla(210, 9%, 13%, 0.98);
-;/*#1E2124;*/
-        padding: 0 15px 15px 15px;
-        border: none;
-        box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.3);
-        word-break: break-all;
-        word-wrap: break-word;
-        /*animation*/
-        opacity:0;  /* make things invisible upon start */        
-        animation:fadeIn ease-in 1;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
-        animation-delay: 0s;
-        border: 1px solid transparent;
-        border-top: none;
-        
-    } .TOP-msg:hover {
-        border: 1px solid #1D1C2E;
-        border-top: none;
-        /*background-color: hsla(210, 9%, 13%, 0.98);*/
-    }/*上方跳出小窗*/
     
-    .TOP-msg > span {/*子選單標題文字*/
-        background-color: transparent;
-        color: #FFFFFF;
-        padding: 3px 30px 6px 0px;
-        text-align: right;
-        font-size: 15px;
-        letter-spacing: 1px;
-        font-family: "Noto Sans CJK TC", sans-serif;
-        font-weight: bold;
-    }
     
     .TOP-msgbtn {
         border-top: 0px;
@@ -901,10 +864,62 @@
     }
 
     /* 導覽列 > 子選單 */
+    /*.TOP-bh {
+        clip:rect(0px, 4096px, 700px, 0px);
+    }*/
+    /*.TOP-msg[style*="display: none;"] {
+        top: -10px !important;
+    } .TOP-msg[style*="display: block;"] {
+        top: 35px !important;
+        transition: 0.6s ease-out;
+    }*/
+    .TOP-msg {
+        /*position: absolute;*/
+        
+        right: 0px;
+        top: 35px;
+        z-index: 100;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border: none;
+        font-size: 13px;
+        width: 387px;
+        background-color: hsla(210, 9%, 13%, 0.98);
+;/*#1E2124;*/
+        padding: 0 15px 15px 15px;
+        
+        box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.3);
+        word-break: break-all;
+        word-wrap: break-word;
+        /*animation*/
+        opacity:0;  /* make things invisible upon start */        
+        animation:fadeInwithbluring ease-in 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+        border: 1px solid transparent;
+        border-top: none;
+        
+    } .TOP-msg:hover {
+        border: 1px solid #1D1C2E;
+        border-top: none;
+        /*background-color: hsla(210, 9%, 13%, 0.98);*/
+    }/*上方跳出小窗*/
+    
+    .TOP-msg > span {/*子選單標題文字*/
+        background-color: transparent;
+        color: #FFFFFF;
+        padding: 3px 30px 6px 0px;
+        text-align: right;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-family: "Noto Sans CJK TC", sans-serif;
+        font-weight: bold;
+    }
+    
     .TOP-msglist {
         /*background-color: #2E3136;*/
         background-color: hsla(217, 8%, 20%, 0.5);
-
     }
     
     .TOP-board {
@@ -955,11 +970,10 @@
         height: 20px;
         color: #66D9EF;
         padding: 5px 5px 5px 7px;
-        background-image:none;
+        background:none;
         margin-left: 5px;
-    }
-    
-    .TOP-board a:hover {
+        
+    } .TOP-board a:hover {
         color: #FFFFFF;
         background: linear-gradient(90deg,#2e3136 60%,#36393E);
         text-decoration: none;
@@ -1041,6 +1055,17 @@
         height: 50%;
         還沒用好
     }*/
+    
+    /* 浮動導覽列 */
+    #BH-menu-path {
+        opacity: 0.5;
+    } #BH-menu-path:hover {
+        
+        animation:fadeIn cubic-bezier(0,1.02,0,.59) 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+    }
     
     /* 版務人員框框 MOD */
     .FM-rbox14 > a > img[src="http://i2.bahamut.com.tw/noimg110.gif"] {
@@ -1193,12 +1218,26 @@
         border-radius: 40px;
     } /*裁切迷你大頭貼 成圓形的*/
     
-    .user-info {
+    div[id^="egg_tip"] {
+        border: none !important;
+        background: none !important;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    } a.user-info:hover {
+        outline: 0;
+        color: #FF7777;
+    } a.user-info {
+        overflow: visible;
         background-color: #1E2124;
         color: #BEBAB5;
-        border-radius: 3px;
-        outline: none !important;
-    } /* 使用者詳細資料氣泡 */
+        border-radius: 5px;
+        border: 2px solid #646376;
+        outline: 0;
+    } a.user-info span {
+        color: #FFFFFF;
+        overflow: visible;
+    } a.user-info strong {
+        overflow: visible;
+    }/* 使用者詳細資料氣泡 */
     
     .FM-cboxfold {
         padding: 7px 10px;
@@ -1787,7 +1826,7 @@
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
         /* 模糊浮出 */
         opacity:0;  /* make things invisible upon start */        
-        animation:fadeIn ease-in 1;
+        animation:fadeInwithbluring ease-in 1;
         animation-fill-mode:forwards;
         animation-duration:0.2s;
         animation-delay: 0s;
