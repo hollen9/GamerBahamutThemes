@@ -24,120 +24,6 @@
     }
 }
 
-@-moz-document domain("gnn.gamer.com.tw") {
-    /*GNN版面配置+格式*/
-    
-    #BH-master {
-        width: 100%;
-        white-space: nowrap;
-        padding-left: 10px;
-    }
-    h4 {
-        display: none;
-    }
-    /*p[style="clear:both;"]{
-        clear: none !important;
-    }*/ .GN-lbox5B {
-        display: inline-block;
-        vertical-align: top;
-        margin-top: 0px;
-        
-        /*追蹤+FB*/
-    } .GN-lbox5A {
-        display: inline;
-        vertical-align: top;
-        text-align: left !important;
-        /*按鈕：作品資料、收藏、哈拉版*/
-    } .GN-lbox5 {
-        display: inline-block;
-        float: left;
-        vertical-align: top;
-        width: 950px;
-        height: 50px;
-        margin: 0;
-        padding: 0px;
-    } .GN-lbox5 a {
-        font-size: 12px;
-        height: 20px;
-        line-height: 20px;
-        padding: 0 3px;
-        color: white !important;
-    } .GN-lbox5A li {
-        float: none;
-        display: inline;
-        margin: 0;
-    } .GN-lbox5A li a {
-        margin-left: 0px;
-        font-family: "微軟正黑體";
-    }
-    
-    .GN-lbox3 {
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-        /*margin-left: 20;*/
-        width: 660px;
-        white-space: normal;
-        margin-left: 0px;
-        display: inline-block;
-        vertical-align: top;
-    } .GN-lbox3 h1 > img { filter: hue-rotate(180deg) saturate(0.7) brightness(0.9)}
-    .GN-lbox3B h2 {
-        color: #43A0FF;
-    }
-    #comment {
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-        margin-left: 7px;
-        position: fixed;
-        display: inline-block;
-        vertical-align: top;
-        width: 275px;
-        max-height: 75%;
-        height: auto;
-
-        overflow-y: scroll !important;
-        border-radius: 10px;
-        border: 10px solid transparent;
-    } .GN-lbox6A {
-        width: 250px;
-        background-color: transparent;
-        padding: 0px;
-        margin: 0px;
-        white-space: normal;
-    } .GN-lbox6A p {
-        float: none;
-        display: inline-block;
-        margin-left: 0px;
-        width: 200px;
-        border-bottom: 1px solid #3E4146;
-        padding-top:5px;
-        padding-bottom: 5px;
-    } .GN-lbox6A p > a {
-        display: block;
-    } .GN-lbox6A span {
-        color: #555E62;
-        float: right;
-        margin-left: 10px;
-        white-space: nowrap;
-    } .GN-lbox6A img {
-        float: none;
-        display: inline-block;
-    } .GN-lbox6A a {
-        color: #FFFFFF !important;
-    } .GN-lbox6B input {
-        width: 250px;
-    } .GN-lbox6B button {
-        margin-top: 5px;
-        display: block;
-        width: 90%;
-        margin-left: 5%;
-        border-radius: 5px;
-    }
-    
-    
-    /*#comment_input:valid + button {
-        visibility: visible;
-    }*/
-}
-
 @-moz-document domain("gc.bahamut.com.tw") {
     /*使內嵌框架頁同調*/
     body {
@@ -159,7 +45,7 @@
 
     #BH-footer::after, .BA-footer::after {
         visibility: visible;
-        content: "\A\A NightlyBahamut v0.24\A Designed by Hollen9 (好冷酒)\A　";
+        content: "\A\A NightlyBahamut v0.25\A Designed by Hollen9 (好冷酒)\A　";
         white-space: pre;
         cursor: default;
     }
@@ -946,11 +832,10 @@
         vertical-align: middle;
     }
     
-    .TOP-bh, #BH-top-data, .TOP-data {
+    .TOP-bh, #BH-top-data, .TOP-data, .sky{/*sky 動畫瘋*/
         background-image: none;
         background-color: #25282C;/*#1E2124;*/
         color: #FFFFF1;
-        
     }
     
     
@@ -2718,4 +2603,197 @@
         border: 1px solid #FFFFFF !important;
         border-radius: 20px;
     }
+}
+
+@-moz-document domain("gnn.gamer.com.tw") {
+    /*GNN版面配置+格式*/
+    
+    #BH-master {
+        width: 100%;
+        white-space: nowrap;
+        padding-left: 10px;
+    }
+    h4 {
+        display: none;
+    }
+    /*p[style="clear:both;"]{
+        clear: none !important;
+    }*/ .GN-lbox5B {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 0px;
+        
+        /*追蹤+FB*/
+    } .GN-lbox5A {
+        display: inline;
+        vertical-align: top;
+        text-align: left !important;
+        /*按鈕：作品資料、收藏、哈拉版*/
+    } .GN-lbox5 {
+        display: inline-block;
+        float: left;
+        vertical-align: top;
+        width: 950px;
+        height: 50px;
+        margin: 0;
+        padding: 0px;
+    } .GN-lbox5 a {
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 3px;
+        color: white !important;
+    } .GN-lbox5A li {
+        float: none;
+        display: inline;
+        margin: 0;
+    } .GN-lbox5A li a {
+        margin-left: 0px;
+        font-family: "微軟正黑體";
+    }
+    
+    .GN-lbox3 {
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        /*margin-left: 20;*/
+        width: 660px;
+        white-space: normal;
+        margin-left: 0px;
+        display: inline-block;
+        vertical-align: top;
+    } .GN-lbox3 h1 > img { filter: hue-rotate(180deg) saturate(0.7) brightness(0.9)}
+    .GN-lbox3B h2 {
+        color: #43A0FF;
+    }
+    #comment {
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        margin-left: 7px;
+        position: fixed;
+        display: inline-block;
+        vertical-align: top;
+        width: 275px;
+        max-height: 75%;
+        height: auto;
+
+        overflow-y: scroll !important;
+        border-radius: 10px;
+        border: 10px solid transparent;
+    } .GN-lbox6A {
+        width: 250px;
+        background-color: transparent;
+        padding: 0px;
+        margin: 0px;
+        white-space: normal;
+    } .GN-lbox6A p {
+        float: none;
+        display: inline-block;
+        margin-left: 0px;
+        width: 200px;
+        border-bottom: 1px solid #3E4146;
+        padding-top:5px;
+        padding-bottom: 5px;
+    } .GN-lbox6A p > a {
+        display: block;
+    } .GN-lbox6A span {
+        color: #555E62;
+        float: right;
+        margin-left: 10px;
+        white-space: nowrap;
+    } .GN-lbox6A img {
+        float: none;
+        display: inline-block;
+    } .GN-lbox6A a {
+        color: #FFFFFF !important;
+    } .GN-lbox6B input {
+        width: 250px;
+    } .GN-lbox6B button {
+        margin-top: 5px;
+        display: block;
+        width: 90%;
+        margin-left: 5%;
+        border-radius: 5px;
+    }
+    
+    
+    /*#comment_input:valid + button {
+        visibility: visible;
+    }*/
+}
+
+@-moz-document domain("ani.gamer.com.tw") {
+    
+    .container, .videoframe, .player {
+        background: none !important;
+        border: 0 !important;
+    }
+    .TOP-msg {
+        top:55px;
+    }
+    .mainmenu {
+        background: #383030;
+        opacity: 0.5;
+    } .mainmenu:hover {
+        animation:fadeIn cubic-bezier(0,1.02,0,.59) 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+    } .mainmenu li {
+        color: #fff;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+    } .mainmenu li > a {
+        color: #fff;
+        width: 100%;
+        padding: 0 10px 0 10px;
+    } .mainmenu li > a:hover {
+        color: #000000;
+        text-decoration: none;
+        background-color: #FBBCAD;
+    }
+    
+    .subtitle {
+        background: transparent;
+        border-left: 1px solid #282B30;
+    }
+    .sub_top {
+        background: #36393E;
+        border-bottom: 1px solid #282B30;
+        height: 8%;
+        color: #FFF;
+    }
+    #sub_list {
+        margin-top: 46px;
+        padding-top: 0px;
+        height: 92%;
+        background: #36393E;
+    }
+
+    .control {
+        border-top: 1px solid #282B30;
+        background: #424549;
+        
+    } .control input#danmutxt {
+        background: transparent;
+        color: #D3D3D4;
+        padding: 0;
+        padding-left: 55px;
+    } .control input#danmutxt:focus {
+        background: #4B4E53;
+    } .control input#danmutxt:focus + button {
+        background: #E67890;
+    } .control button.sent_mes {
+        border-radius: 0;
+        height: 42px !important;
+        margin: 0;
+    } .control button.enter_mes {
+        background: #282B30;
+        border-radius: 0;
+        border: 0;
+        height: 42px !important;
+        min-width: unset;
+        width: 42px;
+    } .control button, .control button:hover {
+        box-shadow: unset;
+    }
+    
 }
