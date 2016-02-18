@@ -34,7 +34,7 @@
 
 @-moz-document domain("gamer.com.tw") {
     /*
-    名稱: 巴哈姆特之夜
+    名稱: Nightly Bahamut
     作者: 好冷酒 (hollen9)
     更新: 請見頁尾 footer
     始於: 2016/02/06
@@ -43,9 +43,9 @@
     @keyframes PaintColor { from { ;} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
     @keyframes fadeIn { from { opacity: 0;} to {opacity:1;} }
 
-    #BH-footer::after, .BA-footer::after {
+    #BH-footer::after, .BA-footer::after, .footer::after {
         visibility: visible;
-        content: "\A\A NightlyBahamut v0.25\A Designed by Hollen9 (好冷酒)\A　";
+        content: "NightlyBahamut v0.26 (´・ω・`) Designed by Hollen9 (好冷酒)";
         white-space: pre;
         cursor: default;
     }
@@ -64,14 +64,14 @@
     
     /*基本共同設定*/
     
-    #BH-background {
+    /*User-defined BG*/
+    /*#BH-background {
         background-image: url("https://vgy.me/l0wGs3.png"); 
         background-repeat: no-repeat; 
         background-position: 100% 80%;
         background-size: 14% auto;
         background-attachment:fixed;
-        /*User-defined BG*/
-    }
+    }*/
     
     body {
         /*background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
@@ -350,7 +350,7 @@
     }
     /*登入頁面︶結束*/
     /* 首頁︵開始 */
-    .BA-logo {
+    .BA-logo, .bahago {
         filter: contrast(5) invert(1);
         -webkit-filter: contrast(5) invert(1);
     }
@@ -1223,11 +1223,11 @@
         border-radius: 20px;
         margin-bottom: 10px;
     }
-    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-nologin img, .GN-lbox6A img {
+    .FM-reply > .FM-replyC > a > img, .TOP-my li:nth-child(5) img, .FM-cbox10C img, .FM-rbox14-master img, .msghead, .BH-list4 img, .GU-rbox6 img, .TOP-nologin img, .GN-lbox6A img, .sky .head  img {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         border-radius: 40px;
-    } .FM-reply > .FM-replyC > a > img:hover, .TOP-my li:nth-child(5) img:hover, .FM-cbox10C img:hover, .FM-rbox14-master img:hover, .msghead:hover, .BH-list4 img:hover, .GU-rbox6 img:hover, .TOP-nologin img:hover, .GN-lbox6A img:hover {
+    } .FM-reply > .FM-replyC > a > img:hover, .TOP-my li:nth-child(5) img:hover, .FM-cbox10C img:hover, .FM-rbox14-master img:hover, .msghead:hover, .BH-list4 img:hover, .GU-rbox6 img:hover, .TOP-nologin img:hover, .GN-lbox6A img:hover, .sky .head img:hover {
         transition: 0.4s ease-out;
         border-radius: 0px;
         animation-iteration-count: 1;
@@ -2039,7 +2039,7 @@
         /*margin-left: -10px;*/
     }
     
-    .BH-pagebtnA a{
+    .BH-pagebtnA a, .page_number a{
         padding: 0 !important;
         border-radius: 40px !important;
         width: 40px;
@@ -2049,8 +2049,9 @@
         border: 2px solid #232323 !important;
         background: none !important;
         color: #FFFFFF !important;
-    } .BH-pagebtnA a:hover, .BH-pagebtnA .pagenow {
+    } .BH-pagebtnA a:hover, .BH-pagebtnA .pagenow, .page_number a:hover, .page_number .now {
         background-color: #D25C42 !important;
+        text-decoration: none;
     }/* 文章頁數按鈕_數字 */
     
     .prev {
@@ -2721,10 +2722,283 @@
 
 @-moz-document domain("ani.gamer.com.tw") {
     
+    .search button, .search_result button {
+        min-width: unset;
+        width: 30px;
+        height: 100%;
+        background: #EA7B94;
+        border: 0;
+        position: absolute;
+        right: -3px;
+        top: 0;
+        color: #fff;
+        font-size: 1.6em;
+        cursor: pointer;
+    } .search, .search_result {
+        border: 1px solid #EA7B94;
+    }
+    
+    .page_control {
+        background: #2E3136;
+        margin: 0;
+        padding: 20px 0px 20px 0px;
+    }
+    
+    .class_list .now a {
+        
+    } .class_list li a:hover {
+        background: #EA7B94;
+        color: #FFF;
+    }
+    
+    section.index_new {
+        background: #36393E;
+        margin-top: 20px;
+        border-radius: 20px;
+        text-indent: 10px;
+    } .history li {
+        padding: 0;
+        background: transparent;
+    } .history a {
+        height: 100%;
+        padding: 10px;
+    } .history a:hover {
+        text-decoration: none;
+        color: #FFF;
+        background: linear-gradient(90deg,#232528 50%,#36393E);
+    } .history a:ctive {
+        text-decoration: none;
+        color: #C7ADAD;
+        background: linear-gradient(90deg,#282323 50%,#36393E);
+    } .history a > span {
+        float: left;
+        width: 100px;
+    } .history a:hover > span {
+        color: #FFF;
+    } .index_new > .only-title > h1 {
+        font-size: 0;
+    } .index_new > .only-title > h1::after {
+        font-size: 30px;
+        content: "視聴履歴";
+    }
+    
+    /*我的動畫_改字*/
+    .big_banner + script + .container > .anime_top > .title > h1 {
+        font-size:0;
+    } .big_banner + script + .container > .anime_top > .title > h1::after {
+        font-size:30px;
+        content: "お気に入り";
+    } .big_banner + script + .container > .anime_top .arrange a {
+        font-size: 0;
+    } .big_banner + script + .container > .anime_top .arrange a:hover {
+        text-decoration: none;
+        color: #EA7B94;
+    } .big_banner + script + .container > .anime_top .arrange a:active {
+        color: #985060;
+    } .big_banner + script + .container > .anime_top .arrange a::before {
+        font-size: 16px;
+        font: normal normal normal 16px/1 FontAwesome;
+        content: "\f13a";
+        position: relative;
+        left: 7px;
+    } .big_banner + script + .container > .anime_top .arrange a:first-child::after {
+        font-size: 16px;
+        content: "アップデート順";
+    } .big_banner + script + .container > .anime_top .arrange a:last-child::after {
+        font-size: 16px;
+        content: "登録が新しい順";
+    }
+    /*所有動畫改字︵開始_依存所有動畫改字*/
+    .class_list + .anime_top > .title > h1::after {
+        font-size:30px;
+        content: "アニメ作品一覧" !important;
+    } .class_list + .anime_top .arrange a:first-child::after {
+        font-size: 16px;
+        content: "新着順" !important;
+    } .class_list + .anime_top .arrange a:last-child::after {
+        font-size: 16px;
+        content: "人気順" !important;
+    }
+    /*所有動畫改字︶結束_依存"所有動畫"改字*/
+    
+    section.anime_top:hover ul.anime_list .pic {
+        transition: 1s ease-out;
+        filter: brightness(1);
+    } section.anime_top:hover ul.anime_list .pic {
+        filter: brightness(0.7);
+    } section.anime_top:hover ul.anime_list .pic:hover {
+        filter: brightness(1);
+    } section.anime_top ul.anime_list .pic:active {
+        transition: 0.2s ease-out !important;
+        filter: brightness(1);
+    } section.anime_top:active ul.anime_list .pic {
+        transition: 0.2s ease-out !important;
+        filter: brightness(0.4);
+    }
+    
+    /*付費方案*/
+    .cart_header, .big_banner + script + .whilebg {
+        background: transparent;
+    } .cart_header h1 {
+        color: unset;
+    }
+    
+    section.cart {
+        background: #36393E;
+    } section.cart:first-of-type {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    } section.cart:last-of-type {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    } .cart h1 {
+        text-indent: 20px;
+    } .cart .program, .unselect .program {
+        border: 0;
+        background: #2E3136;
+        border-radius: 10px;
+        color: #B0AEC1;
+        border: 2px solid transparent;
+    } .cart .selected .program {
+        border: 2px solid pink;
+    } section[class^="cart"] span {
+        color: #EACAD1;
+    } .cart b {
+        color: #EACAD1;
+        font-weight: bold;
+    } .pay_select select {
+        background: #42464E;
+    }
+    section[class^="cart"] button {
+        line-height: 10px;
+        background: #EA6986;
+        border-radius: 5px;
+    } section[class^="cart"] button:hover {
+        background: #EAA4B4;
+        color: #FFF;
+        border-radius: 5px;
+    } section[class^="cart"] button:active {
+        top: 1px !important;
+        background: #EA0D40;
+        color: #FFFC00;
+        left: 0;
+    }
+    
+    .pay_confirm {
+        border-radius: 20px;
+        background: #36393E;
+    }
+    
+    /*動畫播放頁aniplay_開始*/
+    
+    #danmu {
+        opacity: 0.5;/*userdefined*/
+        font-family: "MS Gothic";
+        text-shadow: 0 0 3px #FF0000;
+    }
+    
+    ul.member a:hover {
+        color: #FFF;
+    }
+    
+    .footer {
+        background: #25282C;
+    }
+    
+    .container button, .container button:hover {
+        box-shadow: unset;
+        border-radius: unset;
+    } .container button:active {
+        top: 0px;
+    }
+    
+    section.player {
+        border-top: 35px solid #36393E !important;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background: #36393E !important;
+    }
+    
+    section.videoname {
+        padding: 5px;
+        background: #1E2124;
+    } .anime_name h1 {
+        color: #FFFFFF;
+    } .anime_name button {
+        transition: 0.2s ease-out;
+        border-radius: 5px;
+        background: #888888;
+        min-height: unset;
+    } .anime_name button:hover {
+        border-radius: 5px;
+    }/*訂閱鈕*/
+    
+    section.data {
+        background: #1E2124;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    } .data_type span {
+        background: #CE4949;
+        border-radius: 5px;
+    } .data_intro h1 {
+        color: #FFF;
+        border-bottom: 1px solid #AFC1BF;
+    }
+    
+    section.old_list, section.news_list {
+        background-color: #2E3136;
+        border-radius: 20px;
+        margin-top:20px;
+    } .title h1 {
+        margin: 0 0 5px 20px;
+        font-size: 30px;
+    } .news_big p {
+        color: #DBDBE1;
+    } .arrange a {
+        
+    }
+    
+    a.bluebtn, .news_big a i {
+        border-radius: 10px;
+        min-width: 80px;
+        text-decoration: none;
+        color: #E54368;
+        border: 2px solid #E54368;
+        background: transparent;
+        font-size: 15px;
+        transition: 0.2s ease-out;
+    } a.bluebtn:hover, .news_big a:hover i {
+        border-color: #FFF;
+        background: #282C30;
+        color: #FFF;
+    }
+    
+    .ACG-score {
+        line-height: 80px;
+    } .ACG-score span {
+        bottom: 8px;
+    }
+    
+    
     .container, .videoframe, .player {
         background: none !important;
         border: 0 !important;
+    } .vast-skip-button {
+        font-family: "Noto Sans CJK TC";
+        background-color: rgba(229,67,104,0.6);
+        color: #FFF !important;
+    } .vjs-control-bar {
+        background-color: rgba(40,43,48,1) !important;
+        
+    } .vjs-play-progress, .vjs-volume-level {
+        background-color: pink !important;
+    } .vjs-control-bar > div[role="button"]:hover {
+        color: #E54368;
+        font-weight: normal;
+    } .vjs-big-play-button:hover, .vjs-default-skin .vjs-big-play-button:focus {
+        color: #E54368 !important;
     }
+    
     .TOP-msg {
         top:55px;
     }
@@ -2758,15 +3032,73 @@
     .sub_top {
         background: #36393E;
         border-bottom: 1px solid #282B30;
-        height: 8%;
+        min-height: 8%;
+        max-height: 41px;
         color: #FFF;
+        font-size: 0;
+        overflow: hidden;
+    } .sub_top::after {
+        font-size: 17px;
+        line-height: 46px;
+        content: "弾幕コメント";
+    } .sub_top #danmuturn {
+        width: 157px;
+        font-size: 0;
+        margin: 5px 0 5px 0;
+        border: 1px solid #1C1E22;
+        background: #2E3136;
+        color: #55575B;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    } .sub_top #danmuturn:hover {
+        color: #E8E9EC;
+    } .sub_top #danmuturn:active, button.refresh:active {
+        background: #34373C !important;
+    } #danmuturn.close_bullet::after {
+        font-size: 14px;
+        content: "コメント表示しない";
+    } #danmuturn.close_bullet.closed::after {
+        font-size: 14px;
+        content: "コメント表示する　";
+    } button.refresh {
+        min-width: unset;
+        width: 35px;
+        height: 35px;
+        background: #2E3136;
+        color: #55575B;
+        margin: 5px 5px 5px 0;
+        border: 1px solid #1C1E22;
+        border-left: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    } button.refresh:hover {
+        background: #2E3136;
+        color: #E8E9EC;
+        margin: 5px 5px 5px 0;
+        border: 1px solid #1C1E22;
+        border-left: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    } button.edit {
+        font-size: 0px;
+    } button.edit::after {
+        font-size: 14px;
+        content:"コピー";
     }
+    
+    
     #sub_list {
         margin-top: 46px;
         padding-top: 0px;
+        margin-right: 2px;
         height: 92%;
         background: #36393E;
+    } .sub_list li:hover {
+        background: #494D54;
+    } .sub_list p, .sub_list li {
+        line-height: 35px;
     }
+    
 
     .control {
         border-top: 1px solid #282B30;
@@ -2777,23 +3109,112 @@
         color: #D3D3D4;
         padding: 0;
         padding-left: 55px;
+        transition: 0.2s ease-out;
     } .control input#danmutxt:focus {
         background: #4B4E53;
-    } .control input#danmutxt:focus + button {
+    } .control input#danmutxt:focus + button.sent_mes {
         background: #E67890;
     } .control button.sent_mes {
+        transition: 0.2s ease-out;
         border-radius: 0;
         height: 42px !important;
         margin: 0;
+        font-size: 0;
+    } .control button.sent_mes:hover {
+        background: #E54368 !important;
+    } .control button.sent_mes:active {
+        position: absolute;
+        background: #9B2D46 !important;
+    } .control button.sent_mes::after {
+        font-size: 14px;
+        content: "コメントする";
     } .control button.enter_mes {
+        transition: 0.2s ease-out;
         background: #282B30;
         border-radius: 0;
         border: 0;
         height: 42px !important;
         min-width: unset;
         width: 42px;
-    } .control button, .control button:hover {
-        box-shadow: unset;
     }
     
+    /*集數回數*/
+    .season {
+        position: fixed;
+        top: 60px;
+        z-index: 10;
+        opacity: 0.5;
+        overflow: visible;
+    } .season:hover {
+        animation:fadeIn cubic-bezier(0,1.02,0,.59) 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+    }
+    .season ul {
+        background: #383030;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        width: 1365px;
+        padding: 0;
+    } .season li:first-child {
+        margin-left: 8px;
+    } .season ul::before {
+        margin-left: 15px;
+        content: "話数選択";
+    } .season li {
+        border-radius: 30px;
+        min-width: 30px;
+        height: 30px;
+        border: 1px solid #bbb;
+        text-align: center;
+        margin: 2px;
+        line-height: 26px;
+        transition: 0.2s ease-out;
+    } .season li:hover {
+        background: #E54368;
+        border-radius: 30px !important;
+    } .season li.playing {
+        background: #CE4949;
+        border-radius: 5px;
+    } .season a {
+        padding: 0;
+        color: #FFF;
+    } .season a:hover {
+        text-decoration: none;
+        background: none;
+    } .season a:active {
+        text-decoration: none;
+        background: none;
+    } .season .saw::after {
+        display: none;
+    } .season:hover .saw::after {
+        display: block;
+        animation:fadeIn cubic-bezier(0,1.02,0,.59) 1;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+        animation-delay: 0s;
+        content: "⬆前回再生";
+        border-radius: 5px;
+        width: 66px;
+        font-size: 12px;
+        position: absolute;
+        background: #EA7B94;
+        color: #fff;
+        padding: 0px;
+        left: 5px;
+        bottom: -28px;
+        overflow: hidden;
+        z-index: 3;
+    }
+    
+    .whilebg {
+        background: #36393E;
+    }
+    
+    /*動畫播放頁aniplay_結束end*/
+    
+    /*觀看紀錄︵開始*/
+    
+    /*觀看紀錄︶結束*/
 }
