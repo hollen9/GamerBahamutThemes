@@ -14,6 +14,7 @@
     #BH-master {
         width: 850px;
         padding-left: 3px;
+    /*background-color: #36393E;*/
     }
 
     .FM-abox2A {
@@ -292,7 +293,8 @@
         /*background:  rgba(45, 46, 56, 0.2);*/
         background: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/master/images/top_bg_dark.png") right no-repeat;
         background-size: 100% 107px;
-        border-bottom: 0px;
+        border-bottom: 5px solid #1D1C2E;
+        margin-bottom: 0px;
     }/*背景圖*/
     ul.BA-menu {
         background-color: hsla(246, 100%, 3%, 0.2);
@@ -574,18 +576,22 @@
     /*rearrangement_start*/
     
     .BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
+        /*rearrange_1, 2_h1*/
         position: relative;
         left: 950px;
         top: -650px;
     } .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
+        /*rearrange_3, 4_h1*/
         position: relative;
         top: -3040px;
     } .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
+        /*rearrange_3, 4_div*/
         position: relative;
         top: -3040px;
     }
     
     .BA-lbox3 {
+        /*rearrange*/
         position: relative;
         left: 950px;
         top: -650px; /*710*/
