@@ -1,5 +1,12 @@
 ﻿@namespace url(http://www.w3.org/1999/xhtml);
 
+@-moz-document domain("ani.gamer.com.tw") {
+    .big_content::after {
+        white-space: pre;
+        content: "\A\A※由於代碼過長，所以動畫瘋已獨立成另一專案。\A請使用者務必刪除當前所使用的任何 Nightly Bahamut，\A　再分別安裝 Nightly Bahamut (基本必裝) 與 Nightly Bahamut: Anime ChuDoku (動畫瘋用)。\A\A　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　-開發者_hollen9";
+    }
+}
+
 @-moz-document domain("forum.gamer.com.tw") {
     /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
     #BH-slave {
@@ -47,7 +54,7 @@
 
     #BH-footer::after, .BA-footer::after, .footer::after {
         visibility: visible;
-        content: "NightlyBahamut v0.29 (´・ω・`) Designed by Hollen9 (好冷酒)";
+        content: "NightlyBahamut v0.30 (´・ω・`) Designed by Hollen9 (好冷酒)";
         white-space: pre;
         cursor: default;
     }
@@ -112,10 +119,13 @@
     /* 一般版面的浮動式廣告 */
     #flySalve {
         /*visibility: hidden;*/
+        transition: 1s;
         position: fixed !important;
         top: 75px !important;
-        left: 0px !important;        
+        left: -60px !important;        
         width: 100px;
+    } #flySalve:hover {
+        left: 0 !important;
     } #flySalve img {
         width: 100px;
         transition: 0.5s;
@@ -164,8 +174,6 @@
         /*background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
         background-color: #1E2124;*/
         background-image: none;
-        
-        
         font-family:"Noto Sans CJK TC DemiLight","MS Gothic", sans-serif;
         color: #C0C1C2;
         /*overflow-x: hidden;*/
@@ -210,7 +218,8 @@
         border: 2px solid black;
     }
    
-    Button {
+    Button, input[type="button"], input[type="submit"] {
+        cursor: pointer;
         transition: 0.5s;
         background: transparent;
         
@@ -223,12 +232,12 @@
         white-space: nowrap;
         min-width:86px;
         min-height:35px;
-    } Button:hover {
+    } Button:hover, input[type="button"]:hover, input[type="submit"]:hover {
         transition: 0.1s ease-out;
         
         border: 2px solid #FFF;
         color: #FFF;
-    } Button:active {
+    } Button:active, input[type="button"]:active, input[type="submit"]:active {
         background: #F16364;
         border-color: #F16364;
         color: #FFD4D4;
@@ -253,11 +262,6 @@
         background: #1E2124;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-    } .frame button {
-        font-size: 0;
-    } .frame button::after {
-        font-size: 17px;
-        content: "返回上一頁"; /*非必要之改動*/
     }
     /* 全頁對話方塊︶結束 */
     
@@ -423,6 +427,37 @@
     
     
     /*[中間]*/
+    .BA-cbox3 p {
+        padding-top: 0;
+        display: block;
+        height: 23px;
+        border: 0;
+    } .BA-cbox3 span {
+        margin-top: 6px;
+    } .BA-cbox3 img {
+        float: right;
+        position: relative;
+        right: 5px;
+        top: 6px;
+        background-color: #FFF;
+        filter: hue-rotate(120deg) saturate(2);
+        -webkit-filter: hue-rotate(120deg) saturate(2);
+        width: 17px;
+    } .BA-cbox3 p a {
+        padding-left: 50px;
+        display: inline-block;
+        margin-left: 10px;
+        width: 675px !important;
+        height: 30px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        line-height: 28px;
+
+    } .BA-cbox3 p:hover {/*0224*/
+        background-color: #4D5158;
+    }
+    
     .BA-cbox6A a.IN-acg5 {
         padding-left: 80px;
         display: inline-block;
@@ -430,7 +465,6 @@
         width: 447px !important;
         max-width: none !important;
         height: 30px;
-        
         overflow: hidden;
         position: absolute;
         left: 0;
@@ -775,16 +809,40 @@
         color: #FFFFFF !important;
     }
     
-    #top_search_q {
-        
-    }
+    
     
     .TOP-search > a {
-        display: inline;
+        /*display: inline;
         background-color: #FFFFFF;
-        padding: 0;
+        padding: 1px 0 1px 0;
+        border: solid transparent;
+        border-width: 1px 1px 1px 0;*/
+        position: relative;
+        left: -26px;
+        border: 0;
+        width: 10px;
+        background: transparent url("http://i2.bahamut.com.tw/search_bg.png") no-repeat;
+        background-position: center 2px;
     } .TOP-search > a > img {
-        vertical-align: middle;
+        visibility: hidden;
+    }
+    
+    #top_search_q {
+        border: 1px solid transparent;
+        /*background: #FFF url("http://i2.bahamut.com.tw/search_bg.png") no-repeat;
+        background-position: 100px 4px;*/
+        border-radius: 5px;
+        padding-right: 26px;
+        
+    } #top_search_q:focus {
+        border: 1px solid #D25C42;
+        background-color: #FFBBAE;
+        /*border-width: 1px 0 1px 1px;*/
+    } #top_search_q:focus + a {
+        /*border: solid #D25C42;
+        border-width: 1px 1px 1px 0px;*/
+        background: transparent url("http://i2.bahamut.com.tw/search_bg.png") no-repeat;
+        background-position: center 2px;
     }
     
     .TOP-bh, #BH-top-data, .TOP-data, .sky{/*sky 動畫瘋*/
@@ -794,6 +852,15 @@
     }
     
     
+    .TOP-bh span a:first-child {
+        border-left: 1px solid;
+        border-color: #32363C;
+    }
+    .TOP-bh span a {
+        border-color: #32363C;
+    } .TOP-bh span a:hover {
+        background-color: #FF6767;
+    }
     
     .TOP-msgbtn {
         border-top: 0px;
@@ -1206,6 +1273,9 @@
 
     
     div[id^="egg_tip"] {
+        color: #C0C0C0 !important;
+        font-size: 14px;
+        padding: 3px;
         border-radius: 5px;
         border: 2px solid #646376 !important;
         background-color: #1E2124 !important;
@@ -2823,6 +2893,7 @@
         border: 0 !important;
         width: 365px !important;
         margin-top: -4px;
+        z-index: 0;
         /*border: 2px solid #FFF !important;
         background: #B8C4D8;
         */
@@ -2925,6 +2996,7 @@
         width: 275px;
         max-height: 75%;
         height: auto;
+        z-index: 10;
 
         overflow-y: scroll !important;
         border-radius: 10px;
@@ -2969,527 +3041,6 @@
     /*#comment_input:valid + button {
         visibility: visible;
     }*/
-}
-
-@-moz-document domain("ani.gamer.com.tw") {
-    /*動畫瘋*/
-    .search button, .search_result button {
-        min-width: unset;
-        width: 30px;
-        height: 100%;
-        background: #EA7B94;
-        border: 0;
-        position: absolute;
-        right: -3px;
-        top: 0;
-        color: #fff;
-        font-size: 1.6em;
-        cursor: pointer;
-    } .search, .search_result {
-        border: 1px solid #EA7B94;
-    }
-    
-    .page_control {
-        background: #2E3136;
-        margin: 0;
-        padding: 20px 0px 20px 0px;
-    }
-    
-    .class_list .now a {
-        
-    } .class_list li a:hover {
-        background: #EA7B94;
-        color: #FFF;
-    }
-    
-    /*我的動畫_改字*/
-    .big_banner + script + .container > .anime_top > .title > h1 {
-        font-size:0;
-    } .big_banner + script + .container > .anime_top > .title > h1::after {
-        font-size:30px;
-        content: "お気に入り";
-    } .big_banner + script + .container > .anime_top .arrange a {
-        font-size: 0;
-    } .big_banner + script + .container > .anime_top .arrange a:hover {
-        text-decoration: none;
-        color: #EA7B94;
-    } .big_banner + script + .container > .anime_top .arrange a:active {
-        color: #985060;
-    } .big_banner + script + .container > .anime_top .arrange a::before {
-        font-size: 16px;
-        font: normal normal normal 16px/1 FontAwesome;
-        content: "\f13a";
-        position: relative;
-        left: 7px;
-    } .big_banner + script + .container > .anime_top .arrange a:first-child::after {
-        font-size: 16px;
-        content: "アップデート順";
-    } .big_banner + script + .container > .anime_top .arrange a:last-child::after {
-        font-size: 16px;
-        content: "登録が新しい順";
-    }
-    /*所有動畫改字︵開始_依存所有動畫改字*/
-    .class_list + .anime_top > .title > h1::after {
-        font-size:30px;
-        content: "アニメ作品一覧" !important;
-    } .class_list + .anime_top .arrange a:first-child::after {
-        font-size: 16px;
-        content: "新着順" !important;
-    } .class_list + .anime_top .arrange a:last-child::after {
-        font-size: 16px;
-        content: "人気順" !important;
-    }
-    /*所有動畫改字︶結束_依存"所有動畫"改字*/
-    
-    section.anime_top:hover ul.anime_list .pic {
-        transition: 1s ease-out;
-        filter: brightness(1);
-        -webkit-filter: brightness(1);
-    } section.anime_top:hover ul.anime_list .pic {
-        filter: brightness(0.7);
-        -webkit-filter: brightness(0.7);
-    } section.anime_top:hover ul.anime_list .pic:hover {
-        filter: brightness(1);
-        -webkit-filter: brightness(1);
-    } section.anime_top ul.anime_list .pic:active {
-        transition: 0.2s ease-out !important;
-        filter: brightness(1);
-        -webkit-filter: brightness(1);
-    } section.anime_top:active ul.anime_list .pic {
-        transition: 0.2s ease-out !important;
-        filter: brightness(0.4);
-        -webkit-filter: brightness(0.4);
-    }
-    
-    /*付費方案*/
-    .cart_header, .big_banner + script + .whilebg {
-        background: transparent;
-    } .cart_header h1 {
-        color: unset;
-    }
-    
-    section.cart {
-        background: #36393E;
-    } section.cart:first-of-type {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    } section.cart:last-of-type {
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    } .cart h1 {
-        text-indent: 20px;
-    } .cart .program, .unselect .program {
-        border: 0;
-        background: #2E3136;
-        border-radius: 10px;
-        color: #B0AEC1;
-        border: 2px solid transparent;
-    } .cart .selected .program {
-        border: 2px solid pink;
-    } section[class^="cart"] span {
-        color: #EACAD1;
-    } .cart b {
-        color: #EACAD1;
-        font-weight: bold;
-    } .pay_select select {
-        background: #42464E;
-    }
-    section[class^="cart"] button {
-        line-height: 10px;
-        background: #EA6986;
-        border-radius: 5px;
-    } section[class^="cart"] button:hover {
-        background: #EAA4B4;
-        color: #FFF;
-        border-radius: 5px;
-    } section[class^="cart"] button:active {
-        top: 1px !important;
-        background: #EA0D40;
-        color: #FFFC00;
-        left: 0;
-    }
-    
-    .pay_confirm {
-        border-radius: 20px;
-        background: #36393E;
-    }
-    
-    /*動畫播放頁aniplay_開始*/
-    
-    #danmu {
-        opacity: 0.5;/*userdefined*/
-        font-family: "MS Gothic";
-        text-shadow: 0 0 3px #FF0000;
-    }
-    
-    ul.member a:hover {
-        color: #FFF;
-    }
-    
-    .footer {
-        background: #25282C;
-    }
-    
-    .container button, .container button:hover {
-        box-shadow: unset;
-        border-radius: unset;
-    } .container button:active {
-        top: 0px;
-    }
-    
-    section.player {
-        border-top: 35px solid #36393E !important;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        background: #36393E !important;
-    }
-    
-    section.videoname {
-        padding: 5px;
-        background: #1E2124;
-    } .anime_name h1 {
-        color: #FFFFFF;
-    } .anime_name button {
-        transition: 0.2s ease-out;
-        border-radius: 5px;
-        background: #888888;
-        min-height: unset;
-    } .anime_name button:hover {
-        border-radius: 5px;
-    }/*訂閱鈕*/
-    
-    section.data {
-        background: #1E2124;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    } .data_type span {
-        background: #CE4949;
-        border-radius: 5px;
-    } .data_intro h1 {
-        color: #FFF;
-        border-bottom: 1px solid #AFC1BF;
-    }
-    
-    section.old_list, section.news_list {
-        background-color: #2E3136;
-        border-radius: 20px;
-        margin-top:20px;
-    } .title h1 {
-        margin: 0 0 5px 20px;
-        font-size: 30px;
-    } .news_big p {
-        color: #DBDBE1;
-    } .arrange a {
-        
-    }
-    
-    a.bluebtn, .news_big a i {
-        border-radius: 10px;
-        min-width: 80px;
-        text-decoration: none;
-        color: #E54368;
-        border: 2px solid #E54368;
-        background: transparent;
-        font-size: 15px;
-        transition: 0.2s ease-out;
-    } a.bluebtn:hover, .news_big a:hover i {
-        border-color: #FFF;
-        background: #282C30;
-        color: #FFF;
-    }
-    
-    .ACG-score {
-        line-height: 80px;
-    } .ACG-score span {
-        bottom: 8px;
-    }
-    
-    
-    .container, .videoframe, .player {
-        background: none !important;
-        border: 0 !important;
-    } .vast-skip-button {
-        font-family: "Noto Sans CJK TC";
-        background-color: rgba(229,67,104,0.6);
-        color: #FFF !important;
-    } .vjs-control-bar {
-        background-color: rgba(40,43,48,1) !important;
-        
-    } .vjs-play-progress, .vjs-volume-level {
-        background-color: pink !important;
-    } .vjs-control-bar > div[role="button"]:hover {
-        color: #E54368;
-        font-weight: normal;
-    } .vjs-big-play-button:hover, .vjs-default-skin .vjs-big-play-button:focus {
-        color: #E54368 !important;
-    }
-    
-    .TOP-msg {
-        top:55px;
-    }
-    
-    .mainmenu {
-        background: #383030;
-        opacity: 0.5;
-    } .mainmenu:hover {
-        animation:fadeIn cubic-bezier(0,1.02,0,.59) 1;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
-        animation-delay: 0s;
-    } .mainmenu li {
-        color: #fff;
-        background: transparent;
-        padding: 0;
-        margin: 0;
-    } .mainmenu li > a {
-        color: #fff;
-        width: 100%;
-        padding: 0 10px 0 10px;
-    } .mainmenu li > a:hover {
-        color: #000000;
-        text-decoration: none;
-        background-color: #FBBCAD;
-    }
-    
-    .subtitle {
-        background: transparent;
-        border-left: 1px solid #282B30;
-    }
-    .sub_top {
-        background: #36393E;
-        border-bottom: 1px solid #282B30;
-        min-height: 8%;
-        max-height: 41px;
-        color: #FFF;
-        font-size: 0;
-        overflow: hidden;
-    } .sub_top::after {
-        font-size: 17px;
-        line-height: 46px;
-        content: "弾幕コメント";
-    } .sub_top #danmuturn {
-        width: 157px;
-        font-size: 0;
-        margin: 5px 0 5px 0;
-        border: 1px solid #1C1E22;
-        background: #2E3136;
-        color: #55575B;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-    } .sub_top #danmuturn:hover {
-        color: #E8E9EC;
-    } .sub_top #danmuturn:active, button.refresh:active {
-        background: #34373C !important;
-    } #danmuturn.close_bullet::after {
-        font-size: 14px;
-        content: "コメント表示しない";
-    } #danmuturn.close_bullet.closed::after {
-        font-size: 14px;
-        content: "コメント表示する　";
-    } button.refresh {
-        min-width: unset;
-        width: 35px;
-        height: 35px;
-        background: #2E3136;
-        color: #55575B;
-        margin: 5px 5px 5px 0;
-        border: 1px solid #1C1E22;
-        border-left: 0;
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-    } button.refresh:hover {
-        background: #2E3136;
-        color: #E8E9EC;
-        margin: 5px 5px 5px 0;
-        border: 1px solid #1C1E22;
-        border-left: 0;
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-    } button.edit {
-        min-width: unset;
-        float: unset;
-        display: inline-block;
-        width: 50px;
-        margin: 0px;
-    } .sub_edit {
-        white-space: nowrap;
-    } .name {
-        float: left;
-        display: inline-block;
-    }
-    
-    button.edit {
-        font-size: 0px;
-    } button.edit:first-of-type::after {
-        font-size: 12px;
-        content:"コピー";
-        letter-spacing: -1px;
-    } button.edit:last-of-type::after {
-        font-size: 12px;
-        content:"ミュート";
-        letter-spacing: -3px;
-    }
-    
-    
-    #sub_list {
-        margin-top: 46px;
-        padding-top: 0px;
-        margin-right: 2px;
-        height: 92%;
-        background: #36393E;
-    } .sub_list li:hover {
-        background: #494D54;
-    } .sub_list p, .sub_list li {
-        line-height: 35px;
-    }
-    
-
-    .control {
-        border-top: 1px solid #282B30;
-        background: #424549;
-        
-    } .control input#danmutxt {
-        background: transparent;
-        color: #D3D3D4;
-        padding: 0;
-        padding-left: 55px;
-        transition: 0.2s ease-out;
-    } .control input#danmutxt:focus {
-        background: #4B4E53;
-    } .control input#danmutxt:focus + button.sent_mes {
-        background: #E67890;
-    } .control button.sent_mes {
-        transition: 0.2s ease-out;
-        border-radius: 0;
-        height: 42px !important;
-        margin: 0;
-        font-size: 0;
-    } .control button.sent_mes:hover {
-        background: #E54368 !important;
-    } .control button.sent_mes:active {
-        position: absolute;
-        background: #9B2D46 !important;
-    } .control button.sent_mes::after {
-        font-size: 14px;
-        content: "コメントする";
-    } .control button.enter_mes {
-        transition: 0.2s ease-out;
-        background: #282B30;
-        border-radius: 0;
-        border: 0;
-        height: 42px !important;
-        min-width: unset;
-        width: 42px;
-    }
-    
-    /*集數回數*/
-    .season {
-        position: fixed;
-        top: 60px;
-        z-index: 10;
-        opacity: 0.5;
-        overflow: visible;
-    } .season:hover {
-        animation:fadeInhalf ease-out 1;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
-        animation-delay: 0s;
-    }
-    .season ul {
-        background: #383030;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        width: 1365px;
-        padding: 0;
-    } .season li:first-child {
-        margin-left: 8px;
-    } .season ul::before {
-        margin-left: 15px;
-        content: "話数選択";
-    } .season li {
-        border-radius: 30px;
-        min-width: 30px;
-        height: 30px;
-        border: 1px solid #bbb;
-        text-align: center;
-        margin: 2px;
-        line-height: 26px;
-        transition: 0.2s ease-out;
-    } .season li:hover {
-        background: #E54368;
-        border-radius: 30px !important;
-    } .season li.playing {
-        background: #CE4949;
-        border-radius: 5px;
-    } .season a {
-        padding: 0;
-        color: #FFF;
-    } .season a:hover {
-        text-decoration: none;
-        background: none;
-    } .season a:active {
-        text-decoration: none;
-        background: none;
-    } .season .saw::after {
-        display: none;
-    } .season:hover .saw::after {
-        display: block;
-        animation:fadeInhalf ease-out 1;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
-        animation-delay: 0s;
-        content: "⬆前回再生";
-        border-radius: 5px;
-        width: 66px;
-        font-size: 12px;
-        position: absolute;
-        background: #EA7B94;
-        color: #fff;
-        padding: 0px;
-        left: 5px;
-        bottom: -28px;
-        overflow: hidden;
-        z-index: 3;
-    }
-    
-    .whilebg {
-        background: #36393E;
-    }
-    
-    /*動畫播放頁aniplay_結束end*/
-    
-    /*觀看紀錄︵開始*/
-    section.index_new {
-        background: #36393E;
-        margin-top: 20px;
-        border-radius: 20px;
-        
-    } .history li {
-        padding: 0;
-        background: transparent;
-    } .history a {
-        height: 100%;
-        padding: 10px;
-    } .history a:hover {
-        text-decoration: none;
-        color: #FFF;
-        background: linear-gradient(90deg,#232528 50%,#36393E);
-    } .history a:active {
-        text-decoration: none;
-        color: #C7ADAD;
-        background: linear-gradient(90deg,#282323 50%,#36393E);
-    } .history a > span {
-        float: left;
-        width: 100px;
-    } .history a:hover > span {
-        color: #FFF;
-    } .index_new > .only-title > h1 {
-        font-size: 0;
-    } .index_new > .only-title > h1::after {
-        font-size: 30px;
-        content: "　視聴履歴";
-    }
-    /*觀看紀錄︶結束*/
 }
 
 @-moz-document domain("user.gamer.com.tw") {
@@ -3564,7 +3115,9 @@
     .LN_wrapper h1 {
         color: #FFFFFF;
     }
-    
+    .login_btn {
+        white-space: nowrap;
+    }
     .LN_main1 .login_btn a {
         font-family: "Noto Sans CJK TC DemiLight", "MS Gothic";
         display: inline-block;
@@ -3668,4 +3221,124 @@
         border-top: 2px solid #D19494;
     }
     /*登入頁面︶結束*/
+}
+
+@-moz-document domain("acg.gamer.com.tw") {
+    /* 搜尋頁面 */
+    div.GU-lbox9, #BH-pagebtn {
+        margin-left: 40px;
+        margin-right: 40px;
+        width: 900px;
+    }
+    .search_bar {
+        background: transparent;
+        border: 0;
+        text-align: left;
+    }
+    .search_bar + p {
+        padding: 5px 5px 5px 12px;
+        font-size: 15px;
+        border: solid #FF4B4B;
+        border-radius: 20px;
+        border-width: 0 0 1px 0;
+        text-align: left;
+    }
+    #bhAcgSearch::before {
+        content: "キーワード："
+    }
+    input[type="text"] {
+        width: 400px;
+        background: transparent;
+        border: solid #F0F0F0;
+        border-width: 0 0 1px 0;
+        color: #F0F0F0 !important;
+    } input[type="text"] + input {
+        border-color: #738BD7;
+    } input[type="text"]:focus + input, input[type="text"] + input:hover, input[type="text"] + input:active{
+        border-color: #F16364;
+    } input[type="text"]:focus {
+        background: transparent;
+        border: solid #738BD7;
+        border-width: 0 0 2px 0;
+    }
+    table.search_table td {
+        font-family:"Noto Sans CJK TC DemiLight","MS Gothic", sans-serif;
+    }
+    p.search_title a:link, p.search_title a:visited {
+        color: #FFF;
+    }
+    table.search_table div ~ a:first-of-type, table.search_table em a {
+        display: inline-block;
+        float: right;
+        margin: 15px 10px 0 5px;
+        font-size: 16px;
+        text-align: center;
+        width: 90px;
+        height: 30px;
+        line-height: 29px;
+        color: #DEE2F2;
+        border: 2px solid #738BD7;
+        border-radius: 5px;
+    } table.search_table div ~ a:first-of-type:hover, table.search_table em a:hover {
+        text-decoration: none;
+        border-color: #F16364;
+        color: #FFF;
+    } table.search_table div ~ a:first-of-type:active, table.search_table em a:active {
+        border-color: #F16364;
+        background: #F16364;
+        color: #FFF;
+    } table.search_table:hover div ~ a:first-of-type, table.search_table:hover em a {
+        text-decoration: none;
+        border-color: #F16364;
+    }
+    
+    .BH-master_tag1 a {
+        background: transparent;
+        color: #CDC1B2 !important;
+        border: 2px solid #232323;
+        border-radius: 10px;
+        margin: 0 1px 0 1px;
+    } .BH-master_tag1 a:hover {
+        border-color: #6A6F8B;
+        background: transparent;
+        color: #9B9FD1 !important;
+    } .BH-master_tag1 .BH-master_tag1now {
+        background: transparent;
+        border: 2px solid #D25C42;
+        color: #D25C42 !important;
+    }
+    
+    .search_talkBtn img {
+        width: 0;
+        height: 0;
+    } .search_talkBtn a::after {
+
+        
+        content: "哈拉版";
+        text-align: center;
+        width: 70px;
+        height: 25px;
+        line-height: 25px;
+        display: block;
+        position: relative;
+        right: 20px;
+        border-radius: 5px;
+        background: #514749;
+        color: #E0C4C9;
+    } .search_talkBtn a:hover::after {
+        color: #F16364;
+    }
+    img[src*="btn_edit.gif"]{
+        filter: invert(1) brightness(2) hue-rotate(120deg);
+        -webkit-filter: invert(1) brightness(2) hue-rotate(120deg);
+    }
+    
+    hr:last-child {
+        visibility: hidden;
+    }
+    
+    .search_title > a:hover {
+        color: #F16364;
+    }
+    
 }
