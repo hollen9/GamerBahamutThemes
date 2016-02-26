@@ -54,7 +54,7 @@
 
     #BH-footer::after, .BA-footer::after, .footer::after {
         visibility: visible;
-        content: "NightlyBahamut v0.30 (´・ω・`) Designed by Hollen9 (好冷酒)";
+        content: "NightlyBahamut v0.31 (´・ω・`) Designed by Hollen9 (好冷酒)";
         white-space: pre;
         cursor: default;
     }
@@ -169,7 +169,7 @@
         background-size: 14% auto;
         background-attachment:fixed;
     }*/
-   
+    
     body {
         /*background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
         background-color: #1E2124;*/
@@ -178,8 +178,11 @@
         color: #C0C1C2;
         /*overflow-x: hidden;*/
     }
+    
+    
     #BH-background, #BH_background {
         background-color: #1d1c2e;
+        min-height:100vh;
     } .BH_background {
         margin-top: 0;
         border-top: 90px solid transparent;
@@ -194,6 +197,7 @@
         color: #3BAFFF;
         text-decoration: none;
         transition: 0.2s ease-out;/*連結補間動畫*/
+        font-family: "Noto Sans CJK TC Regular";
     } a:hover {
         color: #A6DBFF;
         text-decoration: underline;
@@ -415,7 +419,7 @@
         margin-right: auto;
     }
 
-    .BA-lbox3 a:nth-child(2n) {
+    .BA-lbox3 a:nth-child(2n), .BA-lbox6 {
         color: #FFE1FF;
         background-color: transparent;
         border: solid black;
@@ -424,6 +428,14 @@
         /*border-bottom: 1px dotted black;*/
         width: 173px;
     }
+    .BA-lbox6 {
+        border: 0;
+        padding: 0 4px 20px 3px;
+        background: #36393E;
+    } .BA-lbox6 li {
+        border: 0;
+    }
+    
     
     
     /*[中間]*/
@@ -608,35 +620,55 @@
     }
     
     /*rearrangement_start*/
-    
-    .BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
-        /*rearrange_1, 2_h1*/
+    .BA-left {
+        overflow: visible;
+    }
+    /*.BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
         position: relative;
         left: 950px;
         top: -650px;
     } .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
-        /*rearrange_3, 4_h1*/
         position: relative;
         top: -3040px;
     } .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
-        /*rearrange_3, 4_div*/
-        position: relative;
-        top: -3040px;
+        top: -2040px;
+        left: 0px;
     }
     
     .BA-lbox3 {
-        /*rearrange*/
         position: relative;
         left: 950px;
-        top: -650px; /*710*/
+        top: -650px; 710
     } .BA-left {
-        overflow: visible;/*使rearrangement成為可能*/
+        overflow: visible;
     }
-    
     .BA-lbox6, .BA-lbox1, .BA-lbox + .BA-ltitle:nth-of-type(3), .BA-lbox + .BA-ltitle:nth-of-type(4) {
         position: relative !important;
         top: -2000px !important;
-    }/*簡陋補洞法*/
+    }簡陋補洞法
+    */
+    h1.BA-ltitle:nth-child(4), div.BA-lbox:nth-child(5) {
+        position: relative;
+        top: -650px;
+        left: 950px;
+    } /* 動畫瘋 */
+    h1.BA-ltitle:nth-child(8), div.BA-lbox:nth-child(9) {
+        position: relative;
+        top: -2340px;
+    } /* 學術研究 */
+    h1.BA-ltitle:nth-child(10), div.BA-lbox:nth-child(11) {
+        position: relative;
+        top: -2330px;
+    }
+    h1.BA-ltitle:nth-child(6), div.BA-lbox:nth-child(7) {
+        position: relative;
+        top: -640px;
+        left: 950px;
+    }
+    div.BA-lbox:nth-child(11) ~ .BA-lbox6 {
+        position: relative;
+        top: -2370px;
+    }
     
     /*rearrangement_end*/
     
@@ -1270,7 +1302,9 @@
         border-radius: 0px;
         animation-iteration-count: 1;
     }/*裁切迷你大頭貼 成圓形的*/
-
+    .TOP-nologin > a {
+        background: none;
+    }
     
     div[id^="egg_tip"] {
         color: #C0C0C0 !important;
@@ -2848,13 +2882,15 @@
         background-color: transparent;
     }
     /*改字*/
-    #BH-slave .GU-rbox1 + h5 {
+    #BH-slave .GU-rbox1 + h5, #flySalve + h5 {
         font-size: 0;
-    } #BH-slave .GU-rbox1 + h5::after {
+    } #BH-slave .GU-rbox1 + h5::after, #flySalve + h5::after {
         font-size: 15px;
         content:"予定表";
     }
-    
+    .TBC2 {
+        background-color: transparent;
+    }
     .TBC2 td{
         font-size: 0;
     } .TBC2 td:after{
@@ -3044,12 +3080,40 @@
 }
 
 @-moz-document domain("user.gamer.com.tw") {
+    @keyframes BtnFlash {
+        from {
+            border-color: #5F3B3B;
+            color: #616161;
+        }
+        to {
+            border-color: #FF6767;
+            color: #FFF;
+        }
+    }
+    
     /* 登入頁面 */
     body {
         background-color: #1D1C2E;
     }
     
     /* 登入頁面︵開始 */
+    
+    input[value="確定"] {
+        background: transparent !important;
+        animation-duration: 2s;
+        animation-name: BtnFlash;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-name: BtnFlash;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+    } input[value="確定"]:hover {
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+        
+        animation-iteration-count: initial !important;
+    }
     
     .TOP-nologin ul a {
         white-space: nowrap;
@@ -3312,8 +3376,6 @@
         width: 0;
         height: 0;
     } .search_talkBtn a::after {
-
-        
         content: "哈拉版";
         text-align: center;
         width: 70px;
@@ -3328,7 +3390,8 @@
     } .search_talkBtn a:hover::after {
         color: #F16364;
     }
-    img[src*="btn_edit.gif"]{
+    img[src*="btn_edit.gif"], img[src*="btn_add.gif"], img[src*="img_upload.gif"]
+    {
         filter: invert(1) brightness(2) hue-rotate(120deg);
         -webkit-filter: invert(1) brightness(2) hue-rotate(120deg);
     }
