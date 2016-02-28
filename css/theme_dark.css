@@ -7,6 +7,125 @@
     }
 }
 
+@-moz-document url-prefix("http://forum.gamer.com.tw/search_content.php") {
+    /* GOOGLE搜尋頁面 */
+    * {
+        font-family: "Noto Sans CJK TC";
+    }
+    .gsc-control-cse {
+        border: 0;
+        background: transparent;
+        
+    } .FM-blist td[style*="background-color:#FFF"], .FM-blist td[style*="background-color:#FFF"]:hover {
+        background: transparent !important;
+    }
+    .FM-blist tr:hover, .FM-blist tr:hover a {
+        background: unset !important;
+        color: unset !important;
+    }
+    .cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result, .gsc-webResult.gsc-result.gsc-promotion, .gsc-results .gsc-imageResult-classic, .gsc-results .gsc-imageResult-column, .cse .gsc-webResult.gsc-result:hover, .gsc-webResult.gsc-result:hover, .gsc-webResult.gsc-result.gsc-promotion:hover, .gsc-results .gsc-imageResult-classic:hover, .gsc-results .gsc-imageResult-column:hover {
+        border: 0;
+    }
+    #resInfo-0, .gs-snippet {
+        color: #C2C2C2 !important;
+    }
+    .gs-webResult div.gs-visibleUrl-long, .gs-promotion div.gs-visibleUrl-long {
+        color: #626262;
+        text-indent: 30px;
+    }
+    .gstitle {
+        display: block;
+    }
+    .gs-result .gs-title b:first-child {
+        color: #D25C42;
+    } .gs-result .gs-title b, .gs-result .gs-title {
+        text-decoration: none;
+        color: #FFF;
+    } .gs-result .gs-title:hover {
+        color: #D25C42 !important;
+    }
+    
+    .gcsc-branding-text, .gcsc-branding-img-noclear {
+        vertical-align: middle !important;
+    }
+    
+    div.gsc-result {
+        border-bottom: 1px solid #36393E !important;
+    } div.gsc-result:hover {
+        background: #494C53;
+    } div.gsc-result:hover div.gs-title {
+        margin-left: 0px;
+        transition: 0.5s ease-in;
+    }
+    
+    td.gsc-table-cell-snippet-close .gs-snippet {
+        margin-left: -15px;
+        padding-right: 140px;
+    }  .gs-image {
+        transition: 1s;
+        position: relative;
+        top: 0;
+        left: 350px;
+        
+    } div.gsc-result:hover .gs-image {
+        z-index: 100;
+        top: -10px;
+        left: 350px;
+        transition: 1s;
+        transform: scale(2);
+        -webkit-transform: scale(2);
+    } .gs-image:hover {
+        transition: 0.5s;
+        transform: scale(4) !important;
+        -webkit-transform: scale(4) !important;
+    }
+}
+
+@-moz-document domain("forum.gamer.com.tw"), domain("ani.gamer.com.tw"), domain("guild.gamer.com.tw"), domain("gc.gamer.com.tw"), domain("acg.gamer.com.tw"), domain("gnn.gamer.com.tw"), url-prefix("http://www.gamer.com.tw/"), url("http://home.gamer.com.tw/"), url-prefix("http://home.gamer.com.tw/index.php"), url-prefix("http://home.gamer.com.tw/indexWallpaperList.php") {
+    #BH-wrapper {
+        background-color: #2E3136;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+        border-radius: 0 0 20px 20px;
+    }
+    #BH-background, #BH_background {
+        background-color: #1d1c2e;
+        min-height:100vh;
+    } .BH_background {
+        margin-top: 0;
+        border-top: 90px solid transparent;
+    }/*動畫瘋:BH_background*/
+    
+    .BH-rbox a {/* 層級高於其他超連結設定*/
+        color: #3498DB;
+    }
+    .BH-rbox a:hover {/* 層級高於其他超連結設定*/
+        color: #3DB1FF;
+    }
+    
+    .BH-lbox {/*進版*/
+        background-color: #36393E;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        clear: both;
+        overflow: auto;
+        border-radius: 20px;
+    }
+    #BH-slave h5 {
+        background-color: #1E2124;position: relative; top: 25px; border-radius: 10px;
+        border: 3px solid #36393E;
+    }
+    
+    .BH-rbox {
+        background-color: #36393E;
+        border-radius: 20px;
+        color: #C1C1C1;
+        border: 0px solid #e5e5e5;
+        margin-bottom: 10px;
+        overflow: hidden;
+        padding: 25px 8px 8px 8px;
+    } /*這也適用於其他網頁，例如討論區看板*/
+}
+
 @-moz-document domain("forum.gamer.com.tw") {
     /* 討論區重新分配寬度 (這邊沒有格式設定，只有長寬、留白、邊長等) */
     #BH-slave {
@@ -48,10 +167,9 @@
     始於: 2016/02/06
     */
     @keyframes fadeInwithbluring { from { opacity: 0; filter: blur(3px);-webkit-filter: blur(3px);} to { opacity:1; filter: blur(0px); -webkit-filter: blur(0px);} }
-    @keyframes PaintColor { from { ;} to { filter: grayscale(0%); -webkit-filter: grayscale(0%);} }
     @keyframes fadeIn { from { opacity: 0;} to {opacity:1;} }
     @keyframes fadeInhalf { from { opacity: 0.5;} to {opacity:1;} }
-
+    @keyframes blurIn { from {filter: blur(2px);-webkit-filter: blur(2px);} to {filter: blur(0px);-webkit-filter: blur(0px);} }
     #BH-footer::after, .BA-footer::after, .footer::after {
         visibility: visible;
         content: "NightlyBahamut v0.31 (´・ω・`) Designed by Hollen9 (好冷酒)";
@@ -173,31 +291,19 @@
     body {
         /*background-image: url("https://raw.githubusercontent.com/hollen9/GamerBahamutThemes/7efb9ed699c746e3a4173b29220fbbc6cfcfae1b/images/tile_blurblack.png");
         background-color: #1E2124;*/
-        background-image: none;
+        
         font-family:"Noto Sans CJK TC DemiLight","MS Gothic", sans-serif;
         color: #C0C1C2;
         /*overflow-x: hidden;*/
     }
     
-    
-    #BH-background, #BH_background {
-        background-color: #1d1c2e;
-        min-height:100vh;
-    } .BH_background {
-        margin-top: 0;
-        border-top: 90px solid transparent;
-    }/*動畫瘋背景色、邊界調整*/
-    
-    
-    .BA-main {
-        overflow-x: hidden;
-    }
+    .BA-main { overflow-x: hidden; }
     
     a:link, a:visited {
         color: #3BAFFF;
         text-decoration: none;
         transition: 0.2s ease-out;/*連結補間動畫*/
-        font-family: "Noto Sans CJK TC Regular";
+        font-family: "Noto Sans CJK TC Regular", "Noto Sans CJK TC";
     } a:hover {
         color: #A6DBFF;
         text-decoration: underline;
@@ -247,41 +353,41 @@
         color: #FFD4D4;
     }
 
-    #BH-wrapper {
+    /*暫時拿掉喔#BH-wrapper {
         background-color: #2E3136;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
         border-radius: 0 0 20px 20px;
-    }
-    
-    #BA-center-id {
-        
-    }
+    }*/
 
     /* 全頁對話方塊︵開始 */
     .frame {
         background: #2E3136;
         border-radius: 20px;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        
     } .frame > h1 {
         background: #1E2124;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+    } .frame::after {
+        position: fixed;
+        z-index: -1;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1D1C2E url("https://vgy.me/t4GjGN.png");
+        color: #1D1C38;
+        cursor: default;
+        content: "Nightly Bahamut - Made by Hollen9";
+        
     }
     /* 全頁對話方塊︶結束 */
     
     
     /* 首頁︵開始 */
-    @keyframes blurIn {
-        0% {
-            filter: blur(2px);
-            -webkit-filter: blur(2px);
-        }
-        
-        100% {
-            filter: blur(0px);
-            -webkit-filter: blur(0px);
-        }
-    }
+    
     div[class^="BA-cbox"] {
         /*animation*/
         animation:blurIn ease-out 1;
@@ -347,13 +453,7 @@
         padding-bottom: 30px;
     }
     
-    .BH-rbox {
-        background-color: transparent;
-        border: 0px solid #e5e5e5;
-        margin-bottom: 10px;
-        overflow: hidden;
-        padding: 8px;
-    } /*這也適用於其他網頁，例如討論區看板*/
+    
     
     h1.BA-ltitle {
         /*background-color: #2E3136;*/
@@ -374,7 +474,7 @@
         border-radius: 5px;
     }
     .BA-ltitle:nth-of-type(3) {
-        margin-top: 150px;
+        margin-top: 0px;
     } /*學術研究*/
     
     ul.BA-serve {
@@ -385,6 +485,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         margin-bottom: 50px;
+        z-index: 200;
     } ul.BA-serve > li {
         border-bottom: 0px dotted #e5e5e5;
         padding: 0;
@@ -623,51 +724,35 @@
     .BA-left {
         overflow: visible;
     }
-    /*.BA-left .BA-ltitle:nth-of-type(1), .BA-left .BA-ltitle:nth-of-type(2){
-        position: relative;
-        left: 950px;
-        top: -650px;
-    } .BA-left .BA-ltitle:nth-of-type(3), .BA-left .BA-ltitle:nth-of-type(4){
-        position: relative;
-        top: -3040px;
-    } .BA-left .BA-ltitle:nth-of-type(3) + .BA-lbox , .BA-left .BA-ltitle:nth-of-type(4) + .BA-lbox{
-        top: -2040px;
-        left: 0px;
-    }
     
-    .BA-lbox3 {
-        position: relative;
-        left: 950px;
-        top: -650px; 710
-    } .BA-left {
-        overflow: visible;
-    }
-    .BA-lbox6, .BA-lbox1, .BA-lbox + .BA-ltitle:nth-of-type(3), .BA-lbox + .BA-ltitle:nth-of-type(4) {
-        position: relative !important;
-        top: -2000px !important;
-    }簡陋補洞法
-    */
+    
+    
     h1.BA-ltitle:nth-child(4), div.BA-lbox:nth-child(5) {
         position: relative;
         top: -650px;
         left: 950px;
     } /* 動畫瘋 */
-    h1.BA-ltitle:nth-child(8), div.BA-lbox:nth-child(9) {
-        position: relative;
-        top: -2340px;
-    } /* 學術研究 */
-    h1.BA-ltitle:nth-child(10), div.BA-lbox:nth-child(11) {
-        position: relative;
-        top: -2330px;
+     div.BA-lbox:nth-child(11) {
+        margin-bottom: 0 !important;
+        border-radius: 0;
     }
     h1.BA-ltitle:nth-child(6), div.BA-lbox:nth-child(7) {
         position: relative;
         top: -640px;
         left: 950px;
     }
-    div.BA-lbox:nth-child(11) ~ .BA-lbox6 {
+    
+    
+    h1.BA-ltitle:nth-child(8), div.BA-lbox:nth-child(9) {
         position: relative;
-        top: -2370px;
+        top: -2500px;
+    } /* 學術研究 */
+    h1.BA-ltitle:nth-child(10), div.BA-lbox:nth-child(11) {
+        position: relative;
+        top: -2500px;
+    } div.BA-lbox:nth-child(11) ~ .BA-lbox6 {
+        position: relative;
+        top: -2500px;
     }
     
     /*rearrangement_end*/
@@ -1130,11 +1215,12 @@
         animation-delay: 0s;
     }
     
+    
     /* 版務人員框框 MOD */
     .FM-rbox14 > a > img[src="http://i2.bahamut.com.tw/noimg110.gif"] {
         width: 0;
         height: 0;
-    } /*不需要 noimage 這種東西*/
+    } /*noimage..その物、いらない!*/
     
     .FM-rbox14-master {
         padding-bottom: 2px;
@@ -1161,11 +1247,6 @@
         visibility: visible;
 
     }
-    
-    .BH-rbox {
-        color: #C1C1C1;
-    }
-    
 
 
     /* 文章區︵開始*/
@@ -1224,9 +1305,7 @@
         -webkit-filter: brightness(1); filter: brightness(1);
     }/*囊括整個框框_連結加底線*/
     
-    #BH-slave h5 {
-        background-color: #1E2124;position: relative; top: 20px; border-radius: 10px;
-    }
+    
     
     #BH-master h4 {
         height: 30px;
@@ -1525,27 +1604,7 @@
         padding-bottom: 15px;
     }
     
-    .BH-rbox {
-        background-color: #36393E;
-        border-radius: 20px;
-        padding-top: 20px;
-    }
     
-    .BH-rbox a {/* 層級高於其他超連結設定*/
-        color: #3498DB;
-    }
-    .BH-rbox a:hover {/* 層級高於其他超連結設定*/
-        color: #3DB1FF;
-    }
-    
-    .BH-lbox {/*進版*/
-        background-color: #36393E;
-        border: 0px solid #e5e5e5;
-        margin-bottom: 10px;
-        clear: both;
-        overflow: auto;
-        border-radius: 20px;
-    }
     
     /* 推薦文章列表 */
     
@@ -1560,17 +1619,7 @@
     .FM-abox2A {
         overflow-x: hidden;
         overflow-y: auto;
-        /*filter: brightness(80%);-webkit-filter: brightness(80%);*/
     } .FM-abox2A:hover {
-        /*filter: brightness(1);
-        -webkit-filter: brightness(1);*/
-        /*滑鼠移過變彩色*/
-        /*animation:PaintColor ease-in 1;
-        animation-fill-mode:forwards;*/
-        /*animation-direction: normal;*/
-        /*animation-duration:0.2s;
-        animation-delay: 0s;
-        */
         border-radius: 15px;
         background-color: #3D4046;
     } .FM-abox2A:hover .FM-abox2B {
@@ -1580,7 +1629,6 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     } .FM-abox2A:hover .FM-abox2B:hover {
-        /*color: #FFAA97;*/
         text-decoration: none;
         background-color: #7F6F6F;
         border-radius: 5px;
@@ -1608,15 +1656,7 @@
         line-height: 29px;
         font-size: 15px;
         white-space: nowrap;
-    } /*.FM-abox2B:hover {
-        color: #66C1FF !important;
-        text-decoration: none;
-        background: linear-gradient(90deg,#2e3136 60%,#36393E);
-        background-color: #FC9680;
-        border-radius: 5px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }*/
+    }
     
     .FM-abox5B a:link, .FM-abox5B a:visited {
         color: #66C1FF;
@@ -1746,19 +1786,6 @@
     }
     
     /*右側實況中小按鈕*/
-    /*.FM-rbox15C a {
-        display: block;
-        width: 25px;
-        line-height: 25px;
-        background-color: #484D55;
-        border: 1px solid #CCC;
-        border-radius: 3px;
-        text-align: center;
-    } .FM-rbox15C a:hover {
-        text-decoration: none;
-        color: #FFFFFF;
-        background-color: #999999;
-    }*/
     
     .FM-rbox15C a {
         font-size: 0;
@@ -2208,8 +2235,10 @@
         /*margin-left: -10px;*/
     }
     
-    .BH-pagebtnA a, .page_number a{
+    .BH-pagebtnA a, .page_number a, div.gsc-cursor-page{
+        transition: 0.2s ease-out;
         padding: 0 !important;
+        display: inline-block !important;
         border-radius: 40px !important;
         width: 40px;
         height: 40px;
@@ -2218,7 +2247,7 @@
         border: 2px solid #232323 !important;
         background: none !important;
         color: #FFFFFF !important;
-    } .BH-pagebtnA a:hover, .BH-pagebtnA .pagenow, .page_number a:hover, .page_number .now {
+    } .BH-pagebtnA a:hover, .BH-pagebtnA .pagenow, .page_number a:hover, .page_number .now, .gsc-cursor .gsc-cursor-current-page, .gsc-results .gsc-cursor-box .gsc-cursor-page:hover {
         background-color: #D25C42 !important;
         text-decoration: none;
     }/* 文章頁數按鈕_數字 */
@@ -2638,15 +2667,14 @@
         font-family: Helvetica, Arial, sans-serif;
         line-height: 27px;
     }
-
-/* 公會 (不獨立的原因是為了盡量不拆檔案，而且也真的不多) */
+}
+@-moz-document domain("guild.gamer.com.tw") {
+    /* 公會 */
     #msgtalk { font-size: 16px !important; }
     .AT1 { color: #FFFFFF !important; }
-    
     .IMG-E26::after {
         content: "回覆";
     }
-    
     .GU-rbox5 p {
         display: inline-block;
         width: 120px;
@@ -2656,12 +2684,10 @@
         background-color: transparent;
         padding: 5px;
     } /* 會旗 */
-    
     .GU-lbox2 h1 {
         filter: hue-rotate(180deg);
         -webkit-filter: hue-rotate(180deg);
     }
-    
     .GU-lbox2B {
         width: 90px;
         height: 30px;
