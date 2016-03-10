@@ -7,6 +7,19 @@
     }
 }
 
+@-moz-document url-prefix("http://home.gamer.com.tw/creationEdit1.php"), url-prefix("http://home.gamer.com.tw/creationNew1.php") {
+    
+    #BH-master {
+        width: 1000px;
+    }
+    .BH-lbox {
+        background-position: center center;
+        background-size: 100%;
+    }
+}
+
+
+
 @-moz-document url-prefix("http://forum.gamer.com.tw/search_content.php") {
     /* GOOGLE搜尋頁面 */
     * {
@@ -172,7 +185,7 @@
     @keyframes blurIn { from {filter: blur(2px);-webkit-filter: blur(2px);} to {filter: blur(0px);-webkit-filter: blur(0px);} }
     #BH-footer::after, .BA-footer::after, .footer::after {
         visibility: visible;
-        content: "NightlyBahamut v0.31 (´・ω・`) Designed by Hollen9 (好冷酒)";
+        content: "NightlyBahamut v0.32 (´・ω・`) Designed by Hollen9 (好冷酒)";
         white-space: pre;
         cursor: default;
     }
